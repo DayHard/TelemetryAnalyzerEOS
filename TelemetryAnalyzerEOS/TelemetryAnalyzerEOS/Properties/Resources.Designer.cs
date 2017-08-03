@@ -63,9 +63,9 @@ namespace TelemetryAnalyzerEOS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _212121 {
+        internal static System.Drawing.Bitmap Flag_of_France {
             get {
-                object obj = ResourceManager.GetObject("_212121", resourceCulture);
+                object obj = ResourceManager.GetObject("Flag_of_France", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace TelemetryAnalyzerEOS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5035f86647d206_31869991 {
+        internal static System.Drawing.Bitmap Flag_Russia {
             get {
-                object obj = ResourceManager.GetObject("_5035f86647d206_31869991", resourceCulture);
+                object obj = ResourceManager.GetObject("Flag_Russia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace TelemetryAnalyzerEOS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
+        internal static System.Drawing.Bitmap Flag_UK {
             get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
+                object obj = ResourceManager.GetObject("Flag_UK", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,19 @@ namespace TelemetryAnalyzerEOS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Flag_of_France_svg {
+        internal static System.Drawing.Bitmap Status_Fail {
             get {
-                object obj = ResourceManager.GetObject("Flag_of_France_svg", resourceCulture);
+                object obj = ResourceManager.GetObject("Status_Fail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Status_Success {
+            get {
+                object obj = ResourceManager.GetObject("Status_Success", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

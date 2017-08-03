@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox15.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 437</value>
+  </data>
+  <data name="pictureBox15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 35</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox15.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="btnResultN1.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN2.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN3.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN4.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN5.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN6.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN7.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN8.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN9.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN10.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN11.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN12.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultN13.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="btnResultSelfDiag.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="lbLaunchN1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 40</value>
+  </data>
+  <data name="lbLaunchN1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN1.Text" xml:space="preserve">
+    <value>N + 1 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 71</value>
+  </data>
+  <data name="lbLaunchN2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN2.Text" xml:space="preserve">
+    <value>N + 2 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 102</value>
+  </data>
+  <data name="lbLaunchN3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN3.Text" xml:space="preserve">
+    <value>N + 3 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 133</value>
+  </data>
+  <data name="lbLaunchN4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN4.Text" xml:space="preserve">
+    <value>N + 4 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 164</value>
+  </data>
+  <data name="lbLaunchN5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN5.Text" xml:space="preserve">
+    <value>N + 5 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 195</value>
+  </data>
+  <data name="lbLaunchN6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN6.Text" xml:space="preserve">
+    <value>N + 6 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 226</value>
+  </data>
+  <data name="lbLaunchN7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN7.Text" xml:space="preserve">
+    <value>N + 7 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 257</value>
+  </data>
+  <data name="lbLaunchN8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN8.Text" xml:space="preserve">
+    <value>N + 8 start or diagnostic naming:
+</value>
+  </data>
+  <data name="lbLaunchN9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 288</value>
+  </data>
+  <data name="lbLaunchN9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lbLaunchN9.Text" xml:space="preserve">
+    <value>N + 9 start or diagnostic naming:</value>
+  </data>
+  <data name="lbLaunchN10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 319</value>
+  </data>
+  <data name="lbLaunchN10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="lbLaunchN10.Text" xml:space="preserve">
+    <value>N + 10 start or diagnostic naming:
+</value>
+  </data>
+  <data name="lbLaunchN11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 350</value>
+  </data>
+  <data name="lbLaunchN11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="lbLaunchN11.Text" xml:space="preserve">
+    <value>N + 11 start or diagnostic naming:
+</value>
+  </data>
+  <data name="lbLaunchN12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 381</value>
+  </data>
+  <data name="lbLaunchN12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="lbLaunchN12.Text" xml:space="preserve">
+    <value>N + 12 start or diagnostic naming:
+</value>
+  </data>
+  <data name="lbLaunchN13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 412</value>
+  </data>
+  <data name="lbLaunchN13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="lbLaunchN13.Text" xml:space="preserve">
+    <value>N + 13 start or diagnostic naming:
+</value>
+  </data>
+  <data name="cbLaunchN.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN1.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN1.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN1.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN1.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN1.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN2.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN2.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN2.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN2.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN2.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN3.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN3.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN3.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN3.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN3.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN4.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN4.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN4.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN4.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN4.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN5.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN5.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN5.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN5.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN5.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN6.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN6.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN6.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN6.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN6.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN7.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN7.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN7.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN7.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN7.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN8.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN8.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN8.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN8.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN8.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN9.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN9.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN9.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN9.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN9.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN10.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN10.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN10.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN10.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN10.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN11.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN11.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN11.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN11.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN11.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN12.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN12.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN12.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN12.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN12.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbLaunchN13.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbLaunchN13.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbLaunchN13.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbLaunchN13.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbLaunchN13.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items" xml:space="preserve">
+    <value>Check of the general working capacity</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items1" xml:space="preserve">
+    <value>Checking the tuning of plant signals</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items2" xml:space="preserve">
+    <value>Checking the time of collection</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items3" xml:space="preserve">
+    <value>Checking the capture and re-capture time</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items4" xml:space="preserve">
+    <value>Diagnostic results analysis</value>
+  </data>
+  <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lbLaunchN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 9</value>
+  </data>
+  <data name="lbLaunchN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 13</value>
+  </data>
+  <data name="lbLaunchN.Text" xml:space="preserve">
+    <value>N start or diagnostic naming:</value>
+  </data>
+  <data name="lbSelfDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 448</value>
+  </data>
+  <data name="lbSelfDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lbSelfDiagnosis.Text" xml:space="preserve">
+    <value>Self-diagnosis:</value>
+  </data>
+  <data name="btnResultN.Text" xml:space="preserve">
+    <value>Analysis results</value>
+  </data>
+  <data name="pictureBox3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 65</value>
+  </data>
+  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="pictureBox4.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 96</value>
+  </data>
+  <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="pictureBox5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 127</value>
+  </data>
+  <data name="pictureBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="pictureBox6.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 158</value>
+  </data>
+  <data name="pictureBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="pictureBox7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 189</value>
+  </data>
+  <data name="pictureBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="pictureBox8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 220</value>
+  </data>
+  <data name="pictureBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox8.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="pictureBox9.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 251</value>
+  </data>
+  <data name="pictureBox9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox9.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="pictureBox10.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 282</value>
+  </data>
+  <data name="pictureBox10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox10.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="pictureBox11.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 313</value>
+  </data>
+  <data name="pictureBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox11.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="pictureBox12.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 344</value>
+  </data>
+  <data name="pictureBox12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox12.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="pictureBox13.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 375</value>
+  </data>
+  <data name="pictureBox13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox13.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="pictureBox14.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pictureBox14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 406</value>
+  </data>
+  <data name="pictureBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 25</value>
+  </data>
+  <data name="pictureBox14.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="gbLoadedFileList.Text" xml:space="preserve">
+    <value>List of downloaded telemetry files</value>
+  </data>
+  <data name="btnStartAnalyze.Text" xml:space="preserve">
+    <value>Start analysis</value>
+  </data>
+</root>

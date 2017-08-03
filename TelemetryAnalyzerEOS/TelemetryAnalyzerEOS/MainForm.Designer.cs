@@ -31,60 +31,89 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gbLoadedFileList = new System.Windows.Forms.GroupBox();
             this.tabLayPan = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.btnLangRus = new System.Windows.Forms.Button();
-            this.btnLangEng = new System.Windows.Forms.Button();
-            this.btnLangFr = new System.Windows.Forms.Button();
+            this.pbStatusSelfDiagnosis = new System.Windows.Forms.PictureBox();
+            this.btnResultN1 = new System.Windows.Forms.Button();
+            this.btnResultN2 = new System.Windows.Forms.Button();
+            this.btnResultN3 = new System.Windows.Forms.Button();
+            this.btnResultN4 = new System.Windows.Forms.Button();
+            this.btnResultN5 = new System.Windows.Forms.Button();
+            this.btnResultN6 = new System.Windows.Forms.Button();
+            this.btnResultN7 = new System.Windows.Forms.Button();
+            this.btnResultN8 = new System.Windows.Forms.Button();
+            this.btnResultN9 = new System.Windows.Forms.Button();
+            this.btnResultN10 = new System.Windows.Forms.Button();
+            this.btnResultN11 = new System.Windows.Forms.Button();
+            this.btnResultN12 = new System.Windows.Forms.Button();
+            this.btnResultN13 = new System.Windows.Forms.Button();
+            this.btnResultSelfDiag = new System.Windows.Forms.Button();
+            this.lbLaunchN1 = new System.Windows.Forms.Label();
+            this.lbLaunchN2 = new System.Windows.Forms.Label();
+            this.lbLaunchN3 = new System.Windows.Forms.Label();
+            this.lbLaunchN4 = new System.Windows.Forms.Label();
+            this.lbLaunchN5 = new System.Windows.Forms.Label();
+            this.lbLaunchN6 = new System.Windows.Forms.Label();
+            this.lbLaunchN7 = new System.Windows.Forms.Label();
+            this.lbLaunchN8 = new System.Windows.Forms.Label();
+            this.lbLaunchN9 = new System.Windows.Forms.Label();
+            this.lbLaunchN10 = new System.Windows.Forms.Label();
+            this.lbLaunchN11 = new System.Windows.Forms.Label();
+            this.lbLaunchN12 = new System.Windows.Forms.Label();
+            this.lbLaunchN13 = new System.Windows.Forms.Label();
+            this.cbLaunchN = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN1 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN2 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN3 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN4 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN5 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN6 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN7 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN8 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN9 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN10 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN11 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN12 = new System.Windows.Forms.ComboBox();
+            this.cbLaunchN13 = new System.Windows.Forms.ComboBox();
+            this.cbSelfDiagnosis = new System.Windows.Forms.ComboBox();
+            this.pbStatusN = new System.Windows.Forms.PictureBox();
+            this.pbStatusN1 = new System.Windows.Forms.PictureBox();
+            this.lbLaunchN = new System.Windows.Forms.Label();
+            this.lbSelfDiagnosis = new System.Windows.Forms.Label();
+            this.btnResultN = new System.Windows.Forms.Button();
+            this.pbStatusN2 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN3 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN4 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN5 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN6 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN7 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN8 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN9 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN10 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN11 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN12 = new System.Windows.Forms.PictureBox();
+            this.pbStatusN13 = new System.Windows.Forms.PictureBox();
             this.btnStartAnalyze = new System.Windows.Forms.Button();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnLangFr = new System.Windows.Forms.Button();
+            this.btnLangEng = new System.Windows.Forms.Button();
+            this.btnLangRus = new System.Windows.Forms.Button();
             this.gbLoadedFileList.SuspendLayout();
             this.tabLayPan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusSelfDiagnosis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN13)).BeginInit();
             this.SuspendLayout();
             // 
             // gbLoadedFileList
@@ -97,332 +126,519 @@
             // tabLayPan
             // 
             resources.ApplyResources(this.tabLayPan, "tabLayPan");
-            this.tabLayPan.Controls.Add(this.button1, 3, 0);
-            this.tabLayPan.Controls.Add(this.button2, 3, 1);
-            this.tabLayPan.Controls.Add(this.button3, 3, 2);
-            this.tabLayPan.Controls.Add(this.button6, 3, 3);
-            this.tabLayPan.Controls.Add(this.button9, 3, 4);
-            this.tabLayPan.Controls.Add(this.button12, 3, 5);
-            this.tabLayPan.Controls.Add(this.button5, 3, 6);
-            this.tabLayPan.Controls.Add(this.button8, 3, 7);
-            this.tabLayPan.Controls.Add(this.button11, 3, 8);
-            this.tabLayPan.Controls.Add(this.button4, 3, 9);
-            this.tabLayPan.Controls.Add(this.button7, 3, 10);
-            this.tabLayPan.Controls.Add(this.button10, 3, 11);
-            this.tabLayPan.Controls.Add(this.button13, 3, 12);
-            this.tabLayPan.Controls.Add(this.button14, 3, 13);
-            this.tabLayPan.Controls.Add(this.button15, 3, 14);
-            this.tabLayPan.Controls.Add(this.label2, 0, 0);
-            this.tabLayPan.Controls.Add(this.label1, 0, 1);
-            this.tabLayPan.Controls.Add(this.label3, 0, 2);
-            this.tabLayPan.Controls.Add(this.label4, 0, 3);
-            this.tabLayPan.Controls.Add(this.label5, 0, 4);
-            this.tabLayPan.Controls.Add(this.label6, 0, 5);
-            this.tabLayPan.Controls.Add(this.label7, 0, 6);
-            this.tabLayPan.Controls.Add(this.label8, 0, 7);
-            this.tabLayPan.Controls.Add(this.label9, 0, 8);
-            this.tabLayPan.Controls.Add(this.label10, 0, 9);
-            this.tabLayPan.Controls.Add(this.label11, 0, 10);
-            this.tabLayPan.Controls.Add(this.label12, 0, 11);
-            this.tabLayPan.Controls.Add(this.label13, 0, 12);
-            this.tabLayPan.Controls.Add(this.label14, 0, 13);
-            this.tabLayPan.Controls.Add(this.label15, 0, 14);
-            this.tabLayPan.Controls.Add(this.comboBox1, 1, 0);
-            this.tabLayPan.Controls.Add(this.comboBox2, 1, 1);
-            this.tabLayPan.Controls.Add(this.comboBox3, 1, 2);
-            this.tabLayPan.Controls.Add(this.comboBox4, 1, 3);
-            this.tabLayPan.Controls.Add(this.comboBox5, 1, 4);
-            this.tabLayPan.Controls.Add(this.comboBox6, 1, 5);
-            this.tabLayPan.Controls.Add(this.comboBox7, 1, 6);
-            this.tabLayPan.Controls.Add(this.comboBox8, 1, 7);
-            this.tabLayPan.Controls.Add(this.comboBox9, 1, 8);
-            this.tabLayPan.Controls.Add(this.comboBox10, 1, 9);
-            this.tabLayPan.Controls.Add(this.comboBox11, 1, 10);
-            this.tabLayPan.Controls.Add(this.comboBox12, 1, 11);
-            this.tabLayPan.Controls.Add(this.comboBox13, 1, 12);
-            this.tabLayPan.Controls.Add(this.comboBox14, 1, 13);
-            this.tabLayPan.Controls.Add(this.comboBox15, 1, 14);
-            this.tabLayPan.Controls.Add(this.pictureBox1, 2, 0);
+            this.tabLayPan.Controls.Add(this.pbStatusSelfDiagnosis, 2, 14);
+            this.tabLayPan.Controls.Add(this.btnResultN1, 3, 1);
+            this.tabLayPan.Controls.Add(this.btnResultN2, 3, 2);
+            this.tabLayPan.Controls.Add(this.btnResultN3, 3, 3);
+            this.tabLayPan.Controls.Add(this.btnResultN4, 3, 4);
+            this.tabLayPan.Controls.Add(this.btnResultN5, 3, 5);
+            this.tabLayPan.Controls.Add(this.btnResultN6, 3, 6);
+            this.tabLayPan.Controls.Add(this.btnResultN7, 3, 7);
+            this.tabLayPan.Controls.Add(this.btnResultN8, 3, 8);
+            this.tabLayPan.Controls.Add(this.btnResultN9, 3, 9);
+            this.tabLayPan.Controls.Add(this.btnResultN10, 3, 10);
+            this.tabLayPan.Controls.Add(this.btnResultN11, 3, 11);
+            this.tabLayPan.Controls.Add(this.btnResultN12, 3, 12);
+            this.tabLayPan.Controls.Add(this.btnResultN13, 3, 13);
+            this.tabLayPan.Controls.Add(this.btnResultSelfDiag, 3, 14);
+            this.tabLayPan.Controls.Add(this.lbLaunchN1, 0, 1);
+            this.tabLayPan.Controls.Add(this.lbLaunchN2, 0, 2);
+            this.tabLayPan.Controls.Add(this.lbLaunchN3, 0, 3);
+            this.tabLayPan.Controls.Add(this.lbLaunchN4, 0, 4);
+            this.tabLayPan.Controls.Add(this.lbLaunchN5, 0, 5);
+            this.tabLayPan.Controls.Add(this.lbLaunchN6, 0, 6);
+            this.tabLayPan.Controls.Add(this.lbLaunchN7, 0, 7);
+            this.tabLayPan.Controls.Add(this.lbLaunchN8, 0, 8);
+            this.tabLayPan.Controls.Add(this.lbLaunchN9, 0, 9);
+            this.tabLayPan.Controls.Add(this.lbLaunchN10, 0, 10);
+            this.tabLayPan.Controls.Add(this.lbLaunchN11, 0, 11);
+            this.tabLayPan.Controls.Add(this.lbLaunchN12, 0, 12);
+            this.tabLayPan.Controls.Add(this.lbLaunchN13, 0, 13);
+            this.tabLayPan.Controls.Add(this.cbLaunchN, 1, 0);
+            this.tabLayPan.Controls.Add(this.cbLaunchN1, 1, 1);
+            this.tabLayPan.Controls.Add(this.cbLaunchN2, 1, 2);
+            this.tabLayPan.Controls.Add(this.cbLaunchN3, 1, 3);
+            this.tabLayPan.Controls.Add(this.cbLaunchN4, 1, 4);
+            this.tabLayPan.Controls.Add(this.cbLaunchN5, 1, 5);
+            this.tabLayPan.Controls.Add(this.cbLaunchN6, 1, 6);
+            this.tabLayPan.Controls.Add(this.cbLaunchN7, 1, 7);
+            this.tabLayPan.Controls.Add(this.cbLaunchN8, 1, 8);
+            this.tabLayPan.Controls.Add(this.cbLaunchN9, 1, 9);
+            this.tabLayPan.Controls.Add(this.cbLaunchN10, 1, 10);
+            this.tabLayPan.Controls.Add(this.cbLaunchN11, 1, 11);
+            this.tabLayPan.Controls.Add(this.cbLaunchN12, 1, 12);
+            this.tabLayPan.Controls.Add(this.cbLaunchN13, 1, 13);
+            this.tabLayPan.Controls.Add(this.cbSelfDiagnosis, 1, 14);
+            this.tabLayPan.Controls.Add(this.pbStatusN, 2, 0);
+            this.tabLayPan.Controls.Add(this.pbStatusN1, 2, 1);
+            this.tabLayPan.Controls.Add(this.lbLaunchN, 0, 0);
+            this.tabLayPan.Controls.Add(this.lbSelfDiagnosis, 0, 14);
+            this.tabLayPan.Controls.Add(this.btnResultN, 3, 0);
+            this.tabLayPan.Controls.Add(this.pbStatusN2, 2, 2);
+            this.tabLayPan.Controls.Add(this.pbStatusN3, 2, 3);
+            this.tabLayPan.Controls.Add(this.pbStatusN4, 2, 4);
+            this.tabLayPan.Controls.Add(this.pbStatusN5, 2, 5);
+            this.tabLayPan.Controls.Add(this.pbStatusN6, 2, 6);
+            this.tabLayPan.Controls.Add(this.pbStatusN7, 2, 7);
+            this.tabLayPan.Controls.Add(this.pbStatusN8, 2, 8);
+            this.tabLayPan.Controls.Add(this.pbStatusN9, 2, 9);
+            this.tabLayPan.Controls.Add(this.pbStatusN10, 2, 10);
+            this.tabLayPan.Controls.Add(this.pbStatusN11, 2, 11);
+            this.tabLayPan.Controls.Add(this.pbStatusN12, 2, 12);
+            this.tabLayPan.Controls.Add(this.pbStatusN13, 2, 13);
             this.tabLayPan.Name = "tabLayPan";
             // 
-            // button1
+            // pbStatusSelfDiagnosis
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.pbStatusSelfDiagnosis, "pbStatusSelfDiagnosis");
+            this.pbStatusSelfDiagnosis.Name = "pbStatusSelfDiagnosis";
+            this.pbStatusSelfDiagnosis.TabStop = false;
             // 
-            // button2
+            // btnResultN1
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN1, "btnResultN1");
+            this.btnResultN1.Name = "btnResultN1";
+            this.btnResultN1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnResultN2
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN2, "btnResultN2");
+            this.btnResultN2.Name = "btnResultN2";
+            this.btnResultN2.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnResultN3
             // 
-            resources.ApplyResources(this.button6, "button6");
-            this.button6.Name = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN3, "btnResultN3");
+            this.btnResultN3.Name = "btnResultN3";
+            this.btnResultN3.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnResultN4
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN4, "btnResultN4");
+            this.btnResultN4.Name = "btnResultN4";
+            this.btnResultN4.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnResultN5
             // 
-            resources.ApplyResources(this.button12, "button12");
-            this.button12.Name = "button12";
-            this.button12.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN5, "btnResultN5");
+            this.btnResultN5.Name = "btnResultN5";
+            this.btnResultN5.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnResultN6
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN6, "btnResultN6");
+            this.btnResultN6.Name = "btnResultN6";
+            this.btnResultN6.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnResultN7
             // 
-            resources.ApplyResources(this.button8, "button8");
-            this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN7, "btnResultN7");
+            this.btnResultN7.Name = "btnResultN7";
+            this.btnResultN7.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnResultN8
             // 
-            resources.ApplyResources(this.button11, "button11");
-            this.button11.Name = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN8, "btnResultN8");
+            this.btnResultN8.Name = "btnResultN8";
+            this.btnResultN8.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnResultN9
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN9, "btnResultN9");
+            this.btnResultN9.Name = "btnResultN9";
+            this.btnResultN9.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnResultN10
             // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN10, "btnResultN10");
+            this.btnResultN10.Name = "btnResultN10";
+            this.btnResultN10.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnResultN11
             // 
-            resources.ApplyResources(this.button10, "button10");
-            this.button10.Name = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN11, "btnResultN11");
+            this.btnResultN11.Name = "btnResultN11";
+            this.btnResultN11.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btnResultN12
             // 
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.Name = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN12, "btnResultN12");
+            this.btnResultN12.Name = "btnResultN12";
+            this.btnResultN12.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnResultN13
             // 
-            resources.ApplyResources(this.button14, "button14");
-            this.button14.Name = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultN13, "btnResultN13");
+            this.btnResultN13.Name = "btnResultN13";
+            this.btnResultN13.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // btnResultSelfDiag
             // 
-            resources.ApplyResources(this.button15, "button15");
-            this.button15.Name = "button15";
-            this.button15.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnResultSelfDiag, "btnResultSelfDiag");
+            this.btnResultSelfDiag.Name = "btnResultSelfDiag";
+            this.btnResultSelfDiag.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lbLaunchN1
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lbLaunchN1, "lbLaunchN1");
+            this.lbLaunchN1.Name = "lbLaunchN1";
             // 
-            // label1
+            // lbLaunchN2
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lbLaunchN2, "lbLaunchN2");
+            this.lbLaunchN2.Name = "lbLaunchN2";
             // 
-            // label3
+            // lbLaunchN3
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.lbLaunchN3, "lbLaunchN3");
+            this.lbLaunchN3.Name = "lbLaunchN3";
             // 
-            // label4
+            // lbLaunchN4
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.lbLaunchN4, "lbLaunchN4");
+            this.lbLaunchN4.Name = "lbLaunchN4";
             // 
-            // label5
+            // lbLaunchN5
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.lbLaunchN5, "lbLaunchN5");
+            this.lbLaunchN5.Name = "lbLaunchN5";
             // 
-            // label6
+            // lbLaunchN6
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.lbLaunchN6, "lbLaunchN6");
+            this.lbLaunchN6.Name = "lbLaunchN6";
             // 
-            // label7
+            // lbLaunchN7
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.lbLaunchN7, "lbLaunchN7");
+            this.lbLaunchN7.Name = "lbLaunchN7";
             // 
-            // label8
+            // lbLaunchN8
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
+            resources.ApplyResources(this.lbLaunchN8, "lbLaunchN8");
+            this.lbLaunchN8.Name = "lbLaunchN8";
             // 
-            // label9
+            // lbLaunchN9
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.lbLaunchN9, "lbLaunchN9");
+            this.lbLaunchN9.Name = "lbLaunchN9";
             // 
-            // label10
+            // lbLaunchN10
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.lbLaunchN10, "lbLaunchN10");
+            this.lbLaunchN10.Name = "lbLaunchN10";
             // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
-            // 
-            // label15
-            // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.Name = "label15";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.Name = "comboBox2";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.Name = "comboBox3";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox4, "comboBox4");
-            this.comboBox4.Name = "comboBox4";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox5, "comboBox5");
-            this.comboBox5.Name = "comboBox5";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox6, "comboBox6");
-            this.comboBox6.Name = "comboBox6";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox7, "comboBox7");
-            this.comboBox7.Name = "comboBox7";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox8, "comboBox8");
-            this.comboBox8.Name = "comboBox8";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox9, "comboBox9");
-            this.comboBox9.Name = "comboBox9";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox10, "comboBox10");
-            this.comboBox10.Name = "comboBox10";
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox11, "comboBox11");
-            this.comboBox11.Name = "comboBox11";
-            // 
-            // comboBox12
-            // 
-            this.comboBox12.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox12, "comboBox12");
-            this.comboBox12.Name = "comboBox12";
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox13, "comboBox13");
-            this.comboBox13.Name = "comboBox13";
-            // 
-            // comboBox14
-            // 
-            this.comboBox14.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox14, "comboBox14");
-            this.comboBox14.Name = "comboBox14";
-            // 
-            // comboBox15
-            // 
-            this.comboBox15.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox15, "comboBox15");
-            this.comboBox15.Name = "comboBox15";
-            // 
-            // btnLangRus
-            // 
-            this.btnLangRus.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.download;
-            resources.ApplyResources(this.btnLangRus, "btnLangRus");
-            this.btnLangRus.Name = "btnLangRus";
-            this.btnLangRus.UseVisualStyleBackColor = true;
-            this.btnLangRus.Click += new System.EventHandler(this.btnLangRus_Click);
-            // 
-            // btnLangEng
-            // 
-            this.btnLangEng.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources._5035f86647d206_31869991;
-            resources.ApplyResources(this.btnLangEng, "btnLangEng");
-            this.btnLangEng.Name = "btnLangEng";
-            this.btnLangEng.UseVisualStyleBackColor = true;
-            this.btnLangEng.Click += new System.EventHandler(this.btnLangEng_Click);
-            // 
-            // btnLangFr
-            // 
-            this.btnLangFr.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_of_France_svg;
-            resources.ApplyResources(this.btnLangFr, "btnLangFr");
-            this.btnLangFr.Name = "btnLangFr";
-            this.btnLangFr.UseVisualStyleBackColor = true;
-            this.btnLangFr.Click += new System.EventHandler(this.btnLangFr_Click);
+            // lbLaunchN11
+            // 
+            resources.ApplyResources(this.lbLaunchN11, "lbLaunchN11");
+            this.lbLaunchN11.Name = "lbLaunchN11";
+            // 
+            // lbLaunchN12
+            // 
+            resources.ApplyResources(this.lbLaunchN12, "lbLaunchN12");
+            this.lbLaunchN12.Name = "lbLaunchN12";
+            // 
+            // lbLaunchN13
+            // 
+            resources.ApplyResources(this.lbLaunchN13, "lbLaunchN13");
+            this.lbLaunchN13.Name = "lbLaunchN13";
+            // 
+            // cbLaunchN
+            // 
+            this.cbLaunchN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN.FormattingEnabled = true;
+            this.cbLaunchN.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN.Items"),
+            resources.GetString("cbLaunchN.Items1"),
+            resources.GetString("cbLaunchN.Items2"),
+            resources.GetString("cbLaunchN.Items3"),
+            resources.GetString("cbLaunchN.Items4")});
+            resources.ApplyResources(this.cbLaunchN, "cbLaunchN");
+            this.cbLaunchN.Name = "cbLaunchN";
+            // 
+            // cbLaunchN1
+            // 
+            this.cbLaunchN1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN1.FormattingEnabled = true;
+            this.cbLaunchN1.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN1.Items"),
+            resources.GetString("cbLaunchN1.Items1"),
+            resources.GetString("cbLaunchN1.Items2"),
+            resources.GetString("cbLaunchN1.Items3"),
+            resources.GetString("cbLaunchN1.Items4")});
+            resources.ApplyResources(this.cbLaunchN1, "cbLaunchN1");
+            this.cbLaunchN1.Name = "cbLaunchN1";
+            // 
+            // cbLaunchN2
+            // 
+            this.cbLaunchN2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN2.FormattingEnabled = true;
+            this.cbLaunchN2.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN2.Items"),
+            resources.GetString("cbLaunchN2.Items1"),
+            resources.GetString("cbLaunchN2.Items2"),
+            resources.GetString("cbLaunchN2.Items3"),
+            resources.GetString("cbLaunchN2.Items4")});
+            resources.ApplyResources(this.cbLaunchN2, "cbLaunchN2");
+            this.cbLaunchN2.Name = "cbLaunchN2";
+            // 
+            // cbLaunchN3
+            // 
+            this.cbLaunchN3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN3.FormattingEnabled = true;
+            this.cbLaunchN3.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN3.Items"),
+            resources.GetString("cbLaunchN3.Items1"),
+            resources.GetString("cbLaunchN3.Items2"),
+            resources.GetString("cbLaunchN3.Items3"),
+            resources.GetString("cbLaunchN3.Items4")});
+            resources.ApplyResources(this.cbLaunchN3, "cbLaunchN3");
+            this.cbLaunchN3.Name = "cbLaunchN3";
+            // 
+            // cbLaunchN4
+            // 
+            this.cbLaunchN4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN4.FormattingEnabled = true;
+            this.cbLaunchN4.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN4.Items"),
+            resources.GetString("cbLaunchN4.Items1"),
+            resources.GetString("cbLaunchN4.Items2"),
+            resources.GetString("cbLaunchN4.Items3"),
+            resources.GetString("cbLaunchN4.Items4")});
+            resources.ApplyResources(this.cbLaunchN4, "cbLaunchN4");
+            this.cbLaunchN4.Name = "cbLaunchN4";
+            // 
+            // cbLaunchN5
+            // 
+            this.cbLaunchN5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN5.FormattingEnabled = true;
+            this.cbLaunchN5.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN5.Items"),
+            resources.GetString("cbLaunchN5.Items1"),
+            resources.GetString("cbLaunchN5.Items2"),
+            resources.GetString("cbLaunchN5.Items3"),
+            resources.GetString("cbLaunchN5.Items4")});
+            resources.ApplyResources(this.cbLaunchN5, "cbLaunchN5");
+            this.cbLaunchN5.Name = "cbLaunchN5";
+            // 
+            // cbLaunchN6
+            // 
+            this.cbLaunchN6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN6.FormattingEnabled = true;
+            this.cbLaunchN6.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN6.Items"),
+            resources.GetString("cbLaunchN6.Items1"),
+            resources.GetString("cbLaunchN6.Items2"),
+            resources.GetString("cbLaunchN6.Items3"),
+            resources.GetString("cbLaunchN6.Items4")});
+            resources.ApplyResources(this.cbLaunchN6, "cbLaunchN6");
+            this.cbLaunchN6.Name = "cbLaunchN6";
+            // 
+            // cbLaunchN7
+            // 
+            this.cbLaunchN7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN7.FormattingEnabled = true;
+            this.cbLaunchN7.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN7.Items"),
+            resources.GetString("cbLaunchN7.Items1"),
+            resources.GetString("cbLaunchN7.Items2"),
+            resources.GetString("cbLaunchN7.Items3"),
+            resources.GetString("cbLaunchN7.Items4")});
+            resources.ApplyResources(this.cbLaunchN7, "cbLaunchN7");
+            this.cbLaunchN7.Name = "cbLaunchN7";
+            // 
+            // cbLaunchN8
+            // 
+            this.cbLaunchN8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN8.FormattingEnabled = true;
+            this.cbLaunchN8.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN8.Items"),
+            resources.GetString("cbLaunchN8.Items1"),
+            resources.GetString("cbLaunchN8.Items2"),
+            resources.GetString("cbLaunchN8.Items3"),
+            resources.GetString("cbLaunchN8.Items4")});
+            resources.ApplyResources(this.cbLaunchN8, "cbLaunchN8");
+            this.cbLaunchN8.Name = "cbLaunchN8";
+            // 
+            // cbLaunchN9
+            // 
+            this.cbLaunchN9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN9.FormattingEnabled = true;
+            this.cbLaunchN9.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN9.Items"),
+            resources.GetString("cbLaunchN9.Items1"),
+            resources.GetString("cbLaunchN9.Items2"),
+            resources.GetString("cbLaunchN9.Items3"),
+            resources.GetString("cbLaunchN9.Items4")});
+            resources.ApplyResources(this.cbLaunchN9, "cbLaunchN9");
+            this.cbLaunchN9.Name = "cbLaunchN9";
+            // 
+            // cbLaunchN10
+            // 
+            this.cbLaunchN10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN10.FormattingEnabled = true;
+            this.cbLaunchN10.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN10.Items"),
+            resources.GetString("cbLaunchN10.Items1"),
+            resources.GetString("cbLaunchN10.Items2"),
+            resources.GetString("cbLaunchN10.Items3"),
+            resources.GetString("cbLaunchN10.Items4")});
+            resources.ApplyResources(this.cbLaunchN10, "cbLaunchN10");
+            this.cbLaunchN10.Name = "cbLaunchN10";
+            // 
+            // cbLaunchN11
+            // 
+            this.cbLaunchN11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN11.FormattingEnabled = true;
+            this.cbLaunchN11.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN11.Items"),
+            resources.GetString("cbLaunchN11.Items1"),
+            resources.GetString("cbLaunchN11.Items2"),
+            resources.GetString("cbLaunchN11.Items3"),
+            resources.GetString("cbLaunchN11.Items4")});
+            resources.ApplyResources(this.cbLaunchN11, "cbLaunchN11");
+            this.cbLaunchN11.Name = "cbLaunchN11";
+            // 
+            // cbLaunchN12
+            // 
+            this.cbLaunchN12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN12.FormattingEnabled = true;
+            this.cbLaunchN12.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN12.Items"),
+            resources.GetString("cbLaunchN12.Items1"),
+            resources.GetString("cbLaunchN12.Items2"),
+            resources.GetString("cbLaunchN12.Items3"),
+            resources.GetString("cbLaunchN12.Items4")});
+            resources.ApplyResources(this.cbLaunchN12, "cbLaunchN12");
+            this.cbLaunchN12.Name = "cbLaunchN12";
+            // 
+            // cbLaunchN13
+            // 
+            this.cbLaunchN13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLaunchN13.FormattingEnabled = true;
+            this.cbLaunchN13.Items.AddRange(new object[] {
+            resources.GetString("cbLaunchN13.Items"),
+            resources.GetString("cbLaunchN13.Items1"),
+            resources.GetString("cbLaunchN13.Items2"),
+            resources.GetString("cbLaunchN13.Items3"),
+            resources.GetString("cbLaunchN13.Items4")});
+            resources.ApplyResources(this.cbLaunchN13, "cbLaunchN13");
+            this.cbLaunchN13.Name = "cbLaunchN13";
+            // 
+            // cbSelfDiagnosis
+            // 
+            this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelfDiagnosis.FormattingEnabled = true;
+            this.cbSelfDiagnosis.Items.AddRange(new object[] {
+            resources.GetString("cbSelfDiagnosis.Items"),
+            resources.GetString("cbSelfDiagnosis.Items1"),
+            resources.GetString("cbSelfDiagnosis.Items2"),
+            resources.GetString("cbSelfDiagnosis.Items3"),
+            resources.GetString("cbSelfDiagnosis.Items4")});
+            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
+            this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
+            // 
+            // pbStatusN
+            // 
+            resources.ApplyResources(this.pbStatusN, "pbStatusN");
+            this.pbStatusN.Image = global::TelemetryAnalyzerEOS.Properties.Resources.Status_Success;
+            this.pbStatusN.Name = "pbStatusN";
+            this.pbStatusN.TabStop = false;
+            // 
+            // pbStatusN1
+            // 
+            resources.ApplyResources(this.pbStatusN1, "pbStatusN1");
+            this.pbStatusN1.Image = global::TelemetryAnalyzerEOS.Properties.Resources.Status_Fail;
+            this.pbStatusN1.Name = "pbStatusN1";
+            this.pbStatusN1.TabStop = false;
+            // 
+            // lbLaunchN
+            // 
+            resources.ApplyResources(this.lbLaunchN, "lbLaunchN");
+            this.lbLaunchN.Name = "lbLaunchN";
+            // 
+            // lbSelfDiagnosis
+            // 
+            resources.ApplyResources(this.lbSelfDiagnosis, "lbSelfDiagnosis");
+            this.lbSelfDiagnosis.Name = "lbSelfDiagnosis";
+            // 
+            // btnResultN
+            // 
+            resources.ApplyResources(this.btnResultN, "btnResultN");
+            this.btnResultN.Name = "btnResultN";
+            this.btnResultN.UseVisualStyleBackColor = true;
+            // 
+            // pbStatusN2
+            // 
+            resources.ApplyResources(this.pbStatusN2, "pbStatusN2");
+            this.pbStatusN2.Name = "pbStatusN2";
+            this.pbStatusN2.TabStop = false;
+            // 
+            // pbStatusN3
+            // 
+            resources.ApplyResources(this.pbStatusN3, "pbStatusN3");
+            this.pbStatusN3.Name = "pbStatusN3";
+            this.pbStatusN3.TabStop = false;
+            // 
+            // pbStatusN4
+            // 
+            resources.ApplyResources(this.pbStatusN4, "pbStatusN4");
+            this.pbStatusN4.Name = "pbStatusN4";
+            this.pbStatusN4.TabStop = false;
+            // 
+            // pbStatusN5
+            // 
+            resources.ApplyResources(this.pbStatusN5, "pbStatusN5");
+            this.pbStatusN5.Name = "pbStatusN5";
+            this.pbStatusN5.TabStop = false;
+            // 
+            // pbStatusN6
+            // 
+            resources.ApplyResources(this.pbStatusN6, "pbStatusN6");
+            this.pbStatusN6.Name = "pbStatusN6";
+            this.pbStatusN6.TabStop = false;
+            // 
+            // pbStatusN7
+            // 
+            resources.ApplyResources(this.pbStatusN7, "pbStatusN7");
+            this.pbStatusN7.Name = "pbStatusN7";
+            this.pbStatusN7.TabStop = false;
+            // 
+            // pbStatusN8
+            // 
+            resources.ApplyResources(this.pbStatusN8, "pbStatusN8");
+            this.pbStatusN8.Name = "pbStatusN8";
+            this.pbStatusN8.TabStop = false;
+            // 
+            // pbStatusN9
+            // 
+            resources.ApplyResources(this.pbStatusN9, "pbStatusN9");
+            this.pbStatusN9.Name = "pbStatusN9";
+            this.pbStatusN9.TabStop = false;
+            // 
+            // pbStatusN10
+            // 
+            resources.ApplyResources(this.pbStatusN10, "pbStatusN10");
+            this.pbStatusN10.Name = "pbStatusN10";
+            this.pbStatusN10.TabStop = false;
+            // 
+            // pbStatusN11
+            // 
+            resources.ApplyResources(this.pbStatusN11, "pbStatusN11");
+            this.pbStatusN11.Name = "pbStatusN11";
+            this.pbStatusN11.TabStop = false;
+            // 
+            // pbStatusN12
+            // 
+            resources.ApplyResources(this.pbStatusN12, "pbStatusN12");
+            this.pbStatusN12.Name = "pbStatusN12";
+            this.pbStatusN12.TabStop = false;
+            // 
+            // pbStatusN13
+            // 
+            resources.ApplyResources(this.pbStatusN13, "pbStatusN13");
+            this.pbStatusN13.Name = "pbStatusN13";
+            this.pbStatusN13.TabStop = false;
             // 
             // btnStartAnalyze
             // 
@@ -435,12 +651,33 @@
             resources.ApplyResources(this.lbVersion, "lbVersion");
             this.lbVersion.Name = "lbVersion";
             // 
-            // pictureBox1
+            // openFileDialog
             // 
-            this.pictureBox1.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources._212121;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // btnLangFr
+            // 
+            this.btnLangFr.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_of_France;
+            resources.ApplyResources(this.btnLangFr, "btnLangFr");
+            this.btnLangFr.Name = "btnLangFr";
+            this.btnLangFr.UseVisualStyleBackColor = true;
+            this.btnLangFr.Click += new System.EventHandler(this.btnLangFr_Click);
+            // 
+            // btnLangEng
+            // 
+            this.btnLangEng.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_UK;
+            resources.ApplyResources(this.btnLangEng, "btnLangEng");
+            this.btnLangEng.Name = "btnLangEng";
+            this.btnLangEng.UseVisualStyleBackColor = true;
+            this.btnLangEng.Click += new System.EventHandler(this.btnLangEng_Click);
+            // 
+            // btnLangRus
+            // 
+            this.btnLangRus.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_Russia;
+            resources.ApplyResources(this.btnLangRus, "btnLangRus");
+            this.btnLangRus.Name = "btnLangRus";
+            this.btnLangRus.UseVisualStyleBackColor = true;
+            this.btnLangRus.Click += new System.EventHandler(this.btnLangRus_Click);
             // 
             // MainForm
             // 
@@ -452,14 +689,31 @@
             this.Controls.Add(this.btnLangEng);
             this.Controls.Add(this.btnLangRus);
             this.Controls.Add(this.gbLoadedFileList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbLoadedFileList.ResumeLayout(false);
             this.tabLayPan.ResumeLayout(false);
             this.tabLayPan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusSelfDiagnosis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatusN13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,57 +723,72 @@
 
         private System.Windows.Forms.GroupBox gbLoadedFileList;
         private System.Windows.Forms.TableLayoutPanel tabLayPan;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.ComboBox comboBox14;
-        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.Button btnResultN;
+        private System.Windows.Forms.Button btnResultN1;
+        private System.Windows.Forms.Button btnResultN2;
+        private System.Windows.Forms.Button btnResultN3;
+        private System.Windows.Forms.Button btnResultN4;
+        private System.Windows.Forms.Button btnResultN5;
+        private System.Windows.Forms.Button btnResultN6;
+        private System.Windows.Forms.Button btnResultN7;
+        private System.Windows.Forms.Button btnResultN8;
+        private System.Windows.Forms.Button btnResultN9;
+        private System.Windows.Forms.Button btnResultN10;
+        private System.Windows.Forms.Button btnResultN11;
+        private System.Windows.Forms.Button btnResultN12;
+        private System.Windows.Forms.Button btnResultN13;
+        private System.Windows.Forms.Button btnResultSelfDiag;
+        private System.Windows.Forms.Label lbLaunchN1;
+        private System.Windows.Forms.Label lbLaunchN2;
+        private System.Windows.Forms.Label lbLaunchN3;
+        private System.Windows.Forms.Label lbLaunchN4;
+        private System.Windows.Forms.Label lbLaunchN5;
+        private System.Windows.Forms.Label lbLaunchN6;
+        private System.Windows.Forms.Label lbLaunchN7;
+        private System.Windows.Forms.Label lbLaunchN8;
+        private System.Windows.Forms.Label lbLaunchN9;
+        private System.Windows.Forms.Label lbLaunchN10;
+        private System.Windows.Forms.Label lbLaunchN11;
+        private System.Windows.Forms.Label lbLaunchN12;
+        private System.Windows.Forms.Label lbLaunchN13;
+        private System.Windows.Forms.Label lbSelfDiagnosis;
+        private System.Windows.Forms.ComboBox cbLaunchN;
+        private System.Windows.Forms.ComboBox cbLaunchN1;
+        private System.Windows.Forms.ComboBox cbLaunchN2;
+        private System.Windows.Forms.ComboBox cbLaunchN3;
+        private System.Windows.Forms.ComboBox cbLaunchN4;
+        private System.Windows.Forms.ComboBox cbLaunchN5;
+        private System.Windows.Forms.ComboBox cbLaunchN6;
+        private System.Windows.Forms.ComboBox cbLaunchN7;
+        private System.Windows.Forms.ComboBox cbLaunchN8;
+        private System.Windows.Forms.ComboBox cbLaunchN9;
+        private System.Windows.Forms.ComboBox cbLaunchN10;
+        private System.Windows.Forms.ComboBox cbLaunchN11;
+        private System.Windows.Forms.ComboBox cbLaunchN12;
+        private System.Windows.Forms.ComboBox cbLaunchN13;
+        private System.Windows.Forms.ComboBox cbSelfDiagnosis;
         private System.Windows.Forms.Button btnLangRus;
         private System.Windows.Forms.Button btnLangEng;
         private System.Windows.Forms.Button btnLangFr;
         private System.Windows.Forms.Button btnStartAnalyze;
         private System.Windows.Forms.Label lbVersion;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbStatusN;
+        private System.Windows.Forms.PictureBox pbStatusN1;
+        private System.Windows.Forms.Label lbLaunchN;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.PictureBox pbStatusSelfDiagnosis;
+        private System.Windows.Forms.PictureBox pbStatusN2;
+        private System.Windows.Forms.PictureBox pbStatusN3;
+        private System.Windows.Forms.PictureBox pbStatusN4;
+        private System.Windows.Forms.PictureBox pbStatusN5;
+        private System.Windows.Forms.PictureBox pbStatusN6;
+        private System.Windows.Forms.PictureBox pbStatusN7;
+        private System.Windows.Forms.PictureBox pbStatusN8;
+        private System.Windows.Forms.PictureBox pbStatusN9;
+        private System.Windows.Forms.PictureBox pbStatusN10;
+        private System.Windows.Forms.PictureBox pbStatusN11;
+        private System.Windows.Forms.PictureBox pbStatusN12;
+        private System.Windows.Forms.PictureBox pbStatusN13;
     }
 }
 
