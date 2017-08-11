@@ -117,54 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;tabLayPan.Name" xml:space="preserve">
-    <value>tabLayPan</value>
-  </data>
-  <data name="&gt;&gt;tabLayPan.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabLayPan.Parent" xml:space="preserve">
-    <value>gbLoadedFileList</value>
-  </data>
-  <data name="&gt;&gt;tabLayPan.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+  <metadata name="gbLoadedFileList.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabLayPan.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabLayPan.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pbStatusSelfDiagnosis" Row="14" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN1" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN2" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN3" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN4" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN5" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN6" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN7" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN8" Row="8" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN9" Row="9" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN10" Row="10" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN11" Row="11" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN12" Row="12" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN13" Row="13" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultSelfDiag" Row="14" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN3" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN7" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN8" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN9" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN10" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN11" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN12" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN13" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN4" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN6" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN7" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN8" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN9" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN10" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN11" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN12" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN13" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbSelfDiagnosis" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbSelfDiagnosis" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN2" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN3" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN4" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN5" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN6" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN7" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN8" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN9" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN10" Row="10" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN11" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN12" Row="12" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN13" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,35,Percent,41,Percent,4,Percent,20" /&gt;&lt;Rows Styles="Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gbLoadedFileList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="gbLoadedFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>814, 494</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gbLoadedFileList.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbLoadedFileList.Text" xml:space="preserve">
-    <value>Список загруженных файлов телеметрии</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.Name" xml:space="preserve">
-    <value>gbLoadedFileList</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="tabLayPan.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabLayPan.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <metadata name="pbStatusSelfDiagnosis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbStatusSelfDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 437</value>
   </data>
@@ -186,6 +156,9 @@
   <data name="&gt;&gt;pbStatusSelfDiagnosis.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="btnResultN1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN1.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 34</value>
   </data>
@@ -210,6 +183,9 @@
   <data name="&gt;&gt;btnResultN1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="btnResultN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN2.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 65</value>
   </data>
@@ -234,6 +210,9 @@
   <data name="&gt;&gt;btnResultN2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="btnResultN3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN3.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 96</value>
   </data>
@@ -258,6 +237,9 @@
   <data name="&gt;&gt;btnResultN3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="btnResultN4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN4.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 127</value>
   </data>
@@ -282,6 +264,9 @@
   <data name="&gt;&gt;btnResultN4.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="btnResultN5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN5.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 158</value>
   </data>
@@ -306,6 +291,9 @@
   <data name="&gt;&gt;btnResultN5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="btnResultN6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN6.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 189</value>
   </data>
@@ -330,6 +318,9 @@
   <data name="&gt;&gt;btnResultN6.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <metadata name="btnResultN7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN7.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 220</value>
   </data>
@@ -354,6 +345,9 @@
   <data name="&gt;&gt;btnResultN7.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="btnResultN8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN8.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 251</value>
   </data>
@@ -378,6 +372,9 @@
   <data name="&gt;&gt;btnResultN8.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <metadata name="btnResultN9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN9.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 282</value>
   </data>
@@ -402,6 +399,9 @@
   <data name="&gt;&gt;btnResultN9.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <metadata name="btnResultN10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN10.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 313</value>
   </data>
@@ -426,6 +426,9 @@
   <data name="&gt;&gt;btnResultN10.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <metadata name="btnResultN11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN11.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 344</value>
   </data>
@@ -450,6 +453,9 @@
   <data name="&gt;&gt;btnResultN11.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <metadata name="btnResultN12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN12.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 375</value>
   </data>
@@ -474,6 +480,9 @@
   <data name="&gt;&gt;btnResultN12.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <metadata name="btnResultN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN13.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 406</value>
   </data>
@@ -498,6 +507,9 @@
   <data name="&gt;&gt;btnResultN13.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <metadata name="btnResultSelfDiag.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultSelfDiag.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 437</value>
   </data>
@@ -522,6 +534,9 @@
   <data name="&gt;&gt;btnResultSelfDiag.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <metadata name="lbLaunchN1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -555,6 +570,9 @@
   <data name="&gt;&gt;lbLaunchN1.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <metadata name="lbLaunchN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -588,6 +606,9 @@
   <data name="&gt;&gt;lbLaunchN2.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <metadata name="lbLaunchN3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -621,6 +642,9 @@
   <data name="&gt;&gt;lbLaunchN3.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <metadata name="lbLaunchN4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -654,6 +678,9 @@
   <data name="&gt;&gt;lbLaunchN4.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <metadata name="lbLaunchN5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -687,6 +714,9 @@
   <data name="&gt;&gt;lbLaunchN5.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <metadata name="lbLaunchN6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -720,6 +750,9 @@
   <data name="&gt;&gt;lbLaunchN6.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <metadata name="lbLaunchN7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -753,6 +786,9 @@
   <data name="&gt;&gt;lbLaunchN7.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <metadata name="lbLaunchN8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -786,6 +822,9 @@
   <data name="&gt;&gt;lbLaunchN8.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
+  <metadata name="lbLaunchN9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -819,6 +858,9 @@
   <data name="&gt;&gt;lbLaunchN9.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
+  <metadata name="lbLaunchN10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -852,6 +894,9 @@
   <data name="&gt;&gt;lbLaunchN10.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
+  <metadata name="lbLaunchN11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -885,6 +930,9 @@
   <data name="&gt;&gt;lbLaunchN11.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
+  <metadata name="lbLaunchN12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -918,6 +966,9 @@
   <data name="&gt;&gt;lbLaunchN12.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
+  <metadata name="lbLaunchN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -951,6 +1002,9 @@
   <data name="&gt;&gt;lbLaunchN13.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
+  <metadata name="cbLaunchN.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -987,6 +1041,9 @@
   <data name="&gt;&gt;cbLaunchN.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
+  <metadata name="cbLaunchN1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN1.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1023,6 +1080,9 @@
   <data name="&gt;&gt;cbLaunchN1.ZOrder" xml:space="preserve">
     <value>29</value>
   </data>
+  <metadata name="cbLaunchN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN2.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1059,6 +1119,9 @@
   <data name="&gt;&gt;cbLaunchN2.ZOrder" xml:space="preserve">
     <value>30</value>
   </data>
+  <metadata name="cbLaunchN3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN3.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1095,6 +1158,9 @@
   <data name="&gt;&gt;cbLaunchN3.ZOrder" xml:space="preserve">
     <value>31</value>
   </data>
+  <metadata name="cbLaunchN4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN4.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1131,6 +1197,9 @@
   <data name="&gt;&gt;cbLaunchN4.ZOrder" xml:space="preserve">
     <value>32</value>
   </data>
+  <metadata name="cbLaunchN5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN5.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1167,6 +1236,9 @@
   <data name="&gt;&gt;cbLaunchN5.ZOrder" xml:space="preserve">
     <value>33</value>
   </data>
+  <metadata name="cbLaunchN6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN6.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1203,6 +1275,9 @@
   <data name="&gt;&gt;cbLaunchN6.ZOrder" xml:space="preserve">
     <value>34</value>
   </data>
+  <metadata name="cbLaunchN7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN7.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1239,6 +1314,9 @@
   <data name="&gt;&gt;cbLaunchN7.ZOrder" xml:space="preserve">
     <value>35</value>
   </data>
+  <metadata name="cbLaunchN8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN8.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1275,6 +1353,9 @@
   <data name="&gt;&gt;cbLaunchN8.ZOrder" xml:space="preserve">
     <value>36</value>
   </data>
+  <metadata name="cbLaunchN9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN9.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1311,6 +1392,9 @@
   <data name="&gt;&gt;cbLaunchN9.ZOrder" xml:space="preserve">
     <value>37</value>
   </data>
+  <metadata name="cbLaunchN10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN10.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1347,6 +1431,9 @@
   <data name="&gt;&gt;cbLaunchN10.ZOrder" xml:space="preserve">
     <value>38</value>
   </data>
+  <metadata name="cbLaunchN11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN11.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1383,6 +1470,9 @@
   <data name="&gt;&gt;cbLaunchN11.ZOrder" xml:space="preserve">
     <value>39</value>
   </data>
+  <metadata name="cbLaunchN12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN12.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1419,6 +1509,9 @@
   <data name="&gt;&gt;cbLaunchN12.ZOrder" xml:space="preserve">
     <value>40</value>
   </data>
+  <metadata name="cbLaunchN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbLaunchN13.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1455,6 +1548,9 @@
   <data name="&gt;&gt;cbLaunchN13.ZOrder" xml:space="preserve">
     <value>41</value>
   </data>
+  <metadata name="cbSelfDiagnosis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="cbSelfDiagnosis.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -1491,6 +1587,9 @@
   <data name="&gt;&gt;cbSelfDiagnosis.ZOrder" xml:space="preserve">
     <value>42</value>
   </data>
+  <metadata name="pbStatusN.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
@@ -1521,6 +1620,9 @@
   <data name="&gt;&gt;pbStatusN.ZOrder" xml:space="preserve">
     <value>43</value>
   </data>
+  <metadata name="pbStatusN1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
@@ -1551,6 +1653,9 @@
   <data name="&gt;&gt;pbStatusN1.ZOrder" xml:space="preserve">
     <value>44</value>
   </data>
+  <metadata name="lbLaunchN.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbLaunchN.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -1584,6 +1689,9 @@
   <data name="&gt;&gt;lbLaunchN.ZOrder" xml:space="preserve">
     <value>45</value>
   </data>
+  <metadata name="lbSelfDiagnosis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbSelfDiagnosis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -1617,6 +1725,9 @@
   <data name="&gt;&gt;lbSelfDiagnosis.ZOrder" xml:space="preserve">
     <value>46</value>
   </data>
+  <metadata name="btnResultN.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnResultN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1644,6 +1755,9 @@
   <data name="&gt;&gt;btnResultN.ZOrder" xml:space="preserve">
     <value>47</value>
   </data>
+  <metadata name="pbStatusN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN2.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 65</value>
   </data>
@@ -1665,6 +1779,9 @@
   <data name="&gt;&gt;pbStatusN2.ZOrder" xml:space="preserve">
     <value>48</value>
   </data>
+  <metadata name="pbStatusN3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN3.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 96</value>
   </data>
@@ -1686,6 +1803,9 @@
   <data name="&gt;&gt;pbStatusN3.ZOrder" xml:space="preserve">
     <value>49</value>
   </data>
+  <metadata name="pbStatusN4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN4.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 127</value>
   </data>
@@ -1707,6 +1827,9 @@
   <data name="&gt;&gt;pbStatusN4.ZOrder" xml:space="preserve">
     <value>50</value>
   </data>
+  <metadata name="pbStatusN5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN5.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 158</value>
   </data>
@@ -1728,6 +1851,9 @@
   <data name="&gt;&gt;pbStatusN5.ZOrder" xml:space="preserve">
     <value>51</value>
   </data>
+  <metadata name="pbStatusN6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN6.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 189</value>
   </data>
@@ -1749,6 +1875,9 @@
   <data name="&gt;&gt;pbStatusN6.ZOrder" xml:space="preserve">
     <value>52</value>
   </data>
+  <metadata name="pbStatusN7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN7.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 220</value>
   </data>
@@ -1770,6 +1899,9 @@
   <data name="&gt;&gt;pbStatusN7.ZOrder" xml:space="preserve">
     <value>53</value>
   </data>
+  <metadata name="pbStatusN8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN8.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 251</value>
   </data>
@@ -1791,6 +1923,9 @@
   <data name="&gt;&gt;pbStatusN8.ZOrder" xml:space="preserve">
     <value>54</value>
   </data>
+  <metadata name="pbStatusN9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN9.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 282</value>
   </data>
@@ -1812,6 +1947,9 @@
   <data name="&gt;&gt;pbStatusN9.ZOrder" xml:space="preserve">
     <value>55</value>
   </data>
+  <metadata name="pbStatusN10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN10.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 313</value>
   </data>
@@ -1833,6 +1971,9 @@
   <data name="&gt;&gt;pbStatusN10.ZOrder" xml:space="preserve">
     <value>56</value>
   </data>
+  <metadata name="pbStatusN11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN11.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 344</value>
   </data>
@@ -1854,6 +1995,9 @@
   <data name="&gt;&gt;pbStatusN11.ZOrder" xml:space="preserve">
     <value>57</value>
   </data>
+  <metadata name="pbStatusN12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN12.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 375</value>
   </data>
@@ -1875,6 +2019,9 @@
   <data name="&gt;&gt;pbStatusN12.ZOrder" xml:space="preserve">
     <value>58</value>
   </data>
+  <metadata name="pbStatusN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pbStatusN13.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 406</value>
   </data>
@@ -1926,6 +2073,33 @@
   <data name="tabLayPan.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pbStatusSelfDiagnosis" Row="14" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN1" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN2" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN3" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN4" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN5" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN6" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN7" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN8" Row="8" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN9" Row="9" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN10" Row="10" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN11" Row="11" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN12" Row="12" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN13" Row="13" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultSelfDiag" Row="14" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN3" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN7" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN8" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN9" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN10" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN11" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN12" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN13" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN4" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN6" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN7" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN8" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN9" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN10" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN11" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN12" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN13" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbSelfDiagnosis" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbSelfDiagnosis" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN2" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN3" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN4" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN5" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN6" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN7" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN8" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN9" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN10" Row="10" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN11" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN12" Row="12" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN13" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,35,Percent,41,Percent,4,Percent,20" /&gt;&lt;Rows Styles="Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
+  <data name="gbLoadedFileList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="gbLoadedFileList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>814, 494</value>
+  </data>
+  <data name="gbLoadedFileList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbLoadedFileList.Text" xml:space="preserve">
+    <value>Список загруженных файлов телеметрии</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.Name" xml:space="preserve">
+    <value>gbLoadedFileList</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="btnStartAnalyze.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnStartAnalyze.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1956,6 +2130,9 @@
   <data name="&gt;&gt;btnStartAnalyze.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="lbVersion.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lbVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1989,6 +2166,9 @@
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="btnLangFr.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnLangFr.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
@@ -2016,6 +2196,9 @@
   <data name="&gt;&gt;btnLangFr.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="btnLangEng.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnLangEng.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
@@ -2043,6 +2226,9 @@
   <data name="&gt;&gt;btnLangEng.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="btnLangRus.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnLangRus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
@@ -2071,6 +2257,9 @@
     <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">

@@ -17,7 +17,7 @@ namespace TelemetryAnalyzerEOS
         {
             LoadConfiguration();
             InitializeComponent();
-            LoadFile();
+            LoadFiles();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -86,17 +86,22 @@ namespace TelemetryAnalyzerEOS
             doc.Save("setting.xml");
         }
         // Загрузка файла с данными
-        private void LoadFile()
+        private void LoadFiles()
         {
-            Decoder decoder = new Decoder();
             openFileDialog.FileName = null;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                decoder.Open(openFileDialog.FileName);
-                //Decoder.Open(openFileDialog.FileName);
+                Decoder[] decoder = new Decoder[openFileDialog.FileNames.Length];
+                for (int i = 0; i < openFileDialog.FileNames.Length; i++)
+                {      
+                    decoder[i] = new Decoder();
+                    if (!decoder[i].Open(openFileDialog.FileNames[i]))
+                        MessageBox.Show(@"Can`t open file", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    if(!decoder[i].Decode())
+                        MessageBox.Show(@"Can`t decode file", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
-
         // Переключение локализации на русский
         private void btnLangRus_Click(object sender, EventArgs e)
         {

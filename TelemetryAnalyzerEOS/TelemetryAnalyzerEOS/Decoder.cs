@@ -1,26 +1,138 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace TelemetryAnalyzerEOS
 {
-   public  class Decoder
-   {
-        private const uint SingBegin = 0xE4EF7289;
-        private const uint SingEnd = 0x76EFFF28;
-        private const uint CsPointer = 2300 * 4 + 8;
-        private byte[] _data;
+     //Поля параметров протокола стыковки
+     public  class DockPrlParam
+     {
+        private bool _launch; //пуск
+        private bool _shod; //сход
+        private bool _soprLo1; //Сопр ЛО1
+        private bool _soprLo2; //Сопр ЛО2
+        private bool _opencap; //Откр Кр
+        private bool _resetpc; //СБРОСпс
+        private bool _mode; //Режим
+        private bool _groundtarget; //Назем цель
+        private bool _clsF; //CLS-F
 
-        //Считывание данных из файла в массив
-        public  void Open(string path)
+         public bool Launch
+         {
+             get { return _launch; }
+             set { _launch = value; }
+         }
+
+         public bool Shod
+         {
+             get { return _shod; }
+             set { _shod = value; }
+         }
+
+         public bool SoprLO1
+         {
+             get { return _soprLo1; }
+             set { _soprLo1 = value; }
+         }
+
+         public bool SoprLO2
+         {
+             get { return _soprLo2; }
+             set { _soprLo2 = value; }
+         }
+
+         public bool Opencap
+         {
+             get { return _opencap; }
+             set { _opencap = value; }
+         }
+
+         public bool Resetpc
+         {
+             get { return _resetpc; }
+             set { _resetpc = value; }
+         }
+
+         public bool Mode
+         {
+             get { return _mode; }
+             set { _mode = value; }
+         }
+
+         public bool Groundtarget
+         {
+             get { return _groundtarget; }
+             set { _groundtarget = value; }
+         }
+
+         public bool CLS_F
+         {
+             get { return _clsF; }
+             set { _clsF = value; }
+         }
+     }
+   public class Decoder
+   {
+       public DockPrlParam[] DockPrlParams;
+
+       private const uint SingBegin = 0xE4EF7289;
+       private const uint SingEnd = 0x76EFFF28;
+       private const uint CsPointer = 2300 * 4 + 8;
+       private byte[] _data;
+
+       //Считывание данных из файла в массив
+        public bool Open(string path)
         {
-            _data = new byte[(int)new FileInfo(path).Length];
-            using (BinaryReader bReader = new BinaryReader(File.Open(path, FileMode.Open, FileAccess.Read)))
+            try
             {
-                _data = bReader.ReadBytes(_data.Length);
+                _data = new byte[(int)new FileInfo(path).Length];
+                using (BinaryReader bReader = new BinaryReader(File.Open(path, FileMode.Open, FileAccess.Read)))
+                {
+                    _data = bReader.ReadBytes(_data.Length);
+                }
+
+                //Проверка заголовка, если да выделям память под количество пакетов
+                if (HeaderIsValid())
+                {
+                    DockPrlParams = new DockPrlParam[(uint)(_data[2] << 8 | _data[3])];
+                    for (int i = 0; i < DockPrlParams.Length; i++)
+                    {
+                        DockPrlParams[i] = new DockPrlParam();
+                    }
+                    return true;
+                }
+
+                //Считаем количество валидных пакетов
+                int counter = 0;
+                for (int i = 0; i < _data.Length; i+=4)
+                {
+                    if ((uint)((_data[i] << 24) | (_data[i + 1] << 16) | (_data[i + 2] << 8) |
+                                _data[i + 3]) == SingBegin)
+                    {
+                        if (PackagesIsValid(i))
+                            counter ++;
+                    }
+                }
+                //Выделяем память под данные
+                DockPrlParams = new DockPrlParam[counter];
+                for (int i = 0; i < DockPrlParams.Length; i++)
+                {
+                    DockPrlParams[i] = new DockPrlParam();
+                }
+                return true;
             }
-            var a = PackagesIsValid(2300 * 4 + 8 + 4);
+            catch
+            {
+                return false;
+            }
+            //var a = PackagesIsValid(2300 * 4 + 8 + 4);
             //var a = PackagesIsValid(9392);
         }
+        // Декодирование параметров протокола стыковки
+       public bool Decode()
+       {
 
+           return false;
+       } 
         //Проверка заголовка структуры на валидность
         public bool HeaderIsValid()
         {
@@ -60,6 +172,5 @@ namespace TelemetryAnalyzerEOS
            }
            return false;
        }
-
     }
 }
