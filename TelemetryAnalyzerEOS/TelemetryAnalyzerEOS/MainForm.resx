@@ -117,15 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tabLayPan.Name" xml:space="preserve">
+    <value>tabLayPan</value>
+  </data>
+  <data name="&gt;&gt;tabLayPan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabLayPan.Parent" xml:space="preserve">
+    <value>gbLoadedFileList</value>
+  </data>
+  <data name="&gt;&gt;tabLayPan.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabLayPan.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pbStatusSelfDiagnosis" Row="14" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN1" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN2" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN3" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN4" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN5" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN6" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN7" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN8" Row="8" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN9" Row="9" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN10" Row="10" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN11" Row="11" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN12" Row="12" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN13" Row="13" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultSelfDiag" Row="14" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN3" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN7" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN8" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN9" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN10" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN11" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN12" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN13" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN4" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN6" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN7" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN8" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN9" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN10" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN11" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN12" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN13" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbSelfDiagnosis" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbSelfDiagnosis" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN2" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN3" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN4" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN5" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN6" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN7" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN8" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN9" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN10" Row="10" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN11" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN12" Row="12" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN13" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,35,Percent,41,Percent,4,Percent,20" /&gt;&lt;Rows Styles="Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="gbLoadedFileList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="gbLoadedFileList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>814, 494</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gbLoadedFileList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbLoadedFileList.Text" xml:space="preserve">
+    <value>Список загруженных файлов телеметрии</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.Name" xml:space="preserve">
+    <value>gbLoadedFileList</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbLoadedFileList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="tabLayPan.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabLayPan.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbStatusSelfDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
     <value>616, 437</value>
   </data>
@@ -1886,30 +1925,6 @@
   </data>
   <data name="tabLayPan.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pbStatusSelfDiagnosis" Row="14" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN1" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN2" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN3" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN4" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN5" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN6" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN7" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN8" Row="8" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN9" Row="9" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN10" Row="10" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN11" Row="11" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN12" Row="12" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN13" Row="13" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnResultSelfDiag" Row="14" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN3" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN7" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN8" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN9" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN10" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN11" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN12" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN13" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN4" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN6" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN7" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN8" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN9" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN10" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN11" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN12" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbLaunchN13" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cbSelfDiagnosis" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lbLaunchN" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbSelfDiagnosis" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnResultN" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN2" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN3" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN4" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN5" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN6" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN7" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN8" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN9" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN10" Row="10" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN11" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN12" Row="12" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pbStatusN13" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,35,Percent,41,Percent,4,Percent,20" /&gt;&lt;Rows Styles="Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666,Percent,6,666666" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="gbLoadedFileList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="gbLoadedFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>814, 494</value>
-  </data>
-  <data name="gbLoadedFileList.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbLoadedFileList.Text" xml:space="preserve">
-    <value>Список загруженных файлов телеметрии</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.Name" xml:space="preserve">
-    <value>gbLoadedFileList</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbLoadedFileList.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="btnStartAnalyze.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>

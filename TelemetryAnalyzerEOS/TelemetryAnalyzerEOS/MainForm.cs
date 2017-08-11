@@ -17,7 +17,7 @@ namespace TelemetryAnalyzerEOS
         {
             LoadConfiguration();
             InitializeComponent();
-            //LoadFile();
+            LoadFile();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -88,10 +88,12 @@ namespace TelemetryAnalyzerEOS
         // Загрузка файла с данными
         private void LoadFile()
         {
+            Decoder decoder = new Decoder();
             openFileDialog.FileName = null;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
+                decoder.Open(openFileDialog.FileName);
+                //Decoder.Open(openFileDialog.FileName);
             }
         }
 
