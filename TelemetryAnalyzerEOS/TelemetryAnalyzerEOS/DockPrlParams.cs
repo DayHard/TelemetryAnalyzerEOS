@@ -1,11 +1,10 @@
-﻿using System.Security.Cryptography;
-
-namespace TelemetryAnalyzerEOS
+﻿namespace TelemetryAnalyzerEOS
 {
     //Поля параметров протокола стыковки
     //Направление ОЭД-ЦВС
     public class DockPrlParamOedCvs
     {
+        private ushort _framenumber;
         //Сл.1 boolean
         private bool _ready; //Готов
         private bool _indLo1; //Инд ЛО1
@@ -283,12 +282,20 @@ namespace TelemetryAnalyzerEOS
             get { return _Ttec; }
             set { _Ttec = value; }
         }
+
+        public ushort FrameNumber
+        {
+            get { return _framenumber; }
+            set { _framenumber = value; }
+        }
+
         #endregion
     }
     //Поля параметров протокола стыковки
     //Направление ЦВС-ОЭД
     public class DockPrlParamCvsOed
     {
+        private ushort _framenumber;
         //Сл.1 boolean
         private bool _launch; //Пуск
         private bool _shod; //Сход
@@ -418,6 +425,13 @@ namespace TelemetryAnalyzerEOS
             get { return _fikgdu; }
             set { _fikgdu = value; }
         }
+
+        public ushort FrameNumber
+        {
+            get { return _framenumber; }
+            set { _framenumber = value; }
+        }
+
         #endregion
     }
 }
