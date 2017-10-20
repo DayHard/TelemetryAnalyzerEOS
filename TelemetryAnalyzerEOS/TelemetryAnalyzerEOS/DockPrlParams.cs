@@ -54,8 +54,59 @@
         // ReSharper disable once InconsistentNaming
         private int _Ttec; //Сл.24
 
-        #region Incapsulation
-        public bool Ready
+        public DockPrlParamOedCvs()
+        {
+            _framenumber = 0;
+            //Сл.1 boolean
+            _ready = false;
+            _indLo1 = false;
+            _indLo2 = false;
+            _capclosed = false;
+            _capopen = false;
+            _illumination = false;
+            _heat = false;
+            _cooling = false;
+            _tnormal = false;
+            _strobK = false;
+            _serviceable = false;
+            _yzkK2 = false;
+            _yClsF = false;
+
+            //Int32
+            _qkd1 = 0; //Сл.2
+            _fikd1 = 0; //Сл.3
+            _qkk1 = 0; //Сл.4
+            _fikk1 = 0; //Сл.5
+            _qkd2 = 0; //Сл.6
+            _fikd2 = 0; //Сл.7
+            _qkk2 = 0; //Сл.8
+            _fikk2 = 0; //Сл.9
+            _dkp = 0; //Сл.10
+            _Lfi1 = 0; //Сл.11
+            _Lq1 = 0; // Сл.11
+             _Lfi2 = 0; //Сл.12
+            _Lq2 = 0; //Сл.12
+             _yc1 = 0; //Сл.13
+            _yc2 = 0; //Сл.14
+            _nch = 0; //Сл.15
+            _deltaA1 = 0; //Сл.16
+            _deltaA2 = 0; //Сл.17
+            _K1cp = 0; //Сл.18
+            _K2cp = 0; //Сл.19
+            _nc = 0; //Сл.20
+            _focuspc = 0; //Сл.21
+            _Sdiafr1 = 0; //Сл.22
+            _tn1 = 0; //Сл.23
+             _Ttec = 0; //Сл.24
+    }
+
+    #region Incapsulation
+    public ushort FrameNumber
+    {
+    get { return _framenumber; }
+    set { _framenumber = value; }
+    }
+    public bool Ready
         {
             get { return _ready; }
             set { _ready = value; }
@@ -283,12 +334,6 @@
             set { _Ttec = value; }
         }
 
-        public ushort FrameNumber
-        {
-            get { return _framenumber; }
-            set { _framenumber = value; }
-        }
-
         #endregion
     }
     //Поля параметров протокола стыковки
@@ -317,6 +362,30 @@
         private int _qkgdu; //Сл.9
         private int _fikgdu;  //Сл.10
 
+        public DockPrlParamCvsOed()
+        {
+            _framenumber = 0;
+            //Сл.1 boolean
+            _launch = false; //Пуск
+            _shod = false; //Сход
+            _soprLo1 = false; //Сопр ЛО1
+            _soprLo2 = false; //Сопр ЛО2
+            _opencap = false; //Откр Кр
+            _resetpc = false; //СБРОСпс
+            _mode = false; //Режим
+            _groundtarget = false; //Назем цель
+            _clsF = false; //CLS-F
+            //Int32
+            _deltaqk1 = 0; //Сл.2
+            _deltafik1 = 0; // Сл.3
+            _deltaqk2 = 0; //Сл.4
+            _deltafik2 = 0; //Сл.5
+            _qkpod = 0; //Сл.6
+            _fikpod = 0; //Сл.7
+            _dkp = 0; //Сл.8
+            _qkgdu = 0; //Сл.9
+            _fikgdu = 0;  //Сл.10 
+    }
         #region Incapsulation
         public bool Launch
         {

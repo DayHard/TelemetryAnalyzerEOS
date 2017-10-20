@@ -101,14 +101,71 @@ namespace TelemetryAnalyzerEOS
                             break;
                         }
                     }
-                    if (PackagesIsValid(pStart, pEnd))
-                        counter++;
-                    else ecounter++;
+                    // Если пакет валидный, начинаем его разбор
+                    if (!PackagesIsValid(pStart, pEnd) || !DecodePackage(counter, pStart, pEnd))
+                    {
+                        ParamsOedes[counter] = null;
+                        ParamsCvses[counter] = null;
+                        ecounter++;
+                    }
+                    counter++;
                 }
             }
-            MessageBox.Show(@"Good packages: " + counter +@" Bad packages: "+ ecounter);
+            MessageBox.Show(@"Counted packages: " + counter +@" Bad packages: "+ ecounter);
             return false;
-        } 
+        }
+
+        private bool DecodePackage(int counter, uint pStart, uint pEnd)
+        {
+            ParamsOedes[counter].FrameNumber = (ushort)counter;
+            var word1 = ToBigEndian(pStart + 24, 2);
+            //Готов
+            if ( (word1 & 0x1) != 0)
+                ParamsOedes[counter].Ready = true;
+            //Инд ЛО1
+            if ((word1 & 0x2) != 0)
+                ParamsOedes[counter].IndLo1 = true;
+            //Инд ЛО2
+            if ((word1 & 0x4) != 0)
+                ParamsOedes[counter].IndLo2 = true;
+            // Кр Закр(Крышка закрыта)
+            if ((word1 & 0x10) != 0)
+                ParamsOedes[counter].Capclosed = true;
+            //Кр Откр (Крышка открыта)
+            if ((word1 & 0x20) != 0)
+                ParamsOedes[counter].Capclosed = true;
+            // Засв (Засветка)
+            if ((word1 & 0x40) != 0)
+                ParamsOedes[counter].Illumination = true;
+            // Нагрев
+            if ((word1 & 0x80) != 0)
+                ParamsOedes[counter].Heat = true;
+            // Охл (Охлаждение)
+            if ((word1 & 0x100) != 0)
+                ParamsOedes[counter].Cooling = true;
+            //Тнорма (Температура в норме)
+            if ((word1 & 0x200) != 0)
+                ParamsOedes[counter].Tnormal = true;
+            //Строб К
+            if ((word1 & 0x400) != 0)
+                ParamsOedes[counter].StrobK = true;
+            //Исправен
+            if ((word1 & 0x800) != 0)
+                ParamsOedes[counter].Serviceable = true;
+            //УЗК-К2
+            if ((word1 & 0x1000) != 0)
+                ParamsOedes[counter].YzkK2 = true;
+            //Y-CLS-F
+            if ((word1 & 0x8000) != 0)
+                ParamsOedes[counter].YClsF = true;
+
+            var word2 = ToBigEndian(pStart + 24 + 2, 2);
+            ParamsOedes[counter].Qkd1 = (int)word2;
+
+            //ParamsOedes[counter].Qkd1 = 1;// Датчик канала 1 по координате q
+
+            return true;
+        }
 
         /// <summary>
         /// Проверка заголовка файла на валидность.
@@ -128,33 +185,6 @@ namespace TelemetryAnalyzerEOS
             //Устанавливаем флаг валидности заголовка
             if (controlSum == countedSum)
                 return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Не использовать данную перегрузку.
-        /// </summary>
-        /// <param name="counter"></param>
-        /// <returns></returns>
-        public bool PackagesIsValid(uint counter)
-        {
-            if ((uint)((_data[counter] << 24) | (_data[counter + 1] << 16) | (_data[counter + 2] << 8) |
-                        _data[counter + 3]) == SingBegin)
-            {
-                uint countedSum = 0;
-                uint i = counter - 4;
-
-                do
-                {
-                    i += 4;
-                    countedSum += (uint)((_data[i] << 24) | (_data[i + 1] << 16) | (_data[i + 2] << 8) | _data[i + 3]);
-                } while ((uint)((_data[i] << 24) | (_data[i + 1] << 16) | (_data[i + 2] << 8) |
-                                _data[i + 3]) != SingEnd);
-                i += 4;
-                uint controlSum = (uint)((_data[i] << 24) | (_data[i + 1] << 16) | (_data[i + 2] << 8) | _data[i + 3]);
-                if (controlSum == countedSum) return true;
-
-            }
             return false;
         }
 
