@@ -4,7 +4,7 @@
     //Направление ОЭД-ЦВС
     public class DockPrlParamOedCvs
     {
-        private ushort _framenumber;
+        private short _framenumber;
         //Сл.1 boolean
         private bool _ready; //Готов
         private bool _indLo1; //Инд ЛО1
@@ -20,39 +20,39 @@
         private bool _yzkK2; //УЗК-К2
         private bool _yClsF; //Y-CLS-F
         //Int32
-        private int _qkd1; //Сл.2
-        private int _fikd1; //Сл.3
-        private int _qkk1; //Сл.4
-        private int _fikk1; //Сл.5
-        private int _qkd2; //Сл.6
-        private int _fikd2; //Сл.7
-        private int _qkk2; //Сл.8
-        private int _fikk2; //Сл.9
-        private int _dkp; //Сл.10
+        private short _qkd1; //Сл.2
+        private short _fikd1; //Сл.3
+        private short _qkk1; //Сл.4
+        private short _fikk1; //Сл.5
+        private short _qkd2; //Сл.6
+        private short _fikd2; //Сл.7
+        private short _qkk2; //Сл.8
+        private short _fikk2; //Сл.9
+        private short _dkp; //Сл.10
         // ReSharper disable once InconsistentNaming
-        private int _Lfi1; //Сл.11
+        private short _Lfi1; //Сл.11
         // ReSharper disable once InconsistentNaming
-        private int _Lq1; // Сл.11
+        private short _Lq1; // Сл.11
         // ReSharper disable once InconsistentNaming
-        private int _Lfi2; //Сл.12
+        private short _Lfi2; //Сл.12
         // ReSharper disable once InconsistentNaming
-        private int _Lq2; //Сл.12
-        private int _yc1; //Сл.13
-        private int _yc2; //Сл.14
-        private int _nch; //Сл.15
-        private int _deltaA1; //Сл.16
-        private int _deltaA2; //Сл.17
+        private short _Lq2; //Сл.12
+        private short _yc1; //Сл.13
+        private short _yc2; //Сл.14
+        private short _nch; //Сл.15
+        private short _deltaA1; //Сл.16
+        private short _deltaA2; //Сл.17
         // ReSharper disable once InconsistentNaming
-        private int _K1cp; //Сл.18
+        private short _K1cp; //Сл.18
         // ReSharper disable once InconsistentNaming
-        private int _K2cp; //Сл.19
-        private int _nc; //Сл.20
-        private int _focuspc; //Сл.21
+        private short _K2cp; //Сл.19
+        private short _nc; //Сл.20
+        private short _focuspc; //Сл.21
         // ReSharper disable once InconsistentNaming
-        private int _Sdiafr1; //Сл.22
-        private int _tn1; //Сл.23
+        private short _Sdiafr1; //Сл.22
+        private short _tn1; //Сл.23
         // ReSharper disable once InconsistentNaming
-        private int _Ttec; //Сл.24
+        private short _Ttec; //Сл.24
 
         public DockPrlParamOedCvs()
         {
@@ -101,7 +101,7 @@
     }
 
     #region Incapsulation
-    public ushort FrameNumber
+    public short FrameNumber
     {
     get { return _framenumber; }
     set { _framenumber = value; }
@@ -184,151 +184,151 @@
             set { _yClsF = value; }
         }
 
-        public int Qkd1
+        public short Qkd1
         {
             get { return _qkd1; }
             set { _qkd1 = value; }
         }
 
-        public int Fikd1
+        public short Fikd1
         {
             get { return _fikd1; }
             set { _fikd1 = value; }
         }
 
-        public int Qkk1
+        public short Qkk1
         {
             get { return _qkk1; }
             set { _qkk1 = value; }
         }
 
-        public int Fikk1
+        public short Fikk1
         {
             get { return _fikk1; }
             set { _fikk1 = value; }
         }
 
-        public int Qkd2
+        public short Qkd2
         {
             get { return _qkd2; }
             set { _qkd2 = value; }
         }
 
-        public int Fikd2
+        public short Fikd2
         {
             get { return _fikd2; }
             set { _fikd2 = value; }
         }
 
-        public int Qkk2
+        public short Qkk2
         {
             get { return _qkk2; }
             set { _qkk2 = value; }
         }
 
-        public int Fikk2
+        public short Fikk2
         {
             get { return _fikk2; }
             set { _fikk2 = value; }
         }
 
-        public int Dkp
+        public short Dkp
         {
             get { return _dkp; }
             set { _dkp = value; }
         }
 
-        public int Lfi1
+        public short Lfi1
         {
             get { return _Lfi1; }
             set { _Lfi1 = value; }
         }
 
-        public int Lq1
+        public short Lq1
         {
             get { return _Lq1; }
             set { _Lq1 = value; }
         }
 
-        public int Lfi2
+        public short Lfi2
         {
             get { return _Lfi2; }
             set { _Lfi2 = value; }
         }
 
-        public int Lq2
+        public short Lq2
         {
             get { return _Lq2; }
             set { _Lq2 = value; }
         }
 
-        public int Yc1
+        public short Yc1
         {
             get { return _yc1; }
             set { _yc1 = value; }
         }
 
-        public int Yc2
+        public short Yc2
         {
             get { return _yc2; }
             set { _yc2 = value; }
         }
 
-        public int Nch
+        public short Nch
         {
             get { return _nch; }
             set { _nch = value; }
         }
 
-        public int DeltaA1
+        public short DeltaA1
         {
             get { return _deltaA1; }
             set { _deltaA1 = value; }
         }
 
-        public int DeltaA2
+        public short DeltaA2
         {
             get { return _deltaA2; }
             set { _deltaA2 = value; }
         }
 
-        public int K1Cp
+        public short K1Cp
         {
             get { return _K1cp; }
             set { _K1cp = value; }
         }
 
-        public int K2Cp
+        public short K2Cp
         {
             get { return _K2cp; }
             set { _K2cp = value; }
         }
 
-        public int Nc
+        public short Nc
         {
             get { return _nc; }
             set { _nc = value; }
         }
 
-        public int Focuspc
+        public short Focuspc
         {
             get { return _focuspc; }
             set { _focuspc = value; }
         }
 
-        public int Sdiafr1
+        public short Sdiafr1
         {
             get { return _Sdiafr1; }
             set { _Sdiafr1 = value; }
         }
 
-        public int Tn1
+        public short Tn1
         {
             get { return _tn1; }
             set { _tn1 = value; }
         }
 
-        public int Ttec
+        public short Ttec
         {
             get { return _Ttec; }
             set { _Ttec = value; }
@@ -340,7 +340,7 @@
     //Направление ЦВС-ОЭД
     public class DockPrlParamCvsOed
     {
-        private ushort _framenumber;
+        private short _framenumber;
         //Сл.1 boolean
         private bool _launch; //Пуск
         private bool _shod; //Сход
@@ -350,17 +350,16 @@
         private bool _resetpc; //СБРОСпс
         private bool _mode; //Режим
         private bool _groundtarget; //Назем цель
-        private bool _clsF; //CLS-F
         //Int32
-        private int _deltaqk1; //Сл.2
-        private int _deltafik1; // Сл.3
-        private int _deltaqk2; //Сл.4
-        private int _deltafik2; //Сл.5
-        private int _qkpod; //Сл.6
-        private int _fikpod; //Сл.7
-        private int _dkp; //Сл.8
-        private int _qkgdu; //Сл.9
-        private int _fikgdu;  //Сл.10
+        private short _deltaqk1; //Сл.2
+        private short _deltafik1; // Сл.3
+        private short _deltaqk2; //Сл.4
+        private short _deltafik2; //Сл.5
+        private short _qkpod; //Сл.6
+        private short _fikpod; //Сл.7
+        private short _dkp; //Сл.8
+        private short _qkgdu; //Сл.9
+        private short _fikgdu;  //Сл.10
 
         public DockPrlParamCvsOed()
         {
@@ -374,7 +373,6 @@
             _resetpc = false; //СБРОСпс
             _mode = false; //Режим
             _groundtarget = false; //Назем цель
-            _clsF = false; //CLS-F
             //Int32
             _deltaqk1 = 0; //Сл.2
             _deltafik1 = 0; // Сл.3
@@ -435,67 +433,61 @@
             set { _groundtarget = value; }
         }
 
-        public bool CLS_F
-        {
-            get { return _clsF; }
-            set { _clsF = value; }
-        }
-
-        public int Deltaqk1
+        public short Deltaqk1
         {
             get { return _deltaqk1; }
             set { _deltaqk1 = value; }
         }
 
-        public int Deltafik1
+        public short Deltafik1
         {
             get { return _deltafik1; }
             set { _deltafik1 = value; }
         }
 
-        public int Deltaqk2
+        public short Deltaqk2
         {
             get { return _deltaqk2; }
             set { _deltaqk2 = value; }
         }
 
-        public int Deltafik2
+        public short Deltafik2
         {
             get { return _deltafik2; }
             set { _deltafik2 = value; }
         }
 
-        public int Qkpod
+        public short Qkpod
         {
             get { return _qkpod; }
             set { _qkpod = value; }
         }
 
-        public int Fikpod
+        public short Fikpod
         {
             get { return _fikpod; }
             set { _fikpod = value; }
         }
 
-        public int Dkp
+        public short Dkp
         {
             get { return _dkp; }
             set { _dkp = value; }
         }
 
-        public int Qkgdu
+        public short Qkgdu
         {
             get { return _qkgdu; }
             set { _qkgdu = value; }
         }
 
-        public int Fikgdu
+        public short Fikgdu
         {
             get { return _fikgdu; }
             set { _fikgdu = value; }
         }
 
-        public ushort FrameNumber
+        public short FrameNumber
         {
             get { return _framenumber; }
             set { _framenumber = value; }
