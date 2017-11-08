@@ -14,8 +14,8 @@ namespace TelemetryAnalyzerEOS
 {
     public partial class MainForm : Form
     {
-        private LoadingForm loadingForm = new LoadingForm();
         private Decoder[] _decoder;
+        private IList<string> _fileNames;
         private List<ComboBox> _cblist;
         private List<Button> _btnlist;
         public MainForm()
@@ -214,10 +214,10 @@ namespace TelemetryAnalyzerEOS
                 }
 
                 // Настройка видимости Label, ComboBox, PictureBox и Button согласно количеству загруженных файлов
-                SetProperties(openFileDialog.SafeFileNames);
+                _fileNames = openFileDialog.SafeFileNames;
+                SetProperties(_fileNames);
                 if (_decoder.Length != 0)
                     btnStartAnalyze.Enabled = true;
-                loadingForm.Hide();
             }
             else 
             {
@@ -237,6 +237,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             Controls.Clear();
             InitializeComponent();
+            SetProperties(_fileNames);
         }
         // Переключение локализации на французкий
         private void btnLangFr_Click(object sender, EventArgs e)
@@ -244,6 +245,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
             Controls.Clear();
             InitializeComponent();
+            SetProperties(_fileNames);
         }
         // Переключение локализации на английский
         private void btnLangEng_Click(object sender, EventArgs e)
@@ -251,6 +253,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             Controls.Clear();
             InitializeComponent();
+            SetProperties(_fileNames);
         }
         //Тестирование, согласно установленным параметрам
         private void btnStartAnalyze_Click(object sender, EventArgs e)

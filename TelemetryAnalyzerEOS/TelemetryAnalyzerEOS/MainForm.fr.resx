@@ -117,190 +117,101 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnResultN1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnResultN1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnResultN1.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN1.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN2.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN2.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN3.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN3.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN4.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN4.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN4.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN5.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN5.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN5.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN6.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN6.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN6.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN7.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN7.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN7.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN8.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN8.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN8.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN9.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN9.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN9.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN10.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN10.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN10.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN11.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN11.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN11.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN12.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN12.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN12.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN13.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN13.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN13.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultSelfDiag.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultSelfDiag.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultSelfDiag.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultSelfDiag.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
-  </data>
-  <data name="pictureBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnResultN.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnResultN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Résultats de l'analyse</value>
   </data>
   <data name="btnResultN.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN.Text" xml:space="preserve">
-    <value>Результаты анализа</value>
+    <value>Résultats de l'analyse</value>
+  </data>
+  <data name="gbLoadedFileList.Text" xml:space="preserve">
+    <value>Liste des fichiers de télémétrie téléchargés</value>
+  </data>
+  <data name="btnStartAnalyze.Text" xml:space="preserve">
+    <value>Démarrer l'analyse</value>
   </data>
 </root>

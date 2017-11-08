@@ -118,8 +118,8 @@
             // 
             // gbLoadedFileList
             // 
-            this.gbLoadedFileList.Controls.Add(this.tabLayPan);
             resources.ApplyResources(this.gbLoadedFileList, "gbLoadedFileList");
+            this.gbLoadedFileList.Controls.Add(this.tabLayPan);
             this.gbLoadedFileList.Name = "gbLoadedFileList";
             this.gbLoadedFileList.TabStop = false;
             // 
@@ -691,6 +691,7 @@
             this.Controls.Add(this.btnLangEng);
             this.Controls.Add(this.btnLangRus);
             this.Controls.Add(this.gbLoadedFileList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
