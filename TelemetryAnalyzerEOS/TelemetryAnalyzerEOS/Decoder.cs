@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Runtime.InteropServices;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace TelemetryAnalyzerEOS
@@ -19,12 +19,12 @@ namespace TelemetryAnalyzerEOS
         /// </summary>
         /// <param name="path">Путь к файлу.</param>
         /// <returns>Возвращает true, если файл был открыт успешно.</returns>
-        public bool Open(string path)
+        public bool Open(object path)
         {
             try
             {
-                _data = new byte[(int)new FileInfo(path).Length];
-                using (BinaryReader bReader = new BinaryReader(File.Open(path, FileMode.Open, FileAccess.Read)))
+                _data = new byte[(int)new FileInfo((string)path).Length];
+                using (BinaryReader bReader = new BinaryReader(File.Open((string)path, FileMode.Open, FileAccess.Read)))
                 {
                     _data = bReader.ReadBytes(_data.Length);
                 }
@@ -53,12 +53,12 @@ namespace TelemetryAnalyzerEOS
                 {
                     ParamsCvses[i] = new DockPrlParamCvsOed();
                 }
-                return true;
             }
             catch
             {
                 return false;
             }
+            return true;
         }
 
         /// <summary>
@@ -80,12 +80,13 @@ namespace TelemetryAnalyzerEOS
                     {
                         if (PackagesIsValid(pStart, pEnd))
                         {
-                            DecodePackage(counter, pStart, pEnd);
+                            DecodePackage(counter, pStart);
                         }
                         else
                         {
                             //!!!!
                             ParamsOedes[counter] = null;
+                            ParamsCvses[counter] = null;
                             ecounter++;
                         }
                     }
@@ -98,10 +99,11 @@ namespace TelemetryAnalyzerEOS
                             if (sing == SingEnd)
                             {
                                 pEnd = j;
-                                if (!PackagesIsValid(pStart, pEnd) && !DecodePackage(counter, pStart, pEnd))
+                                if (!PackagesIsValid(pStart, pEnd) && !DecodePackage(counter, pStart))
                                 {
                                     //!!!!
                                     ParamsOedes[counter] = null;
+                                    ParamsCvses[counter] = null;
                                     ecounter++;
                                 }
                                 break;
@@ -111,6 +113,7 @@ namespace TelemetryAnalyzerEOS
                             {
                                 //!!!!
                                 ParamsOedes[counter] = null;
+                                ParamsCvses[counter] = null;
                                 i -= 4;
                                 break;
                             }
@@ -119,8 +122,8 @@ namespace TelemetryAnalyzerEOS
                     counter++;
                 }
             }
-            MessageBox.Show(@"Counted packages: " + counter + @" Bad packages: " + ecounter);
-            return false;
+            //MessageBox.Show(@"Counted packages: " + counter + @" Bad packages: " + ecounter);
+            return true;
         }
         ///// <summary>
         ///// Декодирование параметров протокола стыковки.
@@ -159,7 +162,7 @@ namespace TelemetryAnalyzerEOS
         //    return false;
         //}
 
-        private bool DecodePackage(int counter, uint pStart, uint pEnd)
+        private bool DecodePackage(int counter, uint pStart)
         {
 
             if (!DecodeOedCvs(counter, pStart))

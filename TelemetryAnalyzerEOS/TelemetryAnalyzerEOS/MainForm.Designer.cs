@@ -73,11 +73,9 @@
             this.cbLaunchN11 = new System.Windows.Forms.ComboBox();
             this.cbLaunchN12 = new System.Windows.Forms.ComboBox();
             this.cbLaunchN13 = new System.Windows.Forms.ComboBox();
-            this.cbSelfDiagnosis = new System.Windows.Forms.ComboBox();
             this.pbStatusN = new System.Windows.Forms.PictureBox();
             this.pbStatusN1 = new System.Windows.Forms.PictureBox();
             this.lbLaunchN = new System.Windows.Forms.Label();
-            this.lbSelfDiagnosis = new System.Windows.Forms.Label();
             this.btnResultN = new System.Windows.Forms.Button();
             this.pbStatusN2 = new System.Windows.Forms.PictureBox();
             this.pbStatusN3 = new System.Windows.Forms.PictureBox();
@@ -91,6 +89,8 @@
             this.pbStatusN11 = new System.Windows.Forms.PictureBox();
             this.pbStatusN12 = new System.Windows.Forms.PictureBox();
             this.pbStatusN13 = new System.Windows.Forms.PictureBox();
+            this.cbSelfDiagnosis = new System.Windows.Forms.ComboBox();
+            this.lbSelfDiagnosis = new System.Windows.Forms.Label();
             this.btnStartAnalyze = new System.Windows.Forms.Button();
             this.lbVersion = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -168,11 +168,9 @@
             this.tabLayPan.Controls.Add(this.cbLaunchN11, 1, 11);
             this.tabLayPan.Controls.Add(this.cbLaunchN12, 1, 12);
             this.tabLayPan.Controls.Add(this.cbLaunchN13, 1, 13);
-            this.tabLayPan.Controls.Add(this.cbSelfDiagnosis, 1, 14);
             this.tabLayPan.Controls.Add(this.pbStatusN, 2, 0);
             this.tabLayPan.Controls.Add(this.pbStatusN1, 2, 1);
             this.tabLayPan.Controls.Add(this.lbLaunchN, 0, 0);
-            this.tabLayPan.Controls.Add(this.lbSelfDiagnosis, 0, 14);
             this.tabLayPan.Controls.Add(this.btnResultN, 3, 0);
             this.tabLayPan.Controls.Add(this.pbStatusN2, 2, 2);
             this.tabLayPan.Controls.Add(this.pbStatusN3, 2, 3);
@@ -186,6 +184,8 @@
             this.tabLayPan.Controls.Add(this.pbStatusN11, 2, 11);
             this.tabLayPan.Controls.Add(this.pbStatusN12, 2, 12);
             this.tabLayPan.Controls.Add(this.pbStatusN13, 2, 13);
+            this.tabLayPan.Controls.Add(this.cbSelfDiagnosis, 1, 14);
+            this.tabLayPan.Controls.Add(this.lbSelfDiagnosis, 0, 14);
             this.tabLayPan.Name = "tabLayPan";
             // 
             // pbStatusSelfDiagnosis
@@ -525,19 +525,6 @@
             resources.ApplyResources(this.cbLaunchN13, "cbLaunchN13");
             this.cbLaunchN13.Name = "cbLaunchN13";
             // 
-            // cbSelfDiagnosis
-            // 
-            this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSelfDiagnosis.FormattingEnabled = true;
-            this.cbSelfDiagnosis.Items.AddRange(new object[] {
-            resources.GetString("cbSelfDiagnosis.Items"),
-            resources.GetString("cbSelfDiagnosis.Items1"),
-            resources.GetString("cbSelfDiagnosis.Items2"),
-            resources.GetString("cbSelfDiagnosis.Items3"),
-            resources.GetString("cbSelfDiagnosis.Items4")});
-            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
-            this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
-            // 
             // pbStatusN
             // 
             resources.ApplyResources(this.pbStatusN, "pbStatusN");
@@ -556,11 +543,6 @@
             // 
             resources.ApplyResources(this.lbLaunchN, "lbLaunchN");
             this.lbLaunchN.Name = "lbLaunchN";
-            // 
-            // lbSelfDiagnosis
-            // 
-            resources.ApplyResources(this.lbSelfDiagnosis, "lbSelfDiagnosis");
-            this.lbSelfDiagnosis.Name = "lbSelfDiagnosis";
             // 
             // btnResultN
             // 
@@ -640,11 +622,30 @@
             this.pbStatusN13.Name = "pbStatusN13";
             this.pbStatusN13.TabStop = false;
             // 
+            // cbSelfDiagnosis
+            // 
+            this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelfDiagnosis.FormattingEnabled = true;
+            this.cbSelfDiagnosis.Items.AddRange(new object[] {
+            resources.GetString("cbSelfDiagnosis.Items"),
+            resources.GetString("cbSelfDiagnosis.Items1"),
+            resources.GetString("cbSelfDiagnosis.Items2"),
+            resources.GetString("cbSelfDiagnosis.Items3"),
+            resources.GetString("cbSelfDiagnosis.Items4")});
+            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
+            this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
+            // 
+            // lbSelfDiagnosis
+            // 
+            resources.ApplyResources(this.lbSelfDiagnosis, "lbSelfDiagnosis");
+            this.lbSelfDiagnosis.Name = "lbSelfDiagnosis";
+            // 
             // btnStartAnalyze
             // 
             resources.ApplyResources(this.btnStartAnalyze, "btnStartAnalyze");
             this.btnStartAnalyze.Name = "btnStartAnalyze";
             this.btnStartAnalyze.UseVisualStyleBackColor = true;
+            this.btnStartAnalyze.Click += new System.EventHandler(this.btnStartAnalyze_Click);
             // 
             // lbVersion
             // 
@@ -658,24 +659,24 @@
             // 
             // btnLangFr
             // 
-            this.btnLangFr.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_of_France;
             resources.ApplyResources(this.btnLangFr, "btnLangFr");
+            this.btnLangFr.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_of_France;
             this.btnLangFr.Name = "btnLangFr";
             this.btnLangFr.UseVisualStyleBackColor = true;
             this.btnLangFr.Click += new System.EventHandler(this.btnLangFr_Click);
             // 
             // btnLangEng
             // 
-            this.btnLangEng.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_UK;
             resources.ApplyResources(this.btnLangEng, "btnLangEng");
+            this.btnLangEng.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_UK;
             this.btnLangEng.Name = "btnLangEng";
             this.btnLangEng.UseVisualStyleBackColor = true;
             this.btnLangEng.Click += new System.EventHandler(this.btnLangEng_Click);
             // 
             // btnLangRus
             // 
-            this.btnLangRus.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_Russia;
             resources.ApplyResources(this.btnLangRus, "btnLangRus");
+            this.btnLangRus.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_Russia;
             this.btnLangRus.Name = "btnLangRus";
             this.btnLangRus.UseVisualStyleBackColor = true;
             this.btnLangRus.Click += new System.EventHandler(this.btnLangRus_Click);
@@ -690,7 +691,6 @@
             this.Controls.Add(this.btnLangEng);
             this.Controls.Add(this.btnLangRus);
             this.Controls.Add(this.gbLoadedFileList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -752,7 +752,6 @@
         private System.Windows.Forms.Label lbLaunchN11;
         private System.Windows.Forms.Label lbLaunchN12;
         private System.Windows.Forms.Label lbLaunchN13;
-        private System.Windows.Forms.Label lbSelfDiagnosis;
         private System.Windows.Forms.ComboBox cbLaunchN;
         private System.Windows.Forms.ComboBox cbLaunchN1;
         private System.Windows.Forms.ComboBox cbLaunchN2;
@@ -790,6 +789,7 @@
         private System.Windows.Forms.PictureBox pbStatusN11;
         private System.Windows.Forms.PictureBox pbStatusN12;
         private System.Windows.Forms.PictureBox pbStatusN13;
+        private System.Windows.Forms.Label lbSelfDiagnosis;
     }
 }
 
