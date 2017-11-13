@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -14,30 +15,45 @@ namespace TelemetryAnalyzerEOS
 {
     public partial class MainForm : Form
     {
+        private delegate void ThreadStatusChanged();
+        private event ThreadStatusChanged ThreadIsComplite;
+        private  LoadingForm _loadingForm;
+
         private Decoder[] _decoder;
         private IList<string> _fileNames;
         private List<ComboBox> _cblist;
         private List<Button> _btnlist;
+        private List<PictureBox> _pblist;
+
+        private readonly string[] _cbstatus = new string[15];
+
         public MainForm()
         {
             // Установка текущей UI культуры приложения
             LoadConfiguration();
+            //Инициализация GUI
             InitializeComponent();
+            // Подпись на событие завершения потока обработки
+            ThreadIsComplite += ThreadStatus;
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Получение текущей версии ПО
             lbVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+        //Загрузка файлов
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
             //Загрузка файлов, выбранных пользователем
             if (!LoadFiles())
                 Close();
         }
-
         // Установка параметров Label, ComboBox, PictureBox, Button
         private void SetProperties(IList<string> safeFileNames)
         {
-            lbLaunchN.Visible = true;
 
+            // Создание списка Label 
+            // установка видимости , согласно количеству загруженных файлов
             var lblist = new List<Label>
             {
                 lbLaunchN,
@@ -63,6 +79,8 @@ namespace TelemetryAnalyzerEOS
                lblist[i].Visible = true;
             }
 
+            // Создание списка ComboBox 
+            // установка видимости , согласно количеству загруженных файлов
             _cblist = new List<ComboBox>
             {
                 cbLaunchN,
@@ -85,7 +103,8 @@ namespace TelemetryAnalyzerEOS
              for (int i = 0; i < safeFileNames.Count; i++)
                  _cblist[i].Visible = true;
 
-            var pblist = new List<PictureBox>
+            // Создание списка PictureBox 
+            _pblist = new List<PictureBox>
             {
                 pbStatusN,
                 pbStatusN1,
@@ -105,8 +124,10 @@ namespace TelemetryAnalyzerEOS
             };
 
             for (int i = 0; i < safeFileNames.Count; i++)
-                pblist[i].Visible = true;
-
+                _pblist[i].Visible = true;
+            
+            // Создание списка Button, 
+            // установка видимости кнопок согласно количеству загруженных файлов
             _btnlist = new List<Button>
             {
                 btnResultN,
@@ -129,12 +150,19 @@ namespace TelemetryAnalyzerEOS
             for (int i = 0; i < safeFileNames.Count; i++)
                 _btnlist[i].Visible = true;
 
+            //!!! FOR DEBUGING
+            foreach (ComboBox t in _cblist)
+            {
+                t.SelectedIndex = 0;
+            }
+
+            // Установка размеров формы, в соответствии с количеством выбранных файлов
             Height = 135 + safeFileNames.Count * 31;
         }
-
         // Обновление файла конфигурации
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Обновление файла конфигурации языков
             UpdateConfiguration();
         }
         // Загрузка файла setting для установки текущей культуры
@@ -196,28 +224,13 @@ namespace TelemetryAnalyzerEOS
         // Загрузка файла с данными
         private bool LoadFiles()
         {
-            openFileDialog.FileName = null;
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length <= 15)
             {
-
-                _decoder = new Decoder[openFileDialog.FileNames.Length];
-                for (int i = 0; i < openFileDialog.FileNames.Length; i++)
-                {
-                    _decoder[i] = new Decoder();
-
-                    if (!_decoder[i].Open(openFileDialog.FileNames[i]))
-                        MessageBox.Show(@"Can`t open file " + openFileDialog.FileNames[i], @"Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if (!_decoder[i].Decode())
-                        MessageBox.Show(@"Can`t decode file " + openFileDialog.FileNames[i], @"Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
                 // Настройка видимости Label, ComboBox, PictureBox и Button согласно количеству загруженных файлов
                 _fileNames = openFileDialog.SafeFileNames;
                 SetProperties(_fileNames);
-                if (_decoder.Length != 0)
-                    btnStartAnalyze.Enabled = true;
+
+                btnStartAnalyze.Enabled = true;
             }
             else 
             {
@@ -225,7 +238,7 @@ namespace TelemetryAnalyzerEOS
                 // Запрос на повтор выбора файла или закрытие приложения
                 if (MessageBox.Show(
                         @"Некорректное количество выбранных файлов. Количество файлов не может быть равным 0 и превышать 15. Попробовать снова?",
-                        @"Ошибка", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) == DialogResult.Retry)
+                        @"Внимание", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information) == DialogResult.Retry)
                     LoadFiles();
                 else return false;
             }
@@ -258,15 +271,63 @@ namespace TelemetryAnalyzerEOS
         //Тестирование, согласно установленным параметрам
         private void btnStartAnalyze_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < _decoder.Length; i++)
+            // Выделение памяти, согласно количеству загруженных файлов
+            // Класс отвечает за Открытие\Декодирование файлов
+            _decoder = new Decoder[openFileDialog.FileNames.Length];
+            // Объявление массива потоков, для дальнейшего декодирования
+            //Thread[] decThrd = new Thread[openFileDialog.FileNames.Length];
+            //List<Task> decodeTask = new List<Task>(openFileDialog.FileNames.Length);
+
+                // Инициализация класса, для отображения прогресс бара
+            _loadingForm = new LoadingForm
             {
-                switch (_cblist[i].SelectedIndex.ToString())
+                Owner = this,
+                StartPosition = StartPosition
+            };
+                _loadingForm.Show();
+
+            // Установка максимального значения прогресс бара, согласно количеству файлов
+            _loadingForm.pbAnalysing.Maximum = _decoder.Length;
+            // Отключение основной формы, для невозможности вмешательства в процесс декодирования
+            //Enabled = false;
+            //Создание потока, для инициализации массива потоков декадирования (иначе подвисает форма)
+            //new Thread(() =>
+            //{
+                for (int i = 0; i < openFileDialog.FileNames.Length; i++)
                 {
-                    case "0": 
-                        GeneralHealthCheck(i);
+                Task.Factory.StartNew(DataAnalysis,i);
+                // new Thread(DataAnalysis).Start(i);
+                //decThrd[i] = new Thread(DataAnalysis);// { IsBackground = true };
+                //decThrd[i].Start(i);
+                //decodeTask.Add(Task.Factory.StartNew(DataAnalysis, i));
+            }  
+            //}).Start();
+        }
+        //Загрузка, декодирование и анализ данных
+        private void DataAnalysis(object possition)
+        {
+            int i = (int) possition;
+            // Проверка, выбран ли тест
+            if (_cbstatus[i] != "-1")
+            {
+                // Инициализация декодера для текущего файла
+                _decoder[i] = new Decoder();
+                // Открытие файла и считывание его в глобальный массив
+                _decoder[i].Open(openFileDialog.FileNames[i]);
+                // Декодирование файла 
+                _decoder[i].Decode();
+                // Запуск теста в соответсвии с выбранный в ComboBox
+                switch (_cbstatus[i])
+                {
+                    case "0":
+                        if (GeneralHealthCheck())
+                             SetSuccedImage(i);
+                        else SetFailImage(i);
                         break;
                     case "1":
-                        CheckingTheTuningOfThePlantSignals(i);
+                        if (CheckingTheTuningOfThePlantSignals())
+                            SetSuccedImage(i);
+                        else SetFailImage(i);
                         break;
                     case "2":
                         CheckingTheAccumulationTime(i);
@@ -277,26 +338,77 @@ namespace TelemetryAnalyzerEOS
                     case "4":
                         DiagnosticResultsAnalysis(i);
                         break;
+                    default:
+                        MessageBox.Show(@"Something gone wrong...");
+                        _decoder[i] = null;
+                        break;
                 }
             }
+            // Вызов события завершения работы потока (необходимо для работы прогесс бара)
+            ThreadIsComplite?.Invoke();
+        }
+       /// <summary>
+       /// Установка изображения не удачно.
+       /// </summary>
+       /// <param name="i">Номер файла.</param>
+        private void SetFailImage(int i)
+        {
+            Invoke(new MethodInvoker(delegate
+            {
+                _pblist[i].Image = Properties.Resources.Status_Fail;
+                _btnlist[i].Enabled = true;
+            }));
+        }
+        /// <summary>
+        /// Установка изображения успех.
+        /// </summary>
+        /// <param name="i">Номер файла.</param>
+        private void SetSuccedImage(int i)
+        {
+            Invoke(new MethodInvoker(delegate
+            {
+                _pblist[i].Image = Properties.Resources.Status_Success;
+                _btnlist[i].Enabled = true;
+            }));
+        }
+        // Метод изменения статуса прогресс бара
+        /// <summary>
+        /// Метод, вызываеммый событием ThreadIsComplite. Необходим для корректной отработки GUI.
+        /// </summary>
+        private void ThreadStatus()
+        {
+            // Метод работает в массиве потоков, для доступа к GUI Invoke обязателен
+            Invoke(new MethodInvoker(delegate
+            {
+                _loadingForm.pbAnalysing.PerformStep();
+                if (_loadingForm.pbAnalysing.Value != _decoder.Length) return;
+                // Включение формы, по завершению работы потоков декодера
+                Enabled = true;
+                // Скрытие формы с прогресс баром Так же установка значения прогресс бара в 0
+                _loadingForm.Hide();
+                // Установка значения прогресс бара в 0
+                _loadingForm.pbAnalysing.Value = 0;
+            }));
         }
 
         //Проверка общей работоспособности
-        private void GeneralHealthCheck(int possition)
+        private static bool GeneralHealthCheck()
         {
-            
+            Thread.Sleep(2000);
+            return true;
         }
         //Проверка отработки сигналов установок
-        private void CheckingTheTuningOfThePlantSignals(int possition)
+        private bool CheckingTheTuningOfThePlantSignals()
         {
-            for (int i = 0; i < _decoder[possition].ParamsCvses.Length; i++)
-            {
-                if (_decoder[possition].ParamsCvses[i].Launch && _decoder[possition].ParamsCvses[i].Shod
-                    && !_decoder[possition].ParamsCvses[i].SoprLO1 && !_decoder[possition].ParamsCvses[i].SoprLO2)
-                {
+            //for (int i = 0; i < _decoder[possition].ParamsCvses.Length; i++)
+            //{
+            //    if (_decoder[possition].ParamsCvses[i].Launch && _decoder[possition].ParamsCvses[i].Shod
+            //        && !_decoder[possition].ParamsCvses[i].SoprLO1 && !_decoder[possition].ParamsCvses[i].SoprLO2)
+            //    {
                     
-                }                
-            }
+            //    }                
+            //}
+            return false;
         }
         //Проверка времени накопления
         private void CheckingTheAccumulationTime(int possition)
@@ -312,6 +424,15 @@ namespace TelemetryAnalyzerEOS
         private void DiagnosticResultsAnalysis(int possition)
         {
             
+        }
+        // Считывание состояния элементов GUI
+        private void timerGUI_Tick(object sender, EventArgs e)
+        {
+            if(_cblist != null)
+            for (int i = 0; i < _cblist.Count; i++)
+            {
+                _cbstatus[i] = _cblist[i].SelectedIndex.ToString();
+            }
         }
     }
 }

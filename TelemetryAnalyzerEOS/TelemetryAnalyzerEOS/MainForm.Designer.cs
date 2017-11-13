@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gbLoadedFileList = new System.Windows.Forms.GroupBox();
             this.tabLayPan = new System.Windows.Forms.TableLayoutPanel();
@@ -97,6 +98,7 @@
             this.btnLangFr = new System.Windows.Forms.Button();
             this.btnLangEng = new System.Windows.Forms.Button();
             this.btnLangRus = new System.Windows.Forms.Button();
+            this.timerGUI = new System.Windows.Forms.Timer(this.components);
             this.gbLoadedFileList.SuspendLayout();
             this.tabLayPan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStatusSelfDiagnosis)).BeginInit();
@@ -528,14 +530,12 @@
             // pbStatusN
             // 
             resources.ApplyResources(this.pbStatusN, "pbStatusN");
-            this.pbStatusN.Image = global::TelemetryAnalyzerEOS.Properties.Resources.Status_Success;
             this.pbStatusN.Name = "pbStatusN";
             this.pbStatusN.TabStop = false;
             // 
             // pbStatusN1
             // 
             resources.ApplyResources(this.pbStatusN1, "pbStatusN1");
-            this.pbStatusN1.Image = global::TelemetryAnalyzerEOS.Properties.Resources.Status_Fail;
             this.pbStatusN1.Name = "pbStatusN1";
             this.pbStatusN1.TabStop = false;
             // 
@@ -654,7 +654,6 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Multiselect = true;
             // 
             // btnLangFr
@@ -681,6 +680,11 @@
             this.btnLangRus.UseVisualStyleBackColor = true;
             this.btnLangRus.Click += new System.EventHandler(this.btnLangRus_Click);
             // 
+            // timerGUI
+            // 
+            this.timerGUI.Enabled = true;
+            this.timerGUI.Tick += new System.EventHandler(this.timerGUI_Tick);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -698,6 +702,7 @@
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.gbLoadedFileList.ResumeLayout(false);
             this.tabLayPan.ResumeLayout(false);
             this.tabLayPan.PerformLayout();
@@ -791,6 +796,7 @@
         private System.Windows.Forms.PictureBox pbStatusN12;
         private System.Windows.Forms.PictureBox pbStatusN13;
         private System.Windows.Forms.Label lbSelfDiagnosis;
+        private System.Windows.Forms.Timer timerGUI;
     }
 }
 

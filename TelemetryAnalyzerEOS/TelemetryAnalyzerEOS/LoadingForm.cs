@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace TelemetryAnalyzerEOS
 {
     public partial class LoadingForm : Form
     {
-        public LoadingForm()
+        public LoadingForm()//Point location )
         {
             InitializeComponent();
+            //StartPosition = FormStartPosition.Manual;
+            //Location = location;
         }
     }
 }

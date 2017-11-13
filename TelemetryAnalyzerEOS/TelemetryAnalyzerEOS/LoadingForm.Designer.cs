@@ -28,38 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbLoading = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            this.pbAnalysing = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
-            // pbLoading
+            // pbAnalysing
             // 
-            this.pbLoading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbLoading.Image = global::TelemetryAnalyzerEOS.Properties.Resources.Loading;
-            this.pbLoading.Location = new System.Drawing.Point(0, 0);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(197, 148);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 0;
-            this.pbLoading.TabStop = false;
+            this.pbAnalysing.Location = new System.Drawing.Point(12, 12);
+            this.pbAnalysing.Maximum = 15;
+            this.pbAnalysing.Name = "pbAnalysing";
+            this.pbAnalysing.Size = new System.Drawing.Size(370, 23);
+            this.pbAnalysing.Step = 1;
+            this.pbAnalysing.TabIndex = 1;
             // 
             // LoadingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(197, 148);
-            this.Controls.Add(this.pbLoading);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(394, 47);
+            this.Controls.Add(this.pbAnalysing);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoadingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LoadingForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbLoading;
+        public System.Windows.Forms.ProgressBar pbAnalysing;
     }
 }

@@ -1,6 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
+﻿using System.IO;
+using System.Threading.Tasks;
 
 namespace TelemetryAnalyzerEOS
 {
@@ -65,66 +64,66 @@ namespace TelemetryAnalyzerEOS
         /// Декодирование параметров протокола стыковки.
         /// </summary>
         /// <returns>Возвращает true, при успешном декодировании.</returns> 
-        public bool Decode()
+        public void Decode()
         {
-
             int counter = 0, ecounter = 0;
             for (uint i = CsPointer + 4; i < _data.Length; i+=4)
             {
-                if (ToBigEndian(i, 4) == SingBegin)
+            if (ToBigEndian(i, 4) == SingBegin)
+            {
+                var pStart = i;
+                var offset = ToBigEndian(i + 4, 4);
+                var pEnd = offset - 8;
+                if (ToBigEndian(pEnd, 4) == SingEnd)
                 {
-                    var pStart = i;
-                    var offset = ToBigEndian(i + 4, 4);
-                    var pEnd = offset - 8;
-                    if (ToBigEndian(pEnd, 4) == SingEnd)
+                    if (PackagesIsValid(pStart, pEnd))
                     {
-                        if (PackagesIsValid(pStart, pEnd))
-                        {
-                            DecodePackage(counter, pStart);
-                        }
-                        else
-                        {
-                            //!!!!
-                            ParamsOedes[counter] = null;
-                            ParamsCvses[counter] = null;
-                            ecounter++;
-                        }
+                        DecodePackage(counter, pStart);
                     }
-                    // Если указанное смещение не верно, ищем признак конца
                     else
                     {
-                        for (uint j = i+4; j < _data.Length; j+=4)
+                        //!!!!
+                        ParamsOedes[counter] = null;
+                        ParamsCvses[counter] = null;
+                        ecounter++;
+                    }
+                }
+                // Если указанное смещение не верно, ищем признак конца
+                else
+                {
+                    for (uint j = i+4; j < _data.Length; j+=4)
+                    {
+                        var sing = ToBigEndian(j, 4);
+                        if (sing == SingEnd)
                         {
-                            var sing = ToBigEndian(j, 4);
-                            if (sing == SingEnd)
-                            {
-                                pEnd = j;
-                                if (!PackagesIsValid(pStart, pEnd) && !DecodePackage(counter, pStart))
-                                {
-                                    //!!!!
-                                    ParamsOedes[counter] = null;
-                                    ParamsCvses[counter] = null;
-                                    ecounter++;
-                                }
-                                break;
-                            }
-
-                            if (sing == SingBegin)
+                            pEnd = j;
+                            if (!PackagesIsValid(pStart, pEnd) && !DecodePackage(counter, pStart))
                             {
                                 //!!!!
                                 ParamsOedes[counter] = null;
                                 ParamsCvses[counter] = null;
-                                i -= 4;
-                                break;
+                                ecounter++;
                             }
+                            break;
+                        }
+
+                        if (sing == SingBegin)
+                        {
+                            //!!!!
+                            ParamsOedes[counter] = null;
+                            ParamsCvses[counter] = null;
+                            i -= 4;
+                            break;
                         }
                     }
-                    counter++;
                 }
+                counter++;
             }
+            }           
             //MessageBox.Show(@"Counted packages: " + counter + @" Bad packages: " + ecounter);
-            return true;
+            //return true;
         }
+
         ///// <summary>
         ///// Декодирование параметров протокола стыковки.
         ///// </summary>
@@ -161,7 +160,6 @@ namespace TelemetryAnalyzerEOS
         //    MessageBox.Show(@"Counted packages: " + counter +@" Bad packages: "+ ecounter);
         //    return false;
         //}
-
         private bool DecodePackage(int counter, uint pStart)
         {
 
