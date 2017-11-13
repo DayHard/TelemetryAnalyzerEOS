@@ -15,8 +15,8 @@ namespace TelemetryAnalyzerEOS
 {
     public partial class MainForm : Form
     {
-        private delegate void ThreadStatusChanged();
-        private event ThreadStatusChanged ThreadIsComplite;
+        private delegate void TaskStatusChanged();
+        private event TaskStatusChanged TaskIsComplite;
         private  LoadingForm _loadingForm;
 
         private Decoder[] _decoder;
@@ -34,7 +34,7 @@ namespace TelemetryAnalyzerEOS
             //Инициализация GUI
             InitializeComponent();
             // Подпись на событие завершения потока обработки
-            ThreadIsComplite += ThreadStatus;
+            TaskIsComplite += TaskStatus;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -274,11 +274,8 @@ namespace TelemetryAnalyzerEOS
             // Выделение памяти, согласно количеству загруженных файлов
             // Класс отвечает за Открытие\Декодирование файлов
             _decoder = new Decoder[openFileDialog.FileNames.Length];
-            // Объявление массива потоков, для дальнейшего декодирования
-            //Thread[] decThrd = new Thread[openFileDialog.FileNames.Length];
-            //List<Task> decodeTask = new List<Task>(openFileDialog.FileNames.Length);
 
-                // Инициализация класса, для отображения прогресс бара
+            // Инициализация класса, для отображения прогресс бара
             _loadingForm = new LoadingForm
             {
                 Owner = this,
@@ -289,19 +286,12 @@ namespace TelemetryAnalyzerEOS
             // Установка максимального значения прогресс бара, согласно количеству файлов
             _loadingForm.pbAnalysing.Maximum = _decoder.Length;
             // Отключение основной формы, для невозможности вмешательства в процесс декодирования
-            //Enabled = false;
-            //Создание потока, для инициализации массива потоков декадирования (иначе подвисает форма)
-            //new Thread(() =>
-            //{
-                for (int i = 0; i < openFileDialog.FileNames.Length; i++)
-                {
+            Enabled = false;
+            // Создание тасков для декодирования (иначе подвисает форма)
+            for (int i = 0; i < openFileDialog.FileNames.Length; i++)
+            {
                 Task.Factory.StartNew(DataAnalysis,i);
-                // new Thread(DataAnalysis).Start(i);
-                //decThrd[i] = new Thread(DataAnalysis);// { IsBackground = true };
-                //decThrd[i].Start(i);
-                //decodeTask.Add(Task.Factory.StartNew(DataAnalysis, i));
             }  
-            //}).Start();
         }
         //Загрузка, декодирование и анализ данных
         private void DataAnalysis(object possition)
@@ -330,22 +320,20 @@ namespace TelemetryAnalyzerEOS
                         else SetFailImage(i);
                         break;
                     case "2":
-                        CheckingTheAccumulationTime(i);
+                        CheckingTheAccumulationTime();
                         break;
                     case "3":
-                        CheckingTheCaptureAndRecaptureTime(i);
+                        CheckingTheCaptureAndRecaptureTime();
                         break;
                     case "4":
-                        DiagnosticResultsAnalysis(i);
+                        DiagnosticResultsAnalysis();
                         break;
                     default:
-                        MessageBox.Show(@"Something gone wrong...");
-                        _decoder[i] = null;
-                        break;
+                        throw new Exception("ComboBox switch exception.");
                 }
             }
             // Вызов события завершения работы потока (необходимо для работы прогесс бара)
-            ThreadIsComplite?.Invoke();
+            TaskIsComplite?.Invoke();
         }
        /// <summary>
        /// Установка изображения не удачно.
@@ -375,7 +363,7 @@ namespace TelemetryAnalyzerEOS
         /// <summary>
         /// Метод, вызываеммый событием ThreadIsComplite. Необходим для корректной отработки GUI.
         /// </summary>
-        private void ThreadStatus()
+        private void TaskStatus()
         {
             // Метод работает в массиве потоков, для доступа к GUI Invoke обязателен
             Invoke(new MethodInvoker(delegate
@@ -411,17 +399,17 @@ namespace TelemetryAnalyzerEOS
             return false;
         }
         //Проверка времени накопления
-        private void CheckingTheAccumulationTime(int possition)
+        private void CheckingTheAccumulationTime()
         {
             
         }
         //Проверка времени захвата и перезахвата
-        private void CheckingTheCaptureAndRecaptureTime(int possition)
+        private void CheckingTheCaptureAndRecaptureTime()
         {
             
         }
         //Анализ результатов диагностики
-        private void DiagnosticResultsAnalysis(int possition)
+        private void DiagnosticResultsAnalysis()
         {
             
         }
