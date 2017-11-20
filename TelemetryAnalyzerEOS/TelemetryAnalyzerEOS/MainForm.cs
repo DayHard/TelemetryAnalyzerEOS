@@ -158,6 +158,7 @@ namespace TelemetryAnalyzerEOS
 
             // Установка размеров формы, в соответствии с количеством выбранных файлов
             Height = 135 + safeFileNames.Count * 31;
+            btnStartAnalyze.Enabled = true;
         }
         // Обновление файла конфигурации
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -227,7 +228,6 @@ namespace TelemetryAnalyzerEOS
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length <= 15)
             {
                 SetProperties(openFileDialog.SafeFileNames);
-                btnStartAnalyze.Enabled = true;
                 safefileNames = openFileDialog.SafeFileNames;
             }
             else 
@@ -283,8 +283,13 @@ namespace TelemetryAnalyzerEOS
 
             // Установка максимального значения прогресс бара, согласно количеству файлов
             _loadingForm.pbAnalysing.Maximum = _decoder.Length;
-            // Отключение основной формы, для невозможности вмешательства в процесс декодирования
-            Enabled = false;
+            // Отключение основных формы, для невозможности вмешательства в процесс декодирования
+            gbLoadedFileList.Enabled = false;
+            btnStartAnalyze.Enabled = false;
+            btnLangRus.Enabled = false;
+            btnLangFr.Enabled = false;
+            btnLangEng.Enabled = false;
+
             // Создание тасков для декодирования (иначе подвисает форма)
             for (int i = 0; i < openFileDialog.FileNames.Length; i++)
             {
@@ -378,7 +383,11 @@ namespace TelemetryAnalyzerEOS
                 _loadingForm.pbAnalysing.PerformStep();
                 if (_loadingForm.pbAnalysing.Value != _decoder.Length) return;
                 // Включение формы, по завершению работы потоков декодера
-                Enabled = true;
+                gbLoadedFileList.Enabled = true;
+                btnStartAnalyze.Enabled = true;
+                btnLangRus.Enabled = true;
+                btnLangFr.Enabled = true;
+                btnLangEng.Enabled = true;
                 // Скрытие формы с прогресс баром Так же установка значения прогресс бара в 0
                 _loadingForm.Hide();
                 // Установка значения прогресс бара в 0

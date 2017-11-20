@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnResultN13.Name" xml:space="preserve">
-    <value>btnResultN13</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnResultN8.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -149,9 +146,6 @@
   </data>
   <data name="cbLaunchN6.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;cbLaunchN1.ZOrder" xml:space="preserve">
-    <value>29</value>
   </data>
   <data name="cbLaunchN3.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 21</value>
@@ -186,8 +180,8 @@
   <data name="cbLaunchN7.Items2" xml:space="preserve">
     <value>Проверка времени накопления</value>
   </data>
-  <data name="cbLaunchN7.Items3" xml:space="preserve">
-    <value>Проверка времени захвата и перезахвата</value>
+  <data name="&gt;&gt;btnResultN8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbLaunchN13.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -261,9 +255,6 @@
   <data name="&gt;&gt;lbLaunchN2.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
-  <data name="&gt;&gt;btnResultN2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnResultSelfDiag.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -271,9 +262,6 @@
     <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN5.Parent" xml:space="preserve">
-    <value>tabLayPan</value>
-  </data>
-  <data name="&gt;&gt;btnResultSelfDiag.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
   <data name="lbLaunchN13.Visible" type="System.Boolean, mscorlib">
@@ -291,7 +279,7 @@
   <data name="&gt;&gt;lbLaunchN11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbLaunchN6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lbLaunchN5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
   <data name="btnResultN4.Text" xml:space="preserve">
@@ -336,6 +324,9 @@
   <data name="lbLaunchN1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="&gt;&gt;btnResultN11.Name" xml:space="preserve">
+    <value>btnResultN11</value>
+  </data>
   <data name="lbLaunchN9.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -354,11 +345,8 @@
   <data name="btnResultN.Text" xml:space="preserve">
     <value>Результаты анализа</value>
   </data>
-  <data name="&gt;&gt;pbStatusN5.Name" xml:space="preserve">
-    <value>pbStatusN5</value>
-  </data>
-  <data name="btnLangRus.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;btnResultSelfDiag.Parent" xml:space="preserve">
+    <value>tabLayPan</value>
   </data>
   <data name="&gt;&gt;lbLaunchN8.ZOrder" xml:space="preserve">
     <value>22</value>
@@ -405,14 +393,14 @@
   <data name="&gt;&gt;gbLoadedFileList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;cbSelfDiagnosis.Name" xml:space="preserve">
+    <value>cbSelfDiagnosis</value>
+  </data>
   <data name="lbLaunchN.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
   </data>
   <data name="btnResultN6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="lbLaunchN8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
   </data>
   <data name="btnResultSelfDiag.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 23</value>
@@ -422,6 +410,9 @@
   </data>
   <data name="pbStatusN13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;btnResultN8.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;btnLangRus.Parent" xml:space="preserve">
     <value>$this</value>
@@ -513,6 +504,9 @@
   <data name="cbLaunchN5.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
+  <data name="&gt;&gt;cbSelfDiagnosis.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;btnResultN13.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
@@ -521,6 +515,9 @@
   </data>
   <data name="btnResultN13.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnResultN1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbStatusN4.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -540,8 +537,8 @@
   <data name="btnResultN9.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;lbLaunchN.ZOrder" xml:space="preserve">
-    <value>44</value>
+  <data name="lbLaunchN4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnResultN.Location" type="System.Drawing.Point, System.Drawing">
     <value>459, 3</value>
@@ -552,8 +549,8 @@
   <data name="&gt;&gt;pbStatusN7.ZOrder" xml:space="preserve">
     <value>51</value>
   </data>
-  <data name="lbSelfDiagnosis.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="&gt;&gt;cbLaunchN1.ZOrder" xml:space="preserve">
+    <value>29</value>
   </data>
   <data name="btnLangFr.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -582,11 +579,17 @@
   <data name="lbLaunchN10.Text" xml:space="preserve">
     <value>Пуск N + 10</value>
   </data>
+  <data name="&gt;&gt;btnLangFr.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cbLaunchN.Items" xml:space="preserve">
+    <value>Проверка общей работоспособности</value>
+  </data>
   <data name="cbLaunchN12.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 21</value>
   </data>
-  <data name="pbStatusN4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;btnResultN13.Name" xml:space="preserve">
+    <value>btnResultN13</value>
   </data>
   <data name="pbStatusN.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 3</value>
@@ -621,6 +624,9 @@
   <data name="&gt;&gt;lbSelfDiagnosis.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btnResultN10.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="btnResultN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -647,6 +653,9 @@
   </data>
   <data name="btnResultN13.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="pbStatusN4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnResultN5.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 23</value>
@@ -687,11 +696,14 @@
   <data name="lbLaunchN3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbLaunchN8.Items3" xml:space="preserve">
-    <value>Проверка времени захвата и перезахвата</value>
+  <data name="btnResultN13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>459, 393</value>
   </data>
   <data name="lbLaunchN9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
+  </data>
+  <data name="lbLaunchN3.Text" xml:space="preserve">
+    <value>Пуск N + 3</value>
   </data>
   <data name="btnResultN3.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -716,9 +728,6 @@
   </data>
   <data name="&gt;&gt;lbLaunchN1.Name" xml:space="preserve">
     <value>lbLaunchN1</value>
-  </data>
-  <data name="&gt;&gt;btnResultN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabLayPan.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -768,14 +777,17 @@
   <data name="&gt;&gt;btnStartAnalyze.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;btnResultN2.Parent" xml:space="preserve">
+    <value>tabLayPan</value>
+  </data>
   <data name="lbLaunchN13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbLaunchN13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="lbLaunchN10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+  <data name="&gt;&gt;lbLaunchN3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbLaunchN1.Parent" xml:space="preserve">
     <value>tabLayPan</value>
@@ -834,14 +846,17 @@
   <data name="cbLaunchN13.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
+  <data name="cbLaunchN3.Items2" xml:space="preserve">
+    <value>Проверка времени накопления</value>
+  </data>
   <data name="btnResultN2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="&gt;&gt;cbLaunchN6.Name" xml:space="preserve">
     <value>cbLaunchN6</value>
   </data>
-  <data name="btnResultN13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 393</value>
+  <data name="pbStatusN2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="lbLaunchN10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -849,17 +864,14 @@
   <data name="pbStatusN8.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
   </data>
-  <data name="&gt;&gt;lbLaunchN9.ZOrder" xml:space="preserve">
-    <value>23</value>
+  <data name="lbLaunchN8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnResultN3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="gbLoadedFileList.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
-  </data>
-  <data name="lbLaunchN9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;gbLoadedFileList.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -878,6 +890,9 @@
   </data>
   <data name="btnResultN9.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="lbLaunchN6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="pbStatusN13.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -909,8 +924,8 @@
   <data name="cbLaunchN3.Items1" xml:space="preserve">
     <value>Проверка отработки сигналов установок</value>
   </data>
-  <data name="cbLaunchN3.Items2" xml:space="preserve">
-    <value>Проверка времени накопления</value>
+  <data name="&gt;&gt;pbStatusN5.Name" xml:space="preserve">
+    <value>pbStatusN5</value>
   </data>
   <data name="cbLaunchN3.Items3" xml:space="preserve">
     <value>Проверка времени захвата и перезахвата</value>
@@ -951,14 +966,11 @@
   <data name="&gt;&gt;cbLaunchN7.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
-  <data name="&gt;&gt;btnResultSelfDiag.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="cbSelfDiagnosis.Items4" xml:space="preserve">
     <value>Анализ результатов диагностики</value>
   </data>
-  <data name="&gt;&gt;cbLaunchN.Name" xml:space="preserve">
-    <value>cbLaunchN</value>
+  <data name="btnLangRus.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="lbLaunchN2.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1050,8 +1062,14 @@
   <data name="&gt;&gt;lbLaunchN4.Name" xml:space="preserve">
     <value>lbLaunchN4</value>
   </data>
+  <data name="&gt;&gt;btnResultN3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="pbStatusN11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="cbLaunchN8.Items1" xml:space="preserve">
+    <value>Проверка отработки сигналов установок</value>
   </data>
   <data name="btnResultN2.Location" type="System.Drawing.Point, System.Drawing">
     <value>459, 63</value>
@@ -1098,8 +1116,8 @@
   <data name="cbLaunchN.Items1" xml:space="preserve">
     <value>Проверка отработки сигналов установок</value>
   </data>
-  <data name="&gt;&gt;btnResultN1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbStatusN3.Parent" xml:space="preserve">
+    <value>tabLayPan</value>
   </data>
   <data name="lbLaunchN7.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1113,8 +1131,11 @@
   <data name="pbStatusN9.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 24</value>
   </data>
-  <data name="&gt;&gt;cbLaunchN4.ZOrder" xml:space="preserve">
-    <value>32</value>
+  <data name="pbStatusN2.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="pbStatusN9.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="&gt;&gt;pbStatusN7.Parent" xml:space="preserve">
     <value>tabLayPan</value>
@@ -1152,9 +1173,6 @@
   <data name="pbStatusN2.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="lbLaunchN1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
   <data name="&gt;&gt;btnResultN7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1166,9 +1184,6 @@
   </data>
   <data name="btnResultN3.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="pbStatusN5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 153</value>
   </data>
   <data name="btnResultSelfDiag.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1248,8 +1263,8 @@
   <data name="&gt;&gt;pbStatusN9.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbLaunchN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbLaunchN10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
   </data>
   <data name="btnLangEng.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 30</value>
@@ -1259,6 +1274,9 @@
   </data>
   <data name="cbLaunchN.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 3</value>
+  </data>
+  <data name="pbStatusN.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN13.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1296,11 +1314,11 @@
   <data name="&gt;&gt;btnResultSelfDiag.Name" xml:space="preserve">
     <value>btnResultSelfDiag</value>
   </data>
-  <data name="pbStatusN2.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
+  <data name="&gt;&gt;pbStatusN10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbLaunchN8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;btnResultN2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbLaunchN10.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1317,6 +1335,9 @@
   <data name="&gt;&gt;lbLaunchN10.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
+  <data name="&gt;&gt;tabLayPan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lbLaunchN12.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 368</value>
   </data>
@@ -1329,8 +1350,8 @@
   <data name="pbStatusN11.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnResultN9.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="lbSelfDiagnosis.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="btnResultN9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1344,8 +1365,8 @@
   <data name="pbStatusN10.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 303</value>
   </data>
-  <data name="&gt;&gt;btnResultN3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbStatusN13.Parent" xml:space="preserve">
+    <value>tabLayPan</value>
   </data>
   <data name="cbSelfDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 21</value>
@@ -1377,9 +1398,6 @@
   <data name="cbLaunchN13.Items1" xml:space="preserve">
     <value>Проверка отработки сигналов установок</value>
   </data>
-  <data name="&gt;&gt;lbLaunchN3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1409,9 +1427,6 @@
   </data>
   <data name="cbLaunchN12.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
-  </data>
-  <data name="&gt;&gt;pbStatusN3.Parent" xml:space="preserve">
-    <value>tabLayPan</value>
   </data>
   <data name="lbLaunchN8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1476,8 +1491,8 @@
   <data name="lbLaunchN11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnLangRus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="cbLaunchN6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 183</value>
   </data>
   <data name="&gt;&gt;btnStartAnalyze.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1527,11 +1542,11 @@
   <data name="btnResultN5.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnLangEng.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="pbStatusN.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
-  </data>
-  <data name="btnResultN11.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN12.Name" xml:space="preserve">
     <value>cbLaunchN12</value>
@@ -1578,8 +1593,8 @@
   <data name="btnResultN7.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="pbStatusN.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="lbLaunchN9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;btnResultN7.Name" xml:space="preserve">
     <value>btnResultN7</value>
@@ -1595,9 +1610,6 @@
   </data>
   <data name="lbLaunchN4.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
-  </data>
-  <data name="lbLaunchN7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="btnResultN6.Location" type="System.Drawing.Point, System.Drawing">
     <value>459, 183</value>
@@ -1617,9 +1629,6 @@
   <data name="lbLaunchN2.Location" type="System.Drawing.Point, System.Drawing">
     <value>60, 68</value>
   </data>
-  <data name="&gt;&gt;btnResultN1.Parent" xml:space="preserve">
-    <value>tabLayPan</value>
-  </data>
   <data name="btnLangRus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -1637,9 +1646,6 @@
   </data>
   <data name="&gt;&gt;btnResultN3.Name" xml:space="preserve">
     <value>btnResultN3</value>
-  </data>
-  <data name="&gt;&gt;btnResultN10.Name" xml:space="preserve">
-    <value>btnResultN10</value>
   </data>
   <data name="cbLaunchN13.Items3" xml:space="preserve">
     <value>Проверка времени захвата и перезахвата</value>
@@ -1677,8 +1683,8 @@
   <data name="cbLaunchN8.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
-  <data name="&gt;&gt;btnResultN8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbLaunchN1.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="lbLaunchN4.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1722,6 +1728,9 @@
   <data name="pbStatusN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;pbStatusN.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
   <data name="&gt;&gt;cbLaunchN8.ZOrder" xml:space="preserve">
     <value>36</value>
   </data>
@@ -1758,6 +1767,9 @@
   <data name="&gt;&gt;btnResultN8.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
+  <data name="lbLaunchN12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="cbSelfDiagnosis.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1773,17 +1785,14 @@
   <data name="&gt;&gt;btnStartAnalyze.Name" xml:space="preserve">
     <value>btnStartAnalyze</value>
   </data>
-  <data name="lbLaunchN5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="&gt;&gt;pbStatusN10.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
   <data name="&gt;&gt;cbSelfDiagnosis.ZOrder" xml:space="preserve">
     <value>58</value>
   </data>
-  <data name="&gt;&gt;cbSelfDiagnosis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnResultN12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>459, 363</value>
   </data>
   <data name="&gt;&gt;lbLaunchN13.Parent" xml:space="preserve">
     <value>tabLayPan</value>
@@ -1845,6 +1854,9 @@
   <data name="cbLaunchN7.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;cbLaunchN.Name" xml:space="preserve">
+    <value>cbLaunchN</value>
+  </data>
   <data name="cbSelfDiagnosis.Items1" xml:space="preserve">
     <value>Проверка отработки сигналов установок</value>
   </data>
@@ -1872,17 +1884,11 @@
   <data name="&gt;&gt;lbLaunchN3.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="btnResultN10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 303</value>
-  </data>
   <data name="&gt;&gt;lbLaunchN11.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
   <data name="btnResultN1.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 363</value>
   </data>
   <data name="btnResultN.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 23</value>
@@ -1890,14 +1896,8 @@
   <data name="btnResultN5.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;btnResultN11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lbLaunchN6.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
-  </data>
-  <data name="btnResultN7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="lbLaunchN10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1920,8 +1920,8 @@
   <data name="&gt;&gt;cbLaunchN2.ZOrder" xml:space="preserve">
     <value>30</value>
   </data>
-  <data name="&gt;&gt;pbStatusN10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbStatusN5.ZOrder" xml:space="preserve">
+    <value>49</value>
   </data>
   <data name="lbLaunchN8.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1941,8 +1941,8 @@
   <data name="lbLaunchN7.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="pbStatusN2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="&gt;&gt;btnResultN10.Name" xml:space="preserve">
+    <value>btnResultN10</value>
   </data>
   <data name="&gt;&gt;btnLangRus.Name" xml:space="preserve">
     <value>btnLangRus</value>
@@ -1970,9 +1970,6 @@
   </data>
   <data name="cbLaunchN4.Items4" xml:space="preserve">
     <value>Анализ результатов диагностики</value>
-  </data>
-  <data name="&gt;&gt;pbStatusN5.ZOrder" xml:space="preserve">
-    <value>49</value>
   </data>
   <data name="lbLaunchN9.Text" xml:space="preserve">
     <value>Пуск N + 9</value>
@@ -2004,8 +2001,8 @@
   <data name="btnResultN1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;pbStatusN13.Parent" xml:space="preserve">
-    <value>tabLayPan</value>
+  <data name="lbLaunchN8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="&gt;&gt;lbLaunchN6.Name" xml:space="preserve">
     <value>lbLaunchN6</value>
@@ -2022,14 +2019,14 @@
   <data name="lbLaunchN.Text" xml:space="preserve">
     <value>Пуск N</value>
   </data>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lbLaunchN1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbLaunchN2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;pbStatusN12.Name" xml:space="preserve">
-    <value>pbStatusN12</value>
   </data>
   <data name="pbStatusN5.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -2046,8 +2043,8 @@
   <data name="&gt;&gt;pbStatusN12.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
-  <data name="&gt;&gt;btnLangFr.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lbLaunchN7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lbLaunchN11.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -2079,8 +2076,8 @@
   <data name="&gt;&gt;pbStatusN3.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbLaunchN7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;timerGUI.Name" xml:space="preserve">
+    <value>timerGUI</value>
   </data>
   <data name="lbLaunchN6.Text" xml:space="preserve">
     <value>Пуск N + 6</value>
@@ -2115,8 +2112,8 @@
   <data name="lbLaunchN9.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
   </data>
-  <data name="btnLangEng.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="&gt;&gt;btnResultN1.Parent" xml:space="preserve">
+    <value>tabLayPan</value>
   </data>
   <data name="&gt;&gt;btnResultN8.Name" xml:space="preserve">
     <value>btnResultN8</value>
@@ -2127,14 +2124,14 @@
   <data name="pbStatusN1.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
-  <data name="cbLaunchN8.Items1" xml:space="preserve">
-    <value>Проверка отработки сигналов установок</value>
+  <data name="&gt;&gt;lbLaunchN9.ZOrder" xml:space="preserve">
+    <value>23</value>
   </data>
   <data name="cbLaunchN8.Items2" xml:space="preserve">
     <value>Проверка времени накопления</value>
   </data>
-  <data name="lbLaunchN3.Text" xml:space="preserve">
-    <value>Пуск N + 3</value>
+  <data name="cbLaunchN8.Items3" xml:space="preserve">
+    <value>Проверка времени захвата и перезахвата</value>
   </data>
   <data name="&gt;&gt;pbStatusSelfDiagnosis.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2145,8 +2142,8 @@
   <data name="&gt;&gt;pbStatusN9.Parent" xml:space="preserve">
     <value>tabLayPan</value>
   </data>
-  <data name="&gt;&gt;pbStatusN.ZOrder" xml:space="preserve">
-    <value>42</value>
+  <data name="&gt;&gt;btnResultSelfDiag.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbStatusN6.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2154,8 +2151,8 @@
   <data name="btnResultN7.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;btnResultN10.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="btnResultN7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;pbStatusN13.Name" xml:space="preserve">
     <value>pbStatusN13</value>
@@ -2166,8 +2163,8 @@
   <data name="btnResultN7.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 23</value>
   </data>
-  <data name="cbLaunchN6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 183</value>
+  <data name="&gt;&gt;cbLaunchN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbLaunchN11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2178,8 +2175,8 @@
   <data name="btnResultN1.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 23</value>
   </data>
-  <data name="&gt;&gt;tabLayPan.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnResultN10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>459, 303</value>
   </data>
   <data name="pbStatusN7.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -2202,8 +2199,8 @@
   <data name="btnLangEng.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="pbStatusN9.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="&gt;&gt;pbStatusN12.Name" xml:space="preserve">
+    <value>pbStatusN12</value>
   </data>
   <data name="&gt;&gt;cbLaunchN4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2280,8 +2277,8 @@
   <data name="&gt;&gt;pbStatusN1.ZOrder" xml:space="preserve">
     <value>43</value>
   </data>
-  <data name="&gt;&gt;btnResultN8.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;btnResultN11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnResultN6.Text" xml:space="preserve">
     <value>Результаты анализа</value>
@@ -2292,8 +2289,8 @@
   <data name="lbLaunchN1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbLaunchN12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;cbLaunchN4.ZOrder" xml:space="preserve">
+    <value>32</value>
   </data>
   <data name="&gt;&gt;pbStatusN3.ZOrder" xml:space="preserve">
     <value>47</value>
@@ -2304,8 +2301,8 @@
   <data name="btnResultN3.Location" type="System.Drawing.Point, System.Drawing">
     <value>459, 93</value>
   </data>
-  <data name="&gt;&gt;btnResultN11.Name" xml:space="preserve">
-    <value>btnResultN11</value>
+  <data name="&gt;&gt;lbLaunchN.ZOrder" xml:space="preserve">
+    <value>44</value>
   </data>
   <data name="cbLaunchN11.Items3" xml:space="preserve">
     <value>Проверка времени захвата и перезахвата</value>
@@ -2325,8 +2322,8 @@
   <data name="gbLoadedFileList.Size" type="System.Drawing.Size, System.Drawing">
     <value>616, 512</value>
   </data>
-  <data name="cbLaunchN.Items" xml:space="preserve">
-    <value>Проверка общей работоспособности</value>
+  <data name="btnResultN9.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="cbLaunchN5.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -2343,8 +2340,8 @@
   <data name="&gt;&gt;btnResultN.ZOrder" xml:space="preserve">
     <value>45</value>
   </data>
-  <data name="&gt;&gt;btnResultN2.Parent" xml:space="preserve">
-    <value>tabLayPan</value>
+  <data name="pbStatusN5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>411, 153</value>
   </data>
   <data name="btnLangFr.Location" type="System.Drawing.Point, System.Drawing">
     <value>531, 531</value>
@@ -2385,8 +2382,8 @@
   <data name="&gt;&gt;lbVersion.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;cbSelfDiagnosis.Name" xml:space="preserve">
-    <value>cbSelfDiagnosis</value>
+  <data name="btnLangRus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="btnLangRus.Location" type="System.Drawing.Point, System.Drawing">
     <value>490, 531</value>
@@ -2400,8 +2397,8 @@
   <data name="lbLaunchN4.Text" xml:space="preserve">
     <value>Пуск N + 4</value>
   </data>
-  <data name="lbLaunchN4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lbLaunchN7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="&gt;&gt;lbLaunchN9.Name" xml:space="preserve">
     <value>lbLaunchN9</value>
@@ -2412,11 +2409,14 @@
   <data name="lbVersion.Text" xml:space="preserve">
     <value>0.0.0.0</value>
   </data>
+  <data name="cbLaunchN7.Items3" xml:space="preserve">
+    <value>Проверка времени захвата и перезахвата</value>
+  </data>
   <data name="&gt;&gt;lbSelfDiagnosis.Name" xml:space="preserve">
     <value>lbSelfDiagnosis</value>
   </data>
-  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnResultN11.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lbLaunchN5.Name" xml:space="preserve">
     <value>lbLaunchN5</value>
@@ -2424,8 +2424,8 @@
   <data name="&gt;&gt;lbLaunchN7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;timerGUI.Name" xml:space="preserve">
-    <value>timerGUI</value>
+  <data name="&gt;&gt;btnResultN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbLaunchN.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2482,6 +2482,9 @@
     <value>True</value>
   </metadata>
   <metadata name="pbStatusN11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lbLaunchN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="btnLangEng.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2595,9 +2598,6 @@
   <metadata name="timerGUI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>150, 17</value>
   </metadata>
-  <metadata name="pbStatusN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="btnResultN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2612,9 +2612,6 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
   </metadata>
   <metadata name="lbLaunchN10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2649,7 +2646,7 @@
   <metadata name="lbLaunchN8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="lbLaunchN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="pbStatusN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="lbVersion.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
