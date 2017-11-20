@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="gbLoadedFileList.Text" xml:space="preserve">
+    <value>Liste des fichiers de télémétrie téléchargés</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnResultN1.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
@@ -202,16 +205,241 @@
   <data name="btnResultSelfDiag.Text" xml:space="preserve">
     <value>Résultats de l'analyse</value>
   </data>
+  <data name="cbLaunchN.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN1.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN1.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN1.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN1.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN1.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN2.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN2.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN2.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN2.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN2.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN3.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN3.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN3.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN3.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN3.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN4.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN4.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN4.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN4.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN4.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN5.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN5.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN5.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN5.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN5.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN6.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN6.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN6.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN6.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN6.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN7.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN7.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN7.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN7.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN7.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN8.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN8.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN8.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN8.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN8.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN9.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN9.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN9.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN9.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN9.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN10.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN10.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN10.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN10.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN10.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN11.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN11.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN11.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN11.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN11.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN12.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN12.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN12.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN12.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN12.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
+  <data name="cbLaunchN13.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbLaunchN13.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbLaunchN13.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbLaunchN13.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbLaunchN13.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
+  </data>
   <data name="btnResultN.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
   </data>
   <data name="btnResultN.Text" xml:space="preserve">
     <value>Résultats de l'analyse</value>
   </data>
-  <data name="gbLoadedFileList.Text" xml:space="preserve">
-    <value>Liste des fichiers de télémétrie téléchargés</value>
+  <data name="cbSelfDiagnosis.Items" xml:space="preserve">
+    <value>Vérification de la capacité de travail générale</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items1" xml:space="preserve">
+    <value>Vérification de l'accord des signaux de l'installation</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items2" xml:space="preserve">
+    <value>Vérification du temps d'accumulation</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items3" xml:space="preserve">
+    <value>Vérification de la capture et du temps de récupération</value>
+  </data>
+  <data name="cbSelfDiagnosis.Items4" xml:space="preserve">
+    <value>Analyse des résultats de diagnostic</value>
   </data>
   <data name="btnStartAnalyze.Text" xml:space="preserve">
     <value>Démarrer l'analyse</value>
+  </data>
+  <data name="openFileDialog.Title" xml:space="preserve">
+    <value>Ouverture</value>
   </data>
 </root>

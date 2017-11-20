@@ -5,11 +5,9 @@ namespace TelemetryAnalyzerEOS
 {
     public partial class LoadingForm : Form
     {
-        public LoadingForm()//Point location )
+        public LoadingForm()
         {
             InitializeComponent();
-            //StartPosition = FormStartPosition.Manual;
-            //Location = location;
         }
     }
 }

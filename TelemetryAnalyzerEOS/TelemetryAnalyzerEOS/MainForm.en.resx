@@ -534,4 +534,7 @@
   <data name="btnStartAnalyze.Text" xml:space="preserve">
     <value>Start analysis</value>
   </data>
+  <data name="openFileDialog.Title" xml:space="preserve">
+    <value>Opening</value>
+  </data>
 </root>

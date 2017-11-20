@@ -20,10 +20,10 @@ namespace TelemetryAnalyzerEOS
         private  LoadingForm _loadingForm;
 
         private Decoder[] _decoder;
-        private IList<string> _fileNames;
         private List<ComboBox> _cblist;
         private List<Button> _btnlist;
         private List<PictureBox> _pblist;
+        private IList<string> safefileNames;
 
         private readonly string[] _cbstatus = new string[15];
 
@@ -153,7 +153,7 @@ namespace TelemetryAnalyzerEOS
             //!!! FOR DEBUGING
             foreach (ComboBox t in _cblist)
             {
-                t.SelectedIndex = 0;
+                t.SelectedIndex = 1;
             }
 
             // Установка размеров формы, в соответствии с количеством выбранных файлов
@@ -226,11 +226,9 @@ namespace TelemetryAnalyzerEOS
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length <= 15)
             {
-                // Настройка видимости Label, ComboBox, PictureBox и Button согласно количеству загруженных файлов
-                _fileNames = openFileDialog.SafeFileNames;
-                SetProperties(_fileNames);
-
+                SetProperties(openFileDialog.SafeFileNames);
                 btnStartAnalyze.Enabled = true;
+                safefileNames = openFileDialog.SafeFileNames;
             }
             else 
             {
@@ -250,7 +248,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(_fileNames);
+            SetProperties(safefileNames);
         }
         // Переключение локализации на французкий
         private void btnLangFr_Click(object sender, EventArgs e)
@@ -258,7 +256,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(_fileNames);
+            SetProperties(safefileNames);
         }
         // Переключение локализации на английский
         private void btnLangEng_Click(object sender, EventArgs e)
@@ -266,7 +264,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(_fileNames);
+            SetProperties(safefileNames);
         }
         //Тестирование, согласно установленным параметрам
         private void btnStartAnalyze_Click(object sender, EventArgs e)
@@ -296,7 +294,7 @@ namespace TelemetryAnalyzerEOS
         //Загрузка, декодирование и анализ данных
         private void DataAnalysis(object possition)
         {
-            int i = (int) possition;
+            var i = (int) possition;
             // Проверка, выбран ли тест
             if (_cbstatus[i] != "-1")
             {
@@ -310,12 +308,12 @@ namespace TelemetryAnalyzerEOS
                 switch (_cbstatus[i])
                 {
                     case "0":
-                        if (GeneralHealthCheck())
+                        if (GeneralHealthCheck(i))
                              SetSuccedImage(i);
                         else SetFailImage(i);
                         break;
                     case "1":
-                        if (CheckingTheTuningOfThePlantSignals())
+                        if (CheckingTheTuningOfThePlantSignals(i))
                             SetSuccedImage(i);
                         else SetFailImage(i);
                         break;
@@ -332,9 +330,18 @@ namespace TelemetryAnalyzerEOS
                         throw new Exception("ComboBox switch exception.");
                 }
             }
+
             // Вызов события завершения работы потока (необходимо для работы прогесс бара)
             TaskIsComplite?.Invoke();
         }
+
+        private void CreateReport(string path, string data)
+        {
+            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                sw.Write(data);
+            }
+        } 
        /// <summary>
        /// Установка изображения не удачно.
        /// </summary>
@@ -380,23 +387,29 @@ namespace TelemetryAnalyzerEOS
         }
 
         //Проверка общей работоспособности
-        private static bool GeneralHealthCheck()
+        private static bool GeneralHealthCheck(int k)
         {
             Thread.Sleep(2000);
             return true;
         }
         //Проверка отработки сигналов установок
-        private bool CheckingTheTuningOfThePlantSignals()
+        private bool CheckingTheTuningOfThePlantSignals(int k)
         {
-            //for (int i = 0; i < _decoder[possition].ParamsCvses.Length; i++)
-            //{
-            //    if (_decoder[possition].ParamsCvses[i].Launch && _decoder[possition].ParamsCvses[i].Shod
-            //        && !_decoder[possition].ParamsCvses[i].SoprLO1 && !_decoder[possition].ParamsCvses[i].SoprLO2)
-            //    {
-                    
-            //    }                
-            //}
-            return false;
+            int rightpackages = 0;
+
+            foreach (var paramsCvse in _decoder[k].ParamsCvses)
+            {
+                if (paramsCvse.Launch && paramsCvse.Shod
+                    && !paramsCvse.SoprLO1 && !paramsCvse.SoprLO2)
+                {
+                    rightpackages++;
+                }else if (paramsCvse.Launch && paramsCvse.Shod
+                          && paramsCvse.SoprLO1 && paramsCvse.SoprLO2)
+                {
+                    return false;
+                }
+            }
+            return rightpackages != 0;
         }
         //Проверка времени накопления
         private void CheckingTheAccumulationTime()
@@ -421,6 +434,14 @@ namespace TelemetryAnalyzerEOS
             {
                 _cbstatus[i] = _cblist[i].SelectedIndex.ToString();
             }
+        }
+
+        private void btnResultN_Click(object sender, EventArgs e)
+        {
+            //CreateReport("1.txt", "Error");
+            if (File.Exists(@"1.txt"))
+                System.Diagnostics.Process.Start(@"1.txt");
+            else MessageBox.Show(@"File not found");
         }
     }
 }

@@ -127,4 +127,7 @@
   <data name="lbLaunchN.Text" xml:space="preserve">
     <value>Именование пуска N или диагностики:</value>
   </data>
+  <data name="openFileDialog.Title" xml:space="preserve">
+    <value>Открытие</value>
+  </data>
 </root>
