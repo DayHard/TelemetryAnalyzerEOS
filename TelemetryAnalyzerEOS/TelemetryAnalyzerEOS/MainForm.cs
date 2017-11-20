@@ -23,7 +23,8 @@ namespace TelemetryAnalyzerEOS
         private List<ComboBox> _cblist;
         private List<Button> _btnlist;
         private List<PictureBox> _pblist;
-        private IList<string> safefileNames;
+        private IList<string> _safeFileNames;
+        private IList<string> _safeFilePathes;
 
         private readonly string[] _cbstatus = new string[15];
 
@@ -228,7 +229,8 @@ namespace TelemetryAnalyzerEOS
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length <= 15)
             {
                 SetProperties(openFileDialog.SafeFileNames);
-                safefileNames = openFileDialog.SafeFileNames;
+                _safeFileNames = openFileDialog.SafeFileNames;
+                _safeFilePathes = openFileDialog.FileNames;
             }
             else 
             {
@@ -248,7 +250,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(safefileNames);
+            SetProperties(_safeFileNames);
         }
         // Переключение локализации на французкий
         private void btnLangFr_Click(object sender, EventArgs e)
@@ -256,7 +258,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(safefileNames);
+            SetProperties(_safeFileNames);
         }
         // Переключение локализации на английский
         private void btnLangEng_Click(object sender, EventArgs e)
@@ -264,7 +266,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(safefileNames);
+            SetProperties(_safeFileNames);
         }
         //Тестирование, согласно установленным параметрам
         private void btnStartAnalyze_Click(object sender, EventArgs e)
@@ -340,7 +342,7 @@ namespace TelemetryAnalyzerEOS
             TaskIsComplite?.Invoke();
         }
 
-        private void CreateReport(string path, string data)
+        private static void CreateReport(string path, string data)
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
@@ -410,11 +412,17 @@ namespace TelemetryAnalyzerEOS
             {
                 if (paramsCvse.Launch && paramsCvse.Shod
                     && !paramsCvse.SoprLO1 && !paramsCvse.SoprLO2)
-                {
+                {   
+                    // Указать какой диапазон!
+                    if (true)
+                    {
+                        //paramsCvse.
+                    }
                     rightpackages++;
                 }else if (paramsCvse.Launch && paramsCvse.Shod
                           && paramsCvse.SoprLO1 && paramsCvse.SoprLO2)
                 {
+                    CreateReport(_safeFilePathes[k] + ".txt","Ошибка. Файл не предназначен для данного типа проверок.");
                     return false;
                 }
             }

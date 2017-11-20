@@ -495,4 +495,12 @@
 
         #endregion
     }
+
+    public class DockPrlParamVideo
+    {
+        private uint _shiftfromstart;
+
+        public uint Shiftfromstart { get => _shiftfromstart; set => _shiftfromstart = value; }
+    }
+
 }

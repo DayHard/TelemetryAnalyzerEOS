@@ -6,11 +6,12 @@ namespace TelemetryAnalyzerEOS
     {
         public DockPrlParamOedCvs[] ParamsOedes;
         public DockPrlParamCvsOed[] ParamsCvses;
+        public DockPrlParamVideo[] ParamsVideoses;
 
         private const uint SingBegin = 0xE4EF7289;
         private const uint SingEnd = 0x76EFFF28;
         private const uint CsPointer = 2300 * 4 + 8;
-        private byte[] _data;
+        public byte[] Data;
 
         /// <summary>
         /// Открытие файла телеметрии.
@@ -21,10 +22,10 @@ namespace TelemetryAnalyzerEOS
         {
             try
             {
-                _data = new byte[(int)new FileInfo((string)path).Length];
+                Data = new byte[(int)new FileInfo((string)path).Length];
                 using (BinaryReader bReader = new BinaryReader(File.Open((string)path, FileMode.Open, FileAccess.Read)))
                 {
-                    _data = bReader.ReadBytes(_data.Length);
+                    Data = bReader.ReadBytes(Data.Length);
                 }
 
                 //Проверка заголовка, если да выделям память под количество пакетов
@@ -32,6 +33,7 @@ namespace TelemetryAnalyzerEOS
                 {
                     ParamsOedes = new DockPrlParamOedCvs[ToBigEndian(2, 2)];
                     ParamsCvses = new DockPrlParamCvsOed[ToBigEndian(2, 2)];
+                    ParamsVideoses = new DockPrlParamVideo[ToBigEndian(2, 2)];
                 }
                 else
                 {
@@ -39,6 +41,8 @@ namespace TelemetryAnalyzerEOS
                     ParamsOedes = new DockPrlParamOedCvs[2300];
                     //Выделяем память под данные CVS
                     ParamsCvses = new DockPrlParamCvsOed[2300];
+                    //Выделяем память под Video
+                    ParamsVideoses = new DockPrlParamVideo[2300];
                 }
 
                 //Инициализируем OED
@@ -50,6 +54,12 @@ namespace TelemetryAnalyzerEOS
                 for (int i = 0; i < ParamsCvses.Length; i++)
                 {
                     ParamsCvses[i] = new DockPrlParamCvsOed();
+                }
+                //Инициализируем Video
+                //Инициализируем CVS
+                for (int i = 0; i < ParamsVideoses.Length; i++)
+                {
+                    ParamsVideoses[i] = new DockPrlParamVideo();
                 }
             }
             catch
@@ -66,7 +76,7 @@ namespace TelemetryAnalyzerEOS
         public void Decode()
         {
             int counter = 0, ecounter = 0;
-            for (uint i = CsPointer + 4; i < _data.Length; i+=4)
+            for (uint i = CsPointer + 4; i < Data.Length; i+=4)
             {
             if (ToBigEndian(i, 4) == SingBegin)
             {
@@ -84,13 +94,14 @@ namespace TelemetryAnalyzerEOS
                         //!!!!
                         ParamsOedes[counter] = null;
                         ParamsCvses[counter] = null;
+                        ParamsVideoses[counter] = null;
                         ecounter++;
                     }
                 }
                 // Если указанное смещение не верно, ищем признак конца
                 else
                 {
-                    for (uint j = i+4; j < _data.Length; j+=4)
+                    for (uint j = i+4; j < Data.Length; j+=4)
                     {
                         var sing = ToBigEndian(j, 4);
                         if (sing == SingEnd)
@@ -101,7 +112,8 @@ namespace TelemetryAnalyzerEOS
                                 //!!!!
                                 ParamsOedes[counter] = null;
                                 ParamsCvses[counter] = null;
-                                ecounter++;
+                                ParamsVideoses[counter] = null;
+                                    ecounter++;
                             }
                             break;
                         }
@@ -111,7 +123,8 @@ namespace TelemetryAnalyzerEOS
                             //!!!!
                             ParamsOedes[counter] = null;
                             ParamsCvses[counter] = null;
-                            i -= 4;
+                            ParamsVideoses[counter] = null;
+                                i -= 4;
                             break;
                         }
                     }
@@ -166,6 +179,9 @@ namespace TelemetryAnalyzerEOS
                 return false;
 
             if (!DecodeCvsOed(counter, pStart))
+                return false;
+
+            if (!DecodeVideo(counter, pStart))
                 return false;
 
             return true;
@@ -426,6 +442,13 @@ namespace TelemetryAnalyzerEOS
             return true;
         }
 
+        //Адресс начала пакета
+        private bool DecodeVideo(int counter, uint pStart)
+        {
+            ParamsVideoses[counter].Shiftfromstart = pStart;//ToBigEndian(pStart, 4);
+            return true;
+        }
+
         /// <summary>
         /// Проверка заголовка файла на валидность.
         /// </summary>
@@ -506,7 +529,7 @@ namespace TelemetryAnalyzerEOS
             int j = 0;
             for (uint i = counter; i < counter + size; i++)
             {
-                cdata[j] = _data[i];
+                cdata[j] = Data[i];
                 j++;
             }
             for (int i = 0; i < cdata.Length / 2; i++)
