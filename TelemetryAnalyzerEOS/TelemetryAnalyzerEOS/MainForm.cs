@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using static System.Math;
+
 
 namespace TelemetryAnalyzerEOS
 {
@@ -23,7 +25,23 @@ namespace TelemetryAnalyzerEOS
         private List<ComboBox> _cblist;
         private List<Button> _btnlist;
         private List<PictureBox> _pblist;
-        private IList<string> safefileNames;
+        private IList<string> _safefileNames;
+        private IList<string> _safeFilePathes;
+
+        #region Variable
+
+        private const double  FokusKanal2 = 323.0;
+
+        int number_paket_max_otrabot_ust_kanal1_q = 0;
+        int number_paket_max_otrabot_ust_kanal1_fi = 0;
+        int number_paket_max_otrabot_ust_kanal2_q = 0;
+        int number_paket_max_otrabot_ust_kanal2_fi = 0;
+        double max_delta_ustanovka_kanal1_q = 0;
+        double max_delta_ustanovka_kanal1_fi = 0;
+        double max_delta_ustanovka_kanal2_q = 0;
+        double max_delta_ustanovka_kanal2_fi = 0;
+
+        #endregion
 
         private readonly string[] _cbstatus = new string[15];
 
@@ -228,7 +246,8 @@ namespace TelemetryAnalyzerEOS
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length <= 15)
             {
                 SetProperties(openFileDialog.SafeFileNames);
-                safefileNames = openFileDialog.SafeFileNames;
+                _safefileNames = openFileDialog.SafeFileNames;
+                _safeFilePathes = openFileDialog.FileNames;
             }
             else 
             {
@@ -248,7 +267,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(safefileNames);
+            SetProperties(_safefileNames);
         }
         // Переключение локализации на французкий
         private void btnLangFr_Click(object sender, EventArgs e)
@@ -256,7 +275,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(safefileNames);
+            SetProperties(_safefileNames);
         }
         // Переключение локализации на английский
         private void btnLangEng_Click(object sender, EventArgs e)
@@ -264,7 +283,7 @@ namespace TelemetryAnalyzerEOS
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             Controls.Clear();
             InitializeComponent();
-            SetProperties(safefileNames);
+            SetProperties(_safefileNames);
         }
         //Тестирование, согласно установленным параметрам
         private void btnStartAnalyze_Click(object sender, EventArgs e)
@@ -335,22 +354,34 @@ namespace TelemetryAnalyzerEOS
                         throw new Exception("ComboBox switch exception.");
                 }
             }
-
             // Вызов события завершения работы потока (необходимо для работы прогесс бара)
             TaskIsComplite?.Invoke();
         }
-
+        // Создание отчета ошибки
         private void CreateReport(string path, string data)
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
                 sw.Write(data);
             }
-        } 
-       /// <summary>
-       /// Установка изображения не удачно.
-       /// </summary>
-       /// <param name="i">Номер файла.</param>
+        }
+        // Создание файла отчет
+        private void CreateReport(string path, string[] data)
+        {
+            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                var result = String.Empty;
+                foreach (string t in data)
+                {
+                    result += t;
+                }
+                sw.Write(result);
+            }
+        }
+        /// <summary>
+        /// Установка изображения не удачно.
+        /// </summary>
+        /// <param name="i">Номер файла.</param>
         private void SetFailImage(int i)
         {
             Invoke(new MethodInvoker(delegate
@@ -406,15 +437,105 @@ namespace TelemetryAnalyzerEOS
         {
             int rightpackages = 0;
 
-            foreach (var paramsCvse in _decoder[k].ParamsCvses)
+            for (var i = 0; i < _decoder[k].ParamsCvses.Length; i++)
             {
-                if (paramsCvse.Launch && paramsCvse.Shod
-                    && !paramsCvse.SoprLO1 && !paramsCvse.SoprLO2)
+                double tempDelta11 = 0;
+                double tempDelta12 = 0;
+                double tempDelta21 = 0;
+                double tempDelta22 = 0;
+
+                if (_decoder[k].ParamsCvses[i].Launch && _decoder[k].ParamsCvses[i].Shod
+                    && !_decoder[k].ParamsCvses[i].SoprLO1 && !_decoder[k].ParamsCvses[i].SoprLO2)
                 {
+                    // По каналу 1
+                    if (_decoder[k].ParamsCvses[i].Deltaqk1 * 10 <11000 &&
+                        _decoder[k].ParamsCvses[i].Deltafik1 < 14000 && 
+                        k > 100 &&
+                        _decoder[k + 1].ParamsCvses[i].Deltaqk1 * 10 < 11000 && 
+                        _decoder[k + 1].ParamsCvses[i].Deltafik1 < 14000)
+                    {
+                        if (_decoder[k].ParamsCvses[i].Deltaqk1 * 10 != 0 &&
+                            _decoder[k].ParamsCvses[i].Deltafik1 * 10 != 0)
+                        {
+                            var gradus = (double) _decoder[k].ParamsCvses[i].Deltaqk1 * 10 / 3600 * (PI / 180);
+                            var pixelKanal1Q = (double)_decoder[k].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0083;
+
+                            gradus = (double)_decoder[k].ParamsCvses[i].Deltafik1 * 10 / 3600 * (Math.PI / 180);
+                            var pixelKanal1Fi = (double)_decoder[k].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0086;
+
+                            gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltaqk1 / 3600 * (Math.PI / 180);
+                            var pixelKanal1Q1 = (double)_decoder[k].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0083;
+
+                            gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltafik1 / 3600 * (Math.PI / 180);
+                            var pixelKanal1Fi1 = (double)_decoder[k + 1].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0086;
+
+                            tempDelta11 = Math.Abs(pixelKanal1Q - pixelKanal1Q1);
+                            tempDelta12 = Math.Abs(pixelKanal1Fi - pixelKanal1Fi1);
+                        }
+                    }
+                    // По каналу 2
+                    if (_decoder[k].ParamsCvses[i].Deltaqk2 * 2 < 11000 &&
+                        _decoder[k].ParamsCvses[i].Deltafik2 < 2000 &&
+                        k > 205 &&
+                        _decoder[k + 1].ParamsCvses[i].Deltaqk2 * 2 < 1000 &&
+                        _decoder[k + 1].ParamsCvses[i].Deltafik2 < 2000)
+                    {
+;
+
+                        var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk2 * 2 / 3600 * (Math.PI / 180);
+                        var pixelKanal2Q = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0083);
+
+                        gradus = (double)_decoder[k].ParamsCvses[i].Deltafik2 * 2 / 3600 * (Math.PI / 180);
+                        var pixelKanal2Fi = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0086);
+
+                        gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltaqk2 / 3600 * (Math.PI / 180);
+                        var pixelKanal2Q1 = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0083);
+
+                        gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltafik2 / 3600 * (Math.PI / 180);
+                        var pixelKanal2Fi1 = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0086);
+
+                        tempDelta21 = Math.Abs(pixelKanal2Q - pixelKanal2Q1);
+                        tempDelta22 = Math.Abs(pixelKanal2Fi - pixelKanal2Fi1);
+                    }
+                    if (max_delta_ustanovka_kanal1_q < tempDelta11)
+                        number_paket_max_otrabot_ust_kanal1_q = k;
+                    if (max_delta_ustanovka_kanal1_fi < tempDelta12)
+                        number_paket_max_otrabot_ust_kanal1_fi = k;
+                    if (max_delta_ustanovka_kanal2_q < tempDelta21)
+                        number_paket_max_otrabot_ust_kanal2_q = k;
+                    if (max_delta_ustanovka_kanal2_fi < tempDelta22)
+                        number_paket_max_otrabot_ust_kanal2_fi = k;
+
+
+                    max_delta_ustanovka_kanal1_q = max_delta_ustanovka_kanal1_q > tempDelta11
+                        ? max_delta_ustanovka_kanal1_q
+                        : tempDelta11;
+                    max_delta_ustanovka_kanal1_fi = max_delta_ustanovka_kanal1_fi > tempDelta12
+                        ? max_delta_ustanovka_kanal1_fi
+                        : tempDelta12;
+                    max_delta_ustanovka_kanal2_q = max_delta_ustanovka_kanal2_q > tempDelta21
+                        ? max_delta_ustanovka_kanal2_q
+                        : tempDelta21;
+                    max_delta_ustanovka_kanal2_fi = max_delta_ustanovka_kanal2_fi > tempDelta22
+                        ? max_delta_ustanovka_kanal2_fi
+                        : tempDelta22;
+
+                    // Создание массива результатов
+                    var report = new string[4];
+                    report[0] = "Максимальная дельта установка в канале 1 по q: " + max_delta_ustanovka_kanal1_q;
+                    report[1] = "Максимальная дельта установка в канале 1 по fi: " + max_delta_ustanovka_kanal1_fi;
+                    report[2] = "Максимальная дельта установка в канале 2 по q: " + max_delta_ustanovka_kanal2_q;
+                    report[3] = "Максимальная дельта установка в канале 2 по fi: " + max_delta_ustanovka_kanal2_fi;
+                    // Сохранение результатов
+                    CreateReport(_safeFilePathes[k] + ".txt", report);
+
                     rightpackages++;
-                }else if (paramsCvse.Launch && paramsCvse.Shod
-                          && paramsCvse.SoprLO1 && paramsCvse.SoprLO2)
+                }
+                else if (_decoder[k].ParamsCvses[i].Launch && _decoder[k].ParamsCvses[i].Shod
+                         && _decoder[k].ParamsCvses[i].SoprLO1 && _decoder[k].ParamsCvses[i].SoprLO2)
                 {
+                    // Включить в релизной версии
+                    CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Файл не предназначен для данного типа проверок.");
                     return false;
                 }
             }
@@ -435,6 +556,7 @@ namespace TelemetryAnalyzerEOS
         {
             
         }
+
         // Считывание состояния элементов GUI
         private void timerGUI_Tick(object sender, EventArgs e)
         {
@@ -444,7 +566,6 @@ namespace TelemetryAnalyzerEOS
                 _cbstatus[i] = _cblist[i].SelectedIndex.ToString();
             }
         }
-
         private void btnResultN_Click(object sender, EventArgs e)
         {
             //CreateReport("1.txt", "Error");
