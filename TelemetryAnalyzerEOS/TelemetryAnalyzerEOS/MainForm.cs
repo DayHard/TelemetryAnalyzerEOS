@@ -32,15 +32,6 @@ namespace TelemetryAnalyzerEOS
 
         private const double  FokusKanal2 = 323.0;
 
-        int number_paket_max_otrabot_ust_kanal1_q = 0;
-        int number_paket_max_otrabot_ust_kanal1_fi = 0;
-        int number_paket_max_otrabot_ust_kanal2_q = 0;
-        int number_paket_max_otrabot_ust_kanal2_fi = 0;
-        double max_delta_ustanovka_kanal1_q = 0;
-        double max_delta_ustanovka_kanal1_fi = 0;
-        double max_delta_ustanovka_kanal2_q = 0;
-        double max_delta_ustanovka_kanal2_fi = 0;
-
         #endregion
 
         private readonly string[] _cbstatus = new string[15];
@@ -362,6 +353,9 @@ namespace TelemetryAnalyzerEOS
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
+                sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine("Файл: " + path);
+                sw.WriteLine();
                 sw.Write(data);
             }
         }
@@ -370,12 +364,13 @@ namespace TelemetryAnalyzerEOS
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
-                var result = String.Empty;
+                sw.WriteLine("Отчет создан: "+DateTime.Now);
+                sw.WriteLine("Файл: " + path);
+                sw.WriteLine();
                 foreach (string t in data)
                 {
-                    result += t;
+                    sw.WriteLine(t);
                 }
-                sw.Write(result);
             }
         }
         /// <summary>
@@ -436,98 +431,101 @@ namespace TelemetryAnalyzerEOS
         private bool CheckingTheTuningOfThePlantSignals(int k)
         {
             int rightpackages = 0;
+            // Создание массива результатов
+            var report = new string[4];
+            double tempDelta11 = 0;
+            double tempDelta12 = 0;
+            double tempDelta21 = 0;
+            double tempDelta22 = 0;
+            int number_paket_max_otrabot_ust_kanal1_q = 0;
+            int number_paket_max_otrabot_ust_kanal1_fi = 0;
+            int number_paket_max_otrabot_ust_kanal2_q = 0;
+            int number_paket_max_otrabot_ust_kanal2_fi = 0;
+            double max_delta_ustanovka_kanal1_q = 0;
+            double max_delta_ustanovka_kanal1_fi = 0;
+            double max_delta_ustanovka_kanal2_q = 0;
+            double max_delta_ustanovka_kanal2_fi = 0;
 
-            for (var i = 0; i < _decoder[k].ParamsCvses.Length; i++)
+            for (var i = 0; i < _decoder[k].ParamsCvses.Length - 2; i++)
             {
-                double tempDelta11 = 0;
-                double tempDelta12 = 0;
-                double tempDelta21 = 0;
-                double tempDelta22 = 0;
-
                 if (_decoder[k].ParamsCvses[i].Launch && _decoder[k].ParamsCvses[i].Shod
                     && !_decoder[k].ParamsCvses[i].SoprLO1 && !_decoder[k].ParamsCvses[i].SoprLO2)
                 {
                     // По каналу 1
-                    if (_decoder[k].ParamsCvses[i].Deltaqk1 * 10 <11000 &&
+                    if (_decoder[k].ParamsCvses[i].Deltaqk1 <11000 &&
                         _decoder[k].ParamsCvses[i].Deltafik1 < 14000 && 
-                        k > 100 &&
-                        _decoder[k + 1].ParamsCvses[i].Deltaqk1 * 10 < 11000 && 
-                        _decoder[k + 1].ParamsCvses[i].Deltafik1 < 14000)
+                        i > 100 &&
+                        _decoder[k].ParamsCvses[i + 1].Deltaqk1 < 11000 && 
+                        _decoder[k].ParamsCvses[i + 1].Deltafik1 < 14000)
                     {
-                        if (_decoder[k].ParamsCvses[i].Deltaqk1 * 10 != 0 &&
-                            _decoder[k].ParamsCvses[i].Deltafik1 * 10 != 0)
+                        if (_decoder[k].ParamsCvses[i].Deltaqk1 != 0 &&
+                            _decoder[k].ParamsCvses[i].Deltafik1 != 0)
                         {
-                            var gradus = (double) _decoder[k].ParamsCvses[i].Deltaqk1 * 10 / 3600 * (PI / 180);
-                            var pixelKanal1Q = (double)_decoder[k].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0083;
+                            var gradus = ((double) _decoder[k].ParamsCvses[i].Deltaqk1) / 3600 * (PI / 180);
+                            var pixelKanal1Q = (((double)_decoder[k].ParamsOedes[i].Focuspc) * Math.Tan(gradus)) / (2 * 0.0083);
 
-                            gradus = (double)_decoder[k].ParamsCvses[i].Deltafik1 * 10 / 3600 * (Math.PI / 180);
-                            var pixelKanal1Fi = (double)_decoder[k].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0086;
+                            gradus = ((double)_decoder[k].ParamsCvses[i].Deltafik1) / 3600 * (Math.PI / 180);
+                            var pixelKanal1Fi = (((double)_decoder[k].ParamsOedes[i].Focuspc) * Tan(gradus)) / (2 * 0.0086);
 
-                            gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltaqk1 / 3600 * (Math.PI / 180);
-                            var pixelKanal1Q1 = (double)_decoder[k].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0083;
+                            gradus = ((double)_decoder[k].ParamsOedes[i + 1].Qkd1) / 3600 * (Math.PI / 180);
+                            var pixelKanal1Q1 = (((double)_decoder[k].ParamsOedes[i].Focuspc) * Tan(gradus)) / (2 * 0.0083);
 
-                            gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltafik1 / 3600 * (Math.PI / 180);
-                            var pixelKanal1Fi1 = (double)_decoder[k + 1].ParamsOedes[i].Focuspc * 0.1 * Math.Tan(gradus) / 2 * 0.0086;
+                            gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd1 / 3600 * (Math.PI / 180);
+                            var pixelKanal1Fi1 = (((double)_decoder[k].ParamsOedes[i + 1].Focuspc) * Tan(gradus)) / (2 * 0.0086);
 
                             tempDelta11 = Math.Abs(pixelKanal1Q - pixelKanal1Q1);
                             tempDelta12 = Math.Abs(pixelKanal1Fi - pixelKanal1Fi1);
                         }
                     }
                     // По каналу 2
-                    if (_decoder[k].ParamsCvses[i].Deltaqk2 * 2 < 11000 &&
+                    if (_decoder[k].ParamsCvses[i].Deltaqk2 < 1000 &&
                         _decoder[k].ParamsCvses[i].Deltafik2 < 2000 &&
-                        k > 205 &&
-                        _decoder[k + 1].ParamsCvses[i].Deltaqk2 * 2 < 1000 &&
-                        _decoder[k + 1].ParamsCvses[i].Deltafik2 < 2000)
+                        i > 205 &&
+                        _decoder[k].ParamsCvses[i + 1].Deltaqk2 < 1000 &&
+                        _decoder[k].ParamsCvses[i + 1].Deltafik2 < 2000)
                     {
-;
-
-                        var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk2 * 2 / 3600 * (Math.PI / 180);
+                        var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk2 / 3600 * (Math.PI / 180);
                         var pixelKanal2Q = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0083);
 
-                        gradus = (double)_decoder[k].ParamsCvses[i].Deltafik2 * 2 / 3600 * (Math.PI / 180);
+                        gradus = (double)_decoder[k].ParamsCvses[i].Deltafik2 / 3600 * (Math.PI / 180);
                         var pixelKanal2Fi = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0086);
 
-                        gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltaqk2 / 3600 * (Math.PI / 180);
+                        gradus = (double)_decoder[k].ParamsOedes[i + 1].Qkd2 / 3600 * (Math.PI / 180);
                         var pixelKanal2Q1 = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0083);
 
-                        gradus = (double)_decoder[k + 1].ParamsCvses[i].Deltafik2 / 3600 * (Math.PI / 180);
+                        gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd2 / 3600 * (Math.PI / 180);
                         var pixelKanal2Fi1 = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0086);
 
                         tempDelta21 = Math.Abs(pixelKanal2Q - pixelKanal2Q1);
                         tempDelta22 = Math.Abs(pixelKanal2Fi - pixelKanal2Fi1);
                     }
                     if (max_delta_ustanovka_kanal1_q < tempDelta11)
-                        number_paket_max_otrabot_ust_kanal1_q = k;
+                        number_paket_max_otrabot_ust_kanal1_q = i;
                     if (max_delta_ustanovka_kanal1_fi < tempDelta12)
-                        number_paket_max_otrabot_ust_kanal1_fi = k;
+                        number_paket_max_otrabot_ust_kanal1_fi = i;
                     if (max_delta_ustanovka_kanal2_q < tempDelta21)
-                        number_paket_max_otrabot_ust_kanal2_q = k;
+                        number_paket_max_otrabot_ust_kanal2_q = i;
                     if (max_delta_ustanovka_kanal2_fi < tempDelta22)
-                        number_paket_max_otrabot_ust_kanal2_fi = k;
+                        number_paket_max_otrabot_ust_kanal2_fi = i;
 
+                    max_delta_ustanovka_kanal1_q = Max(max_delta_ustanovka_kanal1_q, tempDelta11);
+                    max_delta_ustanovka_kanal1_fi = Max(max_delta_ustanovka_kanal1_fi, tempDelta12);
+                    max_delta_ustanovka_kanal2_q = Max(max_delta_ustanovka_kanal2_q, tempDelta21);
+                    max_delta_ustanovka_kanal2_fi = Max(max_delta_ustanovka_kanal2_fi, tempDelta22);
 
-                    max_delta_ustanovka_kanal1_q = max_delta_ustanovka_kanal1_q > tempDelta11
-                        ? max_delta_ustanovka_kanal1_q
-                        : tempDelta11;
-                    max_delta_ustanovka_kanal1_fi = max_delta_ustanovka_kanal1_fi > tempDelta12
-                        ? max_delta_ustanovka_kanal1_fi
-                        : tempDelta12;
-                    max_delta_ustanovka_kanal2_q = max_delta_ustanovka_kanal2_q > tempDelta21
-                        ? max_delta_ustanovka_kanal2_q
-                        : tempDelta21;
-                    max_delta_ustanovka_kanal2_fi = max_delta_ustanovka_kanal2_fi > tempDelta22
-                        ? max_delta_ustanovka_kanal2_fi
-                        : tempDelta22;
-
-                    // Создание массива результатов
-                    var report = new string[4];
-                    report[0] = "Максимальная дельта установка в канале 1 по q: " + max_delta_ustanovka_kanal1_q;
-                    report[1] = "Максимальная дельта установка в канале 1 по fi: " + max_delta_ustanovka_kanal1_fi;
-                    report[2] = "Максимальная дельта установка в канале 2 по q: " + max_delta_ustanovka_kanal2_q;
-                    report[3] = "Максимальная дельта установка в канале 2 по fi: " + max_delta_ustanovka_kanal2_fi;
+                    report[0] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal1_q +
+                                " Канал 1 по  q: " +
+                                Round(Max(max_delta_ustanovka_kanal1_q, tempDelta11) / 10, 1);
+                    report[1] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal1_fi +
+                                " Канал 1 по fi: " +
+                                Round(Max(max_delta_ustanovka_kanal1_fi, tempDelta12) / 10, 1);
+                    report[2] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal2_q +
+                                " Канал 2 по  q: " +
+                                Round(Max(max_delta_ustanovka_kanal2_q, tempDelta21), 1);;
+                    report[3] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal2_fi +
+                                " Канал 2 по fi: " +
+                                Round(Max(max_delta_ustanovka_kanal2_fi, tempDelta22), 1);
                     // Сохранение результатов
-                    CreateReport(_safeFilePathes[k] + ".txt", report);
 
                     rightpackages++;
                 }
@@ -539,6 +537,8 @@ namespace TelemetryAnalyzerEOS
                     return false;
                 }
             }
+
+            CreateReport(_safeFilePathes[k] + ".txt", report);
             return rightpackages != 0;
         }
         //Проверка времени накопления
