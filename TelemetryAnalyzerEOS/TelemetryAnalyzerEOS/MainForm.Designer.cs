@@ -201,84 +201,98 @@
             resources.ApplyResources(this.btnResultN1, "btnResultN1");
             this.btnResultN1.Name = "btnResultN1";
             this.btnResultN1.UseVisualStyleBackColor = true;
+            this.btnResultN1.Click += new System.EventHandler(this.btnResultN1_Click);
             // 
             // btnResultN2
             // 
             resources.ApplyResources(this.btnResultN2, "btnResultN2");
             this.btnResultN2.Name = "btnResultN2";
             this.btnResultN2.UseVisualStyleBackColor = true;
+            this.btnResultN2.Click += new System.EventHandler(this.btnResultN2_Click);
             // 
             // btnResultN3
             // 
             resources.ApplyResources(this.btnResultN3, "btnResultN3");
             this.btnResultN3.Name = "btnResultN3";
             this.btnResultN3.UseVisualStyleBackColor = true;
+            this.btnResultN3.Click += new System.EventHandler(this.btnResultN3_Click);
             // 
             // btnResultN4
             // 
             resources.ApplyResources(this.btnResultN4, "btnResultN4");
             this.btnResultN4.Name = "btnResultN4";
             this.btnResultN4.UseVisualStyleBackColor = true;
+            this.btnResultN4.Click += new System.EventHandler(this.btnResultN4_Click);
             // 
             // btnResultN5
             // 
             resources.ApplyResources(this.btnResultN5, "btnResultN5");
             this.btnResultN5.Name = "btnResultN5";
             this.btnResultN5.UseVisualStyleBackColor = true;
+            this.btnResultN5.Click += new System.EventHandler(this.btnResultN5_Click);
             // 
             // btnResultN6
             // 
             resources.ApplyResources(this.btnResultN6, "btnResultN6");
             this.btnResultN6.Name = "btnResultN6";
             this.btnResultN6.UseVisualStyleBackColor = true;
+            this.btnResultN6.Click += new System.EventHandler(this.btnResultN6_Click);
             // 
             // btnResultN7
             // 
             resources.ApplyResources(this.btnResultN7, "btnResultN7");
             this.btnResultN7.Name = "btnResultN7";
             this.btnResultN7.UseVisualStyleBackColor = true;
+            this.btnResultN7.Click += new System.EventHandler(this.btnResultN7_Click);
             // 
             // btnResultN8
             // 
             resources.ApplyResources(this.btnResultN8, "btnResultN8");
             this.btnResultN8.Name = "btnResultN8";
             this.btnResultN8.UseVisualStyleBackColor = true;
+            this.btnResultN8.Click += new System.EventHandler(this.btnResultN8_Click);
             // 
             // btnResultN9
             // 
             resources.ApplyResources(this.btnResultN9, "btnResultN9");
             this.btnResultN9.Name = "btnResultN9";
             this.btnResultN9.UseVisualStyleBackColor = true;
+            this.btnResultN9.Click += new System.EventHandler(this.btnResultN9_Click);
             // 
             // btnResultN10
             // 
             resources.ApplyResources(this.btnResultN10, "btnResultN10");
             this.btnResultN10.Name = "btnResultN10";
             this.btnResultN10.UseVisualStyleBackColor = true;
+            this.btnResultN10.Click += new System.EventHandler(this.btnResultN10_Click);
             // 
             // btnResultN11
             // 
             resources.ApplyResources(this.btnResultN11, "btnResultN11");
             this.btnResultN11.Name = "btnResultN11";
             this.btnResultN11.UseVisualStyleBackColor = true;
+            this.btnResultN11.Click += new System.EventHandler(this.btnResultN11_Click);
             // 
             // btnResultN12
             // 
             resources.ApplyResources(this.btnResultN12, "btnResultN12");
             this.btnResultN12.Name = "btnResultN12";
             this.btnResultN12.UseVisualStyleBackColor = true;
+            this.btnResultN12.Click += new System.EventHandler(this.btnResultN12_Click);
             // 
             // btnResultN13
             // 
             resources.ApplyResources(this.btnResultN13, "btnResultN13");
             this.btnResultN13.Name = "btnResultN13";
             this.btnResultN13.UseVisualStyleBackColor = true;
+            this.btnResultN13.Click += new System.EventHandler(this.btnResultN13_Click);
             // 
             // btnResultSelfDiag
             // 
             resources.ApplyResources(this.btnResultSelfDiag, "btnResultSelfDiag");
             this.btnResultSelfDiag.Name = "btnResultSelfDiag";
             this.btnResultSelfDiag.UseVisualStyleBackColor = true;
+            this.btnResultSelfDiag.Click += new System.EventHandler(this.btnResultSelfDiag_Click);
             // 
             // lbLaunchN1
             // 
@@ -347,7 +361,6 @@
             // 
             // cbLaunchN
             // 
-            resources.ApplyResources(this.cbLaunchN, "cbLaunchN");
             this.cbLaunchN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN.FormattingEnabled = true;
             this.cbLaunchN.Items.AddRange(new object[] {
@@ -356,11 +369,11 @@
             resources.GetString("cbLaunchN.Items2"),
             resources.GetString("cbLaunchN.Items3"),
             resources.GetString("cbLaunchN.Items4")});
+            resources.ApplyResources(this.cbLaunchN, "cbLaunchN");
             this.cbLaunchN.Name = "cbLaunchN";
             // 
             // cbLaunchN1
             // 
-            resources.ApplyResources(this.cbLaunchN1, "cbLaunchN1");
             this.cbLaunchN1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN1.FormattingEnabled = true;
             this.cbLaunchN1.Items.AddRange(new object[] {
@@ -369,11 +382,11 @@
             resources.GetString("cbLaunchN1.Items2"),
             resources.GetString("cbLaunchN1.Items3"),
             resources.GetString("cbLaunchN1.Items4")});
+            resources.ApplyResources(this.cbLaunchN1, "cbLaunchN1");
             this.cbLaunchN1.Name = "cbLaunchN1";
             // 
             // cbLaunchN2
             // 
-            resources.ApplyResources(this.cbLaunchN2, "cbLaunchN2");
             this.cbLaunchN2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN2.FormattingEnabled = true;
             this.cbLaunchN2.Items.AddRange(new object[] {
@@ -382,11 +395,11 @@
             resources.GetString("cbLaunchN2.Items2"),
             resources.GetString("cbLaunchN2.Items3"),
             resources.GetString("cbLaunchN2.Items4")});
+            resources.ApplyResources(this.cbLaunchN2, "cbLaunchN2");
             this.cbLaunchN2.Name = "cbLaunchN2";
             // 
             // cbLaunchN3
             // 
-            resources.ApplyResources(this.cbLaunchN3, "cbLaunchN3");
             this.cbLaunchN3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN3.FormattingEnabled = true;
             this.cbLaunchN3.Items.AddRange(new object[] {
@@ -395,11 +408,11 @@
             resources.GetString("cbLaunchN3.Items2"),
             resources.GetString("cbLaunchN3.Items3"),
             resources.GetString("cbLaunchN3.Items4")});
+            resources.ApplyResources(this.cbLaunchN3, "cbLaunchN3");
             this.cbLaunchN3.Name = "cbLaunchN3";
             // 
             // cbLaunchN4
             // 
-            resources.ApplyResources(this.cbLaunchN4, "cbLaunchN4");
             this.cbLaunchN4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN4.FormattingEnabled = true;
             this.cbLaunchN4.Items.AddRange(new object[] {
@@ -408,11 +421,11 @@
             resources.GetString("cbLaunchN4.Items2"),
             resources.GetString("cbLaunchN4.Items3"),
             resources.GetString("cbLaunchN4.Items4")});
+            resources.ApplyResources(this.cbLaunchN4, "cbLaunchN4");
             this.cbLaunchN4.Name = "cbLaunchN4";
             // 
             // cbLaunchN5
             // 
-            resources.ApplyResources(this.cbLaunchN5, "cbLaunchN5");
             this.cbLaunchN5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN5.FormattingEnabled = true;
             this.cbLaunchN5.Items.AddRange(new object[] {
@@ -421,11 +434,11 @@
             resources.GetString("cbLaunchN5.Items2"),
             resources.GetString("cbLaunchN5.Items3"),
             resources.GetString("cbLaunchN5.Items4")});
+            resources.ApplyResources(this.cbLaunchN5, "cbLaunchN5");
             this.cbLaunchN5.Name = "cbLaunchN5";
             // 
             // cbLaunchN6
             // 
-            resources.ApplyResources(this.cbLaunchN6, "cbLaunchN6");
             this.cbLaunchN6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN6.FormattingEnabled = true;
             this.cbLaunchN6.Items.AddRange(new object[] {
@@ -434,11 +447,11 @@
             resources.GetString("cbLaunchN6.Items2"),
             resources.GetString("cbLaunchN6.Items3"),
             resources.GetString("cbLaunchN6.Items4")});
+            resources.ApplyResources(this.cbLaunchN6, "cbLaunchN6");
             this.cbLaunchN6.Name = "cbLaunchN6";
             // 
             // cbLaunchN7
             // 
-            resources.ApplyResources(this.cbLaunchN7, "cbLaunchN7");
             this.cbLaunchN7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN7.FormattingEnabled = true;
             this.cbLaunchN7.Items.AddRange(new object[] {
@@ -447,11 +460,11 @@
             resources.GetString("cbLaunchN7.Items2"),
             resources.GetString("cbLaunchN7.Items3"),
             resources.GetString("cbLaunchN7.Items4")});
+            resources.ApplyResources(this.cbLaunchN7, "cbLaunchN7");
             this.cbLaunchN7.Name = "cbLaunchN7";
             // 
             // cbLaunchN8
             // 
-            resources.ApplyResources(this.cbLaunchN8, "cbLaunchN8");
             this.cbLaunchN8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN8.FormattingEnabled = true;
             this.cbLaunchN8.Items.AddRange(new object[] {
@@ -460,11 +473,11 @@
             resources.GetString("cbLaunchN8.Items2"),
             resources.GetString("cbLaunchN8.Items3"),
             resources.GetString("cbLaunchN8.Items4")});
+            resources.ApplyResources(this.cbLaunchN8, "cbLaunchN8");
             this.cbLaunchN8.Name = "cbLaunchN8";
             // 
             // cbLaunchN9
             // 
-            resources.ApplyResources(this.cbLaunchN9, "cbLaunchN9");
             this.cbLaunchN9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN9.FormattingEnabled = true;
             this.cbLaunchN9.Items.AddRange(new object[] {
@@ -473,11 +486,11 @@
             resources.GetString("cbLaunchN9.Items2"),
             resources.GetString("cbLaunchN9.Items3"),
             resources.GetString("cbLaunchN9.Items4")});
+            resources.ApplyResources(this.cbLaunchN9, "cbLaunchN9");
             this.cbLaunchN9.Name = "cbLaunchN9";
             // 
             // cbLaunchN10
             // 
-            resources.ApplyResources(this.cbLaunchN10, "cbLaunchN10");
             this.cbLaunchN10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN10.FormattingEnabled = true;
             this.cbLaunchN10.Items.AddRange(new object[] {
@@ -486,11 +499,11 @@
             resources.GetString("cbLaunchN10.Items2"),
             resources.GetString("cbLaunchN10.Items3"),
             resources.GetString("cbLaunchN10.Items4")});
+            resources.ApplyResources(this.cbLaunchN10, "cbLaunchN10");
             this.cbLaunchN10.Name = "cbLaunchN10";
             // 
             // cbLaunchN11
             // 
-            resources.ApplyResources(this.cbLaunchN11, "cbLaunchN11");
             this.cbLaunchN11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN11.FormattingEnabled = true;
             this.cbLaunchN11.Items.AddRange(new object[] {
@@ -499,11 +512,11 @@
             resources.GetString("cbLaunchN11.Items2"),
             resources.GetString("cbLaunchN11.Items3"),
             resources.GetString("cbLaunchN11.Items4")});
+            resources.ApplyResources(this.cbLaunchN11, "cbLaunchN11");
             this.cbLaunchN11.Name = "cbLaunchN11";
             // 
             // cbLaunchN12
             // 
-            resources.ApplyResources(this.cbLaunchN12, "cbLaunchN12");
             this.cbLaunchN12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN12.FormattingEnabled = true;
             this.cbLaunchN12.Items.AddRange(new object[] {
@@ -512,11 +525,11 @@
             resources.GetString("cbLaunchN12.Items2"),
             resources.GetString("cbLaunchN12.Items3"),
             resources.GetString("cbLaunchN12.Items4")});
+            resources.ApplyResources(this.cbLaunchN12, "cbLaunchN12");
             this.cbLaunchN12.Name = "cbLaunchN12";
             // 
             // cbLaunchN13
             // 
-            resources.ApplyResources(this.cbLaunchN13, "cbLaunchN13");
             this.cbLaunchN13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLaunchN13.FormattingEnabled = true;
             this.cbLaunchN13.Items.AddRange(new object[] {
@@ -525,6 +538,7 @@
             resources.GetString("cbLaunchN13.Items2"),
             resources.GetString("cbLaunchN13.Items3"),
             resources.GetString("cbLaunchN13.Items4")});
+            resources.ApplyResources(this.cbLaunchN13, "cbLaunchN13");
             this.cbLaunchN13.Name = "cbLaunchN13";
             // 
             // pbStatusN
@@ -625,7 +639,6 @@
             // 
             // cbSelfDiagnosis
             // 
-            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
             this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelfDiagnosis.FormattingEnabled = true;
             this.cbSelfDiagnosis.Items.AddRange(new object[] {
@@ -634,6 +647,7 @@
             resources.GetString("cbSelfDiagnosis.Items2"),
             resources.GetString("cbSelfDiagnosis.Items3"),
             resources.GetString("cbSelfDiagnosis.Items4")});
+            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
             this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
             // 
             // lbSelfDiagnosis
@@ -655,7 +669,6 @@
             // 
             // openFileDialog
             // 
-            resources.ApplyResources(this.openFileDialog, "openFileDialog");
             this.openFileDialog.Multiselect = true;
             // 
             // btnLangFr

@@ -256,7 +256,16 @@ namespace TelemetryAnalyzerEOS
         //Направление ОЭД -> ЦВС декодирование
         private bool DecodeOedCvs(int counter, uint pStart)
         {
-            uint shift = 8;
+            uint shift = 1;
+
+            ParamsOedes[counter].NumberDevice = _data[shift];
+            if (ParamsOedes[counter].NumberDevice == 0)
+            {
+                var pos = (uint)_data.Length - 4;
+                ParamsOedes[counter].NumberDevice = ToBigEndian(pos, 4);
+            }
+
+            shift = 8;
             //Номер кадра
             ParamsOedes[counter].FrameNumber = (short)ToBigEndian(pStart + shift, 2);
             shift += 24;

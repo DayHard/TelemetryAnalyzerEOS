@@ -27,7 +27,6 @@ namespace TelemetryAnalyzerEOS
         private List<PictureBox> _pblist;
         private IList<string> _safefileNames;
         private IList<string> _safeFilePathes;
-
         #region Variable
 
         private const double  FokusKanal2 = 323.0;
@@ -364,13 +363,32 @@ namespace TelemetryAnalyzerEOS
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
-                sw.WriteLine("Отчет создан: "+DateTime.Now);
+                sw.WriteLine("			Отчет об отработке сигналов установок ОЭД 'ПАНЦИРЬ - С1'.");
+                sw.WriteLine();
                 sw.WriteLine("Файл: " + path);
                 sw.WriteLine();
-                foreach (string t in data)
-                {
-                    sw.WriteLine(t);
-                }
+                sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Прибор №: {0} ", data[8]);
+                sw.WriteLine();
+                sw.WriteLine("_____________________________________________________________");
+                sw.WriteLine("|                  |         |                              | ");
+                sw.WriteLine("|      Каналы      | № кадра | Макс. погрешность в пикселах |");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 1 по q  | {0}     | {1}                          |", data[0], data[1]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 1 по fi | {0}     | {1}                          |", data[2], data[3]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 2 по q  | {0}     | {1}                          |", data[4], data[5]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 2 по fi | {0}     | {1}                          |", data[6], data[7]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("Время запаздывания отработки сигналов установок - 20 милисекунд.");
             }
         }
         /// <summary>
@@ -430,21 +448,21 @@ namespace TelemetryAnalyzerEOS
         //Проверка отработки сигналов установок
         private bool CheckingTheTuningOfThePlantSignals(int k)
         {
-            int rightpackages = 0;
+            var rightpackages = 0;
             // Создание массива результатов
-            var report = new string[4];
+            var report = new string[9];
+            var numberPaketMaxWorkingOffStpChannel1Q = 0;
+            var numberPaketMaxWorkingOffStpChannel1Fi = 0;
+            var numberPaketMaxWorkingOffStpChannel2Q = 0;
+            var numberPaketMaxWorkingOffStpChannel2Fi = 0;
             double tempDelta11 = 0;
             double tempDelta12 = 0;
             double tempDelta21 = 0;
             double tempDelta22 = 0;
-            int number_paket_max_otrabot_ust_kanal1_q = 0;
-            int number_paket_max_otrabot_ust_kanal1_fi = 0;
-            int number_paket_max_otrabot_ust_kanal2_q = 0;
-            int number_paket_max_otrabot_ust_kanal2_fi = 0;
-            double max_delta_ustanovka_kanal1_q = 0;
-            double max_delta_ustanovka_kanal1_fi = 0;
-            double max_delta_ustanovka_kanal2_q = 0;
-            double max_delta_ustanovka_kanal2_fi = 0;
+            double maxDeltaSetupChannel1Q = 0;
+            double maxDeltaSetupChannel1Fi = 0;
+            double maxDeltaSetupChannel2Q = 0;
+            double maxDeltaSetupChannel2Fi = 0;
 
             for (var i = 0; i < _decoder[k].ParamsCvses.Length - 2; i++)
             {
@@ -461,20 +479,20 @@ namespace TelemetryAnalyzerEOS
                         if (_decoder[k].ParamsCvses[i].Deltaqk1 != 0 &&
                             _decoder[k].ParamsCvses[i].Deltafik1 != 0)
                         {
-                            var gradus = ((double) _decoder[k].ParamsCvses[i].Deltaqk1) / 3600 * (PI / 180);
-                            var pixelKanal1Q = (((double)_decoder[k].ParamsOedes[i].Focuspc) * Math.Tan(gradus)) / (2 * 0.0083);
+                            var gradus = (double) _decoder[k].ParamsCvses[i].Deltaqk1 / 3600 * (PI / 180);
+                            var pixelKanal1Q = _decoder[k].ParamsOedes[i].Focuspc * Tan(gradus) / (2 * 0.0083);
 
-                            gradus = ((double)_decoder[k].ParamsCvses[i].Deltafik1) / 3600 * (Math.PI / 180);
-                            var pixelKanal1Fi = (((double)_decoder[k].ParamsOedes[i].Focuspc) * Tan(gradus)) / (2 * 0.0086);
+                            gradus = (double)_decoder[k].ParamsCvses[i].Deltafik1 / 3600 * (PI / 180);
+                            var pixelKanal1Fi = _decoder[k].ParamsOedes[i].Focuspc * Tan(gradus) / (2 * 0.0086);
 
-                            gradus = ((double)_decoder[k].ParamsOedes[i + 1].Qkd1) / 3600 * (Math.PI / 180);
-                            var pixelKanal1Q1 = (((double)_decoder[k].ParamsOedes[i].Focuspc) * Tan(gradus)) / (2 * 0.0083);
+                            gradus = (double)_decoder[k].ParamsOedes[i + 1].Qkd1 / 3600 * (PI / 180);
+                            var pixelKanal1Q1 = _decoder[k].ParamsOedes[i].Focuspc * Tan(gradus) / (2 * 0.0083);
 
-                            gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd1 / 3600 * (Math.PI / 180);
-                            var pixelKanal1Fi1 = (((double)_decoder[k].ParamsOedes[i + 1].Focuspc) * Tan(gradus)) / (2 * 0.0086);
+                            gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd1 / 3600 * (PI / 180);
+                            var pixelKanal1Fi1 = _decoder[k].ParamsOedes[i + 1].Focuspc * Tan(gradus) / (2 * 0.0086);
 
-                            tempDelta11 = Math.Abs(pixelKanal1Q - pixelKanal1Q1);
-                            tempDelta12 = Math.Abs(pixelKanal1Fi - pixelKanal1Fi1);
+                            tempDelta11 = Abs(pixelKanal1Q - pixelKanal1Q1);
+                            tempDelta12 = Abs(pixelKanal1Fi - pixelKanal1Fi1);
                         }
                     }
                     // По каналу 2
@@ -484,49 +502,49 @@ namespace TelemetryAnalyzerEOS
                         _decoder[k].ParamsCvses[i + 1].Deltaqk2 < 1000 &&
                         _decoder[k].ParamsCvses[i + 1].Deltafik2 < 2000)
                     {
-                        var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk2 / 3600 * (Math.PI / 180);
-                        var pixelKanal2Q = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0083);
+                        var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk2 / 3600 * (PI / 180);
+                        var pixelKanal2Q = FokusKanal2 * Tan(gradus) / (4 * 0.0083);
 
-                        gradus = (double)_decoder[k].ParamsCvses[i].Deltafik2 / 3600 * (Math.PI / 180);
-                        var pixelKanal2Fi = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0086);
+                        gradus = (double)_decoder[k].ParamsCvses[i].Deltafik2 / 3600 * (PI / 180);
+                        var pixelKanal2Fi = FokusKanal2 * Tan(gradus) / (4 * 0.0086);
 
-                        gradus = (double)_decoder[k].ParamsOedes[i + 1].Qkd2 / 3600 * (Math.PI / 180);
-                        var pixelKanal2Q1 = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0083);
+                        gradus = (double)_decoder[k].ParamsOedes[i + 1].Qkd2 / 3600 * (PI / 180);
+                        var pixelKanal2Q1 = FokusKanal2 * Tan(gradus) / (4 * 0.0083);
 
-                        gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd2 / 3600 * (Math.PI / 180);
-                        var pixelKanal2Fi1 = (double) FokusKanal2 * Math.Tan(gradus) / (4 * 0.0086);
+                        gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd2 / 3600 * (PI / 180);
+                        var pixelKanal2Fi1 = FokusKanal2 * Tan(gradus) / (4 * 0.0086);
 
-                        tempDelta21 = Math.Abs(pixelKanal2Q - pixelKanal2Q1);
-                        tempDelta22 = Math.Abs(pixelKanal2Fi - pixelKanal2Fi1);
+                        tempDelta21 = Abs(pixelKanal2Q - pixelKanal2Q1);
+                        tempDelta22 = Abs(pixelKanal2Fi - pixelKanal2Fi1);
                     }
-                    if (max_delta_ustanovka_kanal1_q < tempDelta11)
-                        number_paket_max_otrabot_ust_kanal1_q = i;
-                    if (max_delta_ustanovka_kanal1_fi < tempDelta12)
-                        number_paket_max_otrabot_ust_kanal1_fi = i;
-                    if (max_delta_ustanovka_kanal2_q < tempDelta21)
-                        number_paket_max_otrabot_ust_kanal2_q = i;
-                    if (max_delta_ustanovka_kanal2_fi < tempDelta22)
-                        number_paket_max_otrabot_ust_kanal2_fi = i;
+                    if (maxDeltaSetupChannel1Q < tempDelta11)
+                        numberPaketMaxWorkingOffStpChannel1Q = i;
+                    if (maxDeltaSetupChannel1Fi < tempDelta12)
+                        numberPaketMaxWorkingOffStpChannel1Fi = i;
+                    if (maxDeltaSetupChannel2Q < tempDelta21)
+                        numberPaketMaxWorkingOffStpChannel2Q = i;
+                    if (maxDeltaSetupChannel2Fi < tempDelta22)
+                        numberPaketMaxWorkingOffStpChannel2Fi = i;
 
-                    max_delta_ustanovka_kanal1_q = Max(max_delta_ustanovka_kanal1_q, tempDelta11);
-                    max_delta_ustanovka_kanal1_fi = Max(max_delta_ustanovka_kanal1_fi, tempDelta12);
-                    max_delta_ustanovka_kanal2_q = Max(max_delta_ustanovka_kanal2_q, tempDelta21);
-                    max_delta_ustanovka_kanal2_fi = Max(max_delta_ustanovka_kanal2_fi, tempDelta22);
+                    maxDeltaSetupChannel1Q = Max(maxDeltaSetupChannel1Q, tempDelta11);
+                    maxDeltaSetupChannel1Fi = Max(maxDeltaSetupChannel1Fi, tempDelta12);
+                    maxDeltaSetupChannel2Q = Max(maxDeltaSetupChannel2Q, tempDelta21);
+                    maxDeltaSetupChannel2Fi = Max(maxDeltaSetupChannel2Fi, tempDelta22);
 
-                    report[0] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal1_q +
-                                " Канал 1 по  q: " +
-                                Round(Max(max_delta_ustanovka_kanal1_q, tempDelta11) / 10, 1);
-                    report[1] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal1_fi +
-                                " Канал 1 по fi: " +
-                                Round(Max(max_delta_ustanovka_kanal1_fi, tempDelta12) / 10, 1);
-                    report[2] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal2_q +
-                                " Канал 2 по  q: " +
-                                Round(Max(max_delta_ustanovka_kanal2_q, tempDelta21), 1);;
-                    report[3] = "Номер кадра: " + number_paket_max_otrabot_ust_kanal2_fi +
-                                " Канал 2 по fi: " +
-                                Round(Max(max_delta_ustanovka_kanal2_fi, tempDelta22), 1);
-                    // Сохранение результатов
-
+                    //Канал 1 по q
+                    report[0] = numberPaketMaxWorkingOffStpChannel1Q.ToString();
+                    report[1] = Round(Max(maxDeltaSetupChannel1Q, tempDelta11) / 10, 1).ToString(CultureInfo.InvariantCulture);
+                    //Канал 1 по fi
+                    report[2] = numberPaketMaxWorkingOffStpChannel1Fi.ToString();
+                    report[3] = Round(Max(maxDeltaSetupChannel1Fi, tempDelta12) / 10, 1).ToString(CultureInfo.InvariantCulture);
+                    // Канал 2 по q
+                    report[4] = numberPaketMaxWorkingOffStpChannel2Q.ToString();
+                    report[5] = Round(Max(maxDeltaSetupChannel2Q, tempDelta21), 1).ToString(CultureInfo.InvariantCulture);
+                    // Канал 2 по fi
+                    report[6] = numberPaketMaxWorkingOffStpChannel2Fi.ToString();
+                    report[7] = Round(Max(maxDeltaSetupChannel2Fi, tempDelta22), 1).ToString(CultureInfo.InvariantCulture);
+                    //Номер прибора
+                    report[8] = _decoder[k].ParamsOedes[0].NumberDevice.ToString();
                     rightpackages++;
                 }
                 else if (_decoder[k].ParamsCvses[i].Launch && _decoder[k].ParamsCvses[i].Shod
@@ -566,12 +584,90 @@ namespace TelemetryAnalyzerEOS
                 _cbstatus[i] = _cblist[i].SelectedIndex.ToString();
             }
         }
+
+        #region FileOpenResult
+
         private void btnResultN_Click(object sender, EventArgs e)
         {
-            //CreateReport("1.txt", "Error");
-            if (File.Exists(@"1.txt"))
-                System.Diagnostics.Process.Start(@"1.txt");
+            OpenFile(0);
+        }
+
+        private void OpenFile(int lauchN)
+        {
+            if (File.Exists(_safeFilePathes[lauchN]))
+                System.Diagnostics.Process.Start(_safeFilePathes[lauchN] + ".txt");
             else MessageBox.Show(@"File not found");
         }
+
+        private void btnResultN1_Click(object sender, EventArgs e)
+        {
+            OpenFile(1);
+        }
+
+        private void btnResultN2_Click(object sender, EventArgs e)
+        {
+            OpenFile(2);
+        }
+
+        private void btnResultN3_Click(object sender, EventArgs e)
+        {
+            OpenFile(3);
+        }
+
+        private void btnResultN4_Click(object sender, EventArgs e)
+        {
+            OpenFile(4);
+        }
+
+        private void btnResultN5_Click(object sender, EventArgs e)
+        {
+            OpenFile(5);
+        }
+
+        private void btnResultN6_Click(object sender, EventArgs e)
+        {
+            OpenFile(6);
+        }
+
+        private void btnResultN7_Click(object sender, EventArgs e)
+        {
+            OpenFile(7);
+        }
+
+        private void btnResultN8_Click(object sender, EventArgs e)
+        {
+            OpenFile(8);
+        }
+
+        private void btnResultN9_Click(object sender, EventArgs e)
+        {
+            OpenFile(9);
+        }
+
+        private void btnResultN10_Click(object sender, EventArgs e)
+        {
+            OpenFile(10);
+        }
+
+        private void btnResultN11_Click(object sender, EventArgs e)
+        {
+            OpenFile(11);
+        }
+
+        private void btnResultN12_Click(object sender, EventArgs e)
+        {
+            OpenFile(12);
+        }
+
+        private void btnResultN13_Click(object sender, EventArgs e)
+        {
+            OpenFile(13);
+        }
+
+        private void btnResultSelfDiag_Click(object sender, EventArgs e)
+        {
+            OpenFile(14);
+        }
+#endregion
     }
 }
