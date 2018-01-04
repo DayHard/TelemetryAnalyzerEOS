@@ -48,11 +48,23 @@
   <ItemGroup>
     <Compile Include="DockPrlParams.cs" />
     <Compile Include="Decoder.cs" />
+    <Compile Include="FocusValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FocusValueForm.Designer.cs">
+      <DependentUpon>FocusValueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoRangeForm.Designer.cs">
+      <DependentUpon>LoRangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -62,8 +74,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FocusValueForm.resx">
+      <DependentUpon>FocusValueForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoRangeForm.resx">
+      <DependentUpon>LoRangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.en.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -4,7 +4,6 @@
     //Направление ОЭД-ЦВС
     public class DockPrlParamOedCvs
     {
-        private uint _numberDevice;
         private short _framenumber;
         //Сл.1 boolean
         private bool _ready; //Готов
@@ -333,12 +332,6 @@
         {
             get { return _Ttec; }
             set { _Ttec = value; }
-        }
-
-        public uint NumberDevice
-        {
-            get { return _numberDevice; }
-            set { _numberDevice = value; }
         }
 
         #endregion

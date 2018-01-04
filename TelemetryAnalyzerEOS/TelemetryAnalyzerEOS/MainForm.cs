@@ -16,7 +16,8 @@ using static System.Math;
 namespace TelemetryAnalyzerEOS
 {
     public partial class MainForm : Form
-    {
+    {     
+        #region Variable
         private delegate void TaskStatusChanged();
         private event TaskStatusChanged TaskIsComplite;
         private  LoadingForm _loadingForm;
@@ -27,13 +28,13 @@ namespace TelemetryAnalyzerEOS
         private List<PictureBox> _pblist;
         private IList<string> _safefileNames;
         private IList<string> _safeFilePathes;
-        #region Variable
+
 
         private const double  FokusKanal2 = 323.0;
+        private readonly string[] _cbstatus = new string[15];
 
         #endregion
 
-        private readonly string[] _cbstatus = new string[15];
 
         public MainForm()
         {
@@ -161,7 +162,7 @@ namespace TelemetryAnalyzerEOS
             //!!! FOR DEBUGING
             foreach (ComboBox t in _cblist)
             {
-                t.SelectedIndex = 1;
+                t.SelectedIndex = 2;
             }
 
             // Установка размеров формы, в соответствии с количеством выбранных файлов
@@ -332,7 +333,9 @@ namespace TelemetryAnalyzerEOS
                         else SetFailImage(i);
                         break;
                     case "2":
-                        CheckingTheAccumulationTime();
+                        if(CheckingTheAccumulationTime(i))
+                            SetSuccedImage(i);
+                        else SetFailImage(i);
                         break;
                     case "3":
                         CheckingTheCaptureAndRecaptureTime();
@@ -348,7 +351,7 @@ namespace TelemetryAnalyzerEOS
             TaskIsComplite?.Invoke();
         }
         // Создание отчета ошибки
-        private void CreateReport(string path, string data)
+        private static void CreateReport(string path, string data)
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
@@ -358,39 +361,7 @@ namespace TelemetryAnalyzerEOS
                 sw.Write(data);
             }
         }
-        // Создание файла отчет
-        private void CreateReport(string path, string[] data)
-        {
-            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
-            {
-                sw.WriteLine("			Отчет об отработке сигналов установок ОЭД 'ПАНЦИРЬ - С1'.");
-                sw.WriteLine();
-                sw.WriteLine("Файл: " + path);
-                sw.WriteLine();
-                sw.WriteLine("Отчет создан: " + DateTime.Now);
-                sw.WriteLine();
-                sw.WriteLine("Прибор №: {0} ", data[8]);
-                sw.WriteLine();
-                sw.WriteLine("_____________________________________________________________");
-                sw.WriteLine("|                  |         |                              | ");
-                sw.WriteLine("|      Каналы      | № кадра | Макс. погрешность в пикселах |");
-                sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|__________________|_________|______________________________|");
-                sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 1 по q  | {0}     | {1}                          |", data[0], data[1]);
-                sw.WriteLine("|__________________|_________|______________________________|");
-                sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 1 по fi | {0}     | {1}                          |", data[2], data[3]);
-                sw.WriteLine("|__________________|_________|______________________________|");
-                sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 2 по q  | {0}     | {1}                          |", data[4], data[5]);
-                sw.WriteLine("|__________________|_________|______________________________|");
-                sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 2 по fi | {0}     | {1}                          |", data[6], data[7]);
-                sw.WriteLine("|__________________|_________|______________________________|");
-                sw.WriteLine("Время запаздывания отработки сигналов установок - 20 милисекунд.");
-            }
-        }
+
         /// <summary>
         /// Установка изображения не удачно.
         /// </summary>
@@ -544,7 +515,7 @@ namespace TelemetryAnalyzerEOS
                     report[6] = numberPaketMaxWorkingOffStpChannel2Fi.ToString();
                     report[7] = Round(Max(maxDeltaSetupChannel2Fi, tempDelta22), 1).ToString(CultureInfo.InvariantCulture);
                     //Номер прибора
-                    report[8] = _decoder[k].ParamsOedes[0].NumberDevice.ToString();
+                    report[8] = _decoder[k].NumberDevice.ToString();
                     rightpackages++;
                 }
                 else if (_decoder[k].ParamsCvses[i].Launch && _decoder[k].ParamsCvses[i].Shod
@@ -556,13 +527,196 @@ namespace TelemetryAnalyzerEOS
                 }
             }
 
-            CreateReport(_safeFilePathes[k] + ".txt", report);
+            CheckingTheTuningOfThePlantSignalsReport(_safeFilePathes[k] + ".txt", report);
             return rightpackages != 0;
         }
-        //Проверка времени накопления
-        private void CheckingTheAccumulationTime()
+        /// <summary>
+        /// Создание файkа "Отчет об отработке сигналов установок ОЭД 'ПАНЦИРЬ - С1'" 
+        /// </summary>
+        /// <param name="path">Путь сохранения файла.</param>
+        /// <param name="data">Результаты теста.</param>
+        private static void CheckingTheTuningOfThePlantSignalsReport(string path, string[] data)
         {
+            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                sw.WriteLine("			Отчет об отработке сигналов установок ОЭД 'ПАНЦИРЬ - С1'.");
+                sw.WriteLine();
+                sw.WriteLine("Файл: " + path);
+                sw.WriteLine();
+                sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Прибор №: {0} ", data[8]);
+                sw.WriteLine();
+                sw.WriteLine("_____________________________________________________________");
+                sw.WriteLine("|                  |         |                              | ");
+                sw.WriteLine("|      Каналы      | № кадра | Макс. погрешность в пикселах |");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 1 по q  | {0}     | {1}                          |", data[0], data[1]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 1 по fi | {0}     | {1}                          |", data[2], data[3]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 2 по q  | {0}     | {1}                          |", data[4], data[5]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("|                  |         |                              |");
+                sw.WriteLine("|    Канал 2 по fi | {0}     | {1}                          |", data[6], data[7]);
+                sw.WriteLine("|__________________|_________|______________________________|");
+                sw.WriteLine("Время запаздывания отработки сигналов установок - 20 милисекунд.");
+            }
+        }
+        //Проверка времени накопления
+        private bool CheckingTheAccumulationTime(int k1)
+        {
+            var loRangeForm = new LoRangeForm();
+            loRangeForm.ShowDialog();
+
+            var num = 0; //номер кадра введеной дальности ЛО
+            int chl1BorderLow = 0, chl1BorderHight = 0;
+            int chl2BorderLow = 0, chl2BorderHight = 0;
+            double cmostime = 0, cmostime2 = 0;
+            var report = new string[17];
+
+            double dlo = loRangeForm.Range;
+            for (int i = 0; i < _decoder[k1].ParamsOedes.Length - 1; i++)
+            {
+                if (_decoder[k1].ParamsCvses[i].Dkp != (short) dlo) continue;
+                num = i;
+                break;
+            }
+            // В случае ввода неверной дальности
+            if (num == 0)
+            {
+                CreateReport(_safeFilePathes[k1] + ".txt", "Ошибка. Введена неверная дальность.");
+                return false;
+            }
             
+
+            var l1 = num;
+            while (_decoder[k1].ParamsOedes[l1].Yc1 >=
+                        _decoder[k1].ParamsOedes[num].Yc1 / 1.5)
+            {
+                chl1BorderLow = l1;
+                l1--;
+                if (l1 == 0)
+                break;
+            }
+      
+            l1 = chl1BorderLow;
+            while (_decoder[k1].ParamsOedes[l1].Yc1 >=
+                   _decoder[k1].ParamsOedes[num].Yc1 / 1.5)
+            {
+                chl1BorderHight = l1;
+                l1++;
+                if (l1 == _decoder[k1].ParamsOedes.Length)
+                    break;
+            }
+
+            var l2 = num;
+            while (_decoder[k1].ParamsOedes[l2].Yc1 >=
+                   _decoder[k1].ParamsOedes[num].Yc1 / 1.5)
+            {
+                chl2BorderLow = l2;
+                l2--;
+                if (l2 == 0)
+                    break;
+            }
+            l2 = chl2BorderLow;
+            while (_decoder[k1].ParamsOedes[l2].Yc2 >=
+                   _decoder[k1].ParamsOedes[num].Yc2 / 1.5)
+            {
+                //!!! Не понятно почему -1!!!
+                chl2BorderHight = l1 - 1;
+                l2++;
+                if (l2 == _decoder[k1].ParamsOedes.Length)
+                    break;
+            }
+
+            if (chl1BorderLow > 0)
+                {
+                    cmostime = (double) (_decoder[k1].ParamsCvses[chl1BorderLow].Dkp
+                                         - _decoder[k1].ParamsCvses[chl1BorderHight].Dkp) / 150;
+                    report[0] = 1.ToString();
+                    report[1] = _decoder[k1].ParamsOedes[num].Yc1.ToString();
+                    report[2] = dlo.ToString(CultureInfo.InvariantCulture);
+                    report[3] = chl1BorderLow.ToString();
+                    report[4] = _decoder[k1].ParamsCvses[chl1BorderLow].Dkp.ToString();
+                    report[5] = chl1BorderHight.ToString();
+                    report[6] = _decoder[k1].ParamsCvses[chl1BorderHight].Dkp.ToString();
+                    report[7] = cmostime.ToString(CultureInfo.InvariantCulture);
+                }
+                if (chl2BorderLow > 0)
+                {
+                    cmostime2 = (double) (_decoder[k1].ParamsCvses[chl2BorderLow].Dkp
+                                          - _decoder[k1].ParamsCvses[chl2BorderHight].Dkp) / 150;
+                    report[8] = 2.ToString();
+                    report[9] = _decoder[k1].ParamsOedes[num].Yc2.ToString();
+                    report[10] = dlo.ToString(CultureInfo.InvariantCulture);
+                    report[11] = chl2BorderLow.ToString();
+                    report[12] = _decoder[k1].ParamsCvses[chl2BorderLow].Dkp.ToString();
+                    report[13] = chl2BorderHight.ToString();
+                    report[14] = _decoder[k1].ParamsCvses[chl2BorderHight].Dkp.ToString();
+                    report[15] = cmostime2.ToString(CultureInfo.InvariantCulture);
+                }
+                report[16] = _decoder[k1].NumberDevice.ToString();
+                CheckingTheAccumulationTimeReport(_safeFilePathes[k1] + ".txt", report);
+            return !(cmostime < 8) && !(cmostime > 18) && !(cmostime2 < 8) && !(cmostime2 > 18);
+        }
+        /// <summary>
+        /// Создание файkа Отчет о времени накопления ФПЗС матриц ОЭД 'ПАНЦИРЬ - С1'"
+        /// </summary>
+        /// <param name="path">Путь сохранения файла.</param>
+        /// <param name="report">Массив данных отчет</param>
+        private static void CheckingTheAccumulationTimeReport(string path, string[] report)
+        {
+
+            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                sw.WriteLine("			Отчет о времени накопления ФПЗС матриц ОЭД 'ПАНЦИРЬ - С1'.");
+                sw.WriteLine();
+                sw.WriteLine("Файл: " + path);
+                sw.WriteLine();
+                sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Прибор №: {0} ", report[16]);
+                sw.WriteLine();
+                sw.WriteLine("Номер канала                                 -| {0}", report[0]);
+                sw.WriteLine();
+                sw.WriteLine("Значение уровня сигнала, ед.                 -| {0}", report[1]);
+                sw.WriteLine();
+                sw.WriteLine("Дальность до ЛО, м.                          -| {0}", report[2]);
+                sw.WriteLine();
+                sw.WriteLine("Кадр начала времени накопления               -| {0}", report[3]);
+                sw.WriteLine();
+                sw.WriteLine("Дальность начала времени накопления, м       -| {0}", report[4]);
+                sw.WriteLine();
+                sw.WriteLine("Кадр завершения времени накопления           -| {0}", report[5]);
+                sw.WriteLine();
+                sw.WriteLine("Дальность завершения времени накопления, м   -| {0}", report[6]);
+                sw.WriteLine();
+                sw.WriteLine("Время накопления, мкс                        -| {0}", report[7]);
+                sw.WriteLine();
+
+                sw.WriteLine();
+                sw.WriteLine("Номер канала                                 -| {0}", report[8]);
+                sw.WriteLine();
+                sw.WriteLine("Значение уровня сигнала, ед.                 -| {0}", report[9]);
+                sw.WriteLine();
+                sw.WriteLine("Дальность до ЛО, м.                          -| {0}", report[10]);
+                sw.WriteLine();
+                sw.WriteLine("Кадр начала времени накопления               -| {0}", report[11]);
+                sw.WriteLine();
+                sw.WriteLine("Дальность начала времени накопления, м       -| {0}", report[12]);
+                sw.WriteLine();
+                sw.WriteLine("Кадр завершения времени накопления           -| {0}", report[13]);
+                sw.WriteLine();
+                sw.WriteLine("Дальность завершения времени накопления, м   -| {0}", report[14]);
+                sw.WriteLine();
+                sw.WriteLine("Время накопления, мкс                        -| {0}", report[15]);
+                sw.WriteLine();
+            }
         }
         //Проверка времени захвата и перезахвата
         private void CheckingTheCaptureAndRecaptureTime()
@@ -578,7 +732,7 @@ namespace TelemetryAnalyzerEOS
         // Считывание состояния элементов GUI
         private void timerGUI_Tick(object sender, EventArgs e)
         {
-            if(_cblist != null)
+            if (_cblist == null) return;
             for (int i = 0; i < _cblist.Count; i++)
             {
                 _cbstatus[i] = _cblist[i].SelectedIndex.ToString();

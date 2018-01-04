@@ -7,6 +7,7 @@ namespace TelemetryAnalyzerEOS
         public DockPrlParamOedCvs[] ParamsOedes;
         public DockPrlParamCvsOed[] ParamsCvses;
 
+        public uint NumberDevice;
         private const uint SingBegin = 0xE4EF7289;
         private const uint SingEnd = 0x76EFFF28;
         private const uint CsPointer = 2300 * 4 + 8;
@@ -258,11 +259,11 @@ namespace TelemetryAnalyzerEOS
         {
             uint shift = 1;
 
-            ParamsOedes[counter].NumberDevice = _data[shift];
-            if (ParamsOedes[counter].NumberDevice == 0)
+            NumberDevice = _data[shift];
+            if (NumberDevice == 0)
             {
                 var pos = (uint)_data.Length - 4;
-                ParamsOedes[counter].NumberDevice = ToBigEndian(pos, 4);
+                NumberDevice = ToBigEndian(pos, 4);
             }
 
             shift = 8;
