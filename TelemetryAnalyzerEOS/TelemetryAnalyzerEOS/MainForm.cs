@@ -570,6 +570,11 @@ namespace TelemetryAnalyzerEOS
         //Проверка времени накопления
         private bool CheckingTheAccumulationTime(int k1)
         {
+            if (_decoder[k1].ParamsCvses.TakeWhile(t => t.Dkp <= 5000).Any())
+            {
+                CreateReport(_safeFilePathes[k1] + ".txt", "Ошибка. Файл не предназначен для данного типа проверок.");
+                return false;
+            }
             var loRangeForm = new LoRangeForm();
             loRangeForm.ShowDialog();
 
