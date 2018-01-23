@@ -29,7 +29,6 @@ namespace TelemetryAnalyzerEOS
         private IList<string> _safefileNames;
         private IList<string> _safeFilePathes;
 
-
         private const double  FokusKanal2 = 323.0;
         private readonly string[] _cbstatus = new string[15];
 
@@ -162,7 +161,7 @@ namespace TelemetryAnalyzerEOS
             //!!! FOR DEBUGING
             foreach (ComboBox t in _cblist)
             {
-                t.SelectedIndex = 2;
+                t.SelectedIndex = 0;
             }
 
             // Установка размеров формы, в соответствии с количеством выбранных файлов
@@ -411,10 +410,236 @@ namespace TelemetryAnalyzerEOS
         }
 
         //Проверка общей работоспособности
-        private static bool GeneralHealthCheck(int k)
+        private bool GeneralHealthCheck(int k)
         {
-            Thread.Sleep(2000);
+            var fvForm = new FocusValueForm();
+            fvForm.ShowDialog();
+            var focus = fvForm.FocusValue;
+
+            //Создание массива отчета
+            var report = new string[32];
+            report[0] = _decoder[k].NumberDevice.ToString();
+
+            #region Таблица 1                     
+            double speedDelta;
+            int numberPaketStartKanal1 = 0, numberPaketStartKanal2 = 0,
+                numberPaketFinishKanal1 = 0, numberPaketFinishKanal2 = 0,
+                idxLo1 = 0, idxLo2Uz = 0;
+            var neprerOldLo1 = 0;
+            var neprerOldLo2Uz = 0;
+            var numPkLo1 = new ushort[10001];
+            var numPkLo2Uzk = new ushort[10001];
+
+            // Канал 1
+            for (int i = 0; i < _decoder[k].ParamsOedes.Length; i++)
+            {
+                if (!_decoder[k].ParamsOedes[i].IndLo1) continue;
+                var neprerNewLo1 = i;
+                if (neprerNewLo1 == neprerOldLo1 + 1)//будет отображать установленные флаги если они были выставлены минимум 2 такта подряд
+                {
+                    numPkLo1[idxLo1] = (ushort)i;
+                    idxLo1++;
+                }
+                neprerOldLo1 = neprerNewLo1;
+
+                if (numberPaketStartKanal1 == 0)
+                {
+                    numberPaketStartKanal1 = i;                    //номер пакета в котором впервые появляется INDLO1
+                }
+                numberPaketFinishKanal1 = i - 1; //(-1 для подгона)
+            }
+
+            var numPkBeginLo1 = numPkLo1[0] - 1;//"-1" нужно для взятия первого пакета в кот. устан. флаг, т.к. в вычислении номера этого пакета из-за условия он увеличивается на 1
+            var numPkEndLo1 = numPkLo1[idxLo1 - 2]; // ПОДГОН! (было -1)
+
+            if (_decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber > 
+                _decoder[k].ParamsOedes[numberPaketStartKanal1].FrameNumber)
+            {
+                numPkBeginLo1 = numberPaketStartKanal1;
+            }
+
+            double speed = 0;
+            for (int iii = 1; iii < 10; iii++)
+            {
+
+                var q1K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Qkd1 +
+                            _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Qkk1;
+                var q0K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Qkd1 +
+                            _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Qkk1;
+                var fi1K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Fikd1 +
+                         _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Fikk1;
+                var fi0K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Fikd1 +
+                         _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Fikk1;
+                speedDelta = Sqrt(Pow(q1K1 - q0K1, 2) + Pow(fi1K1 - fi0K1, 2));
+                if (speed < speedDelta) speed = speedDelta;
+            }
+            speed = speed * 50 / 3600;
+
+            // Массив отчета канал 1
+            report[1] = numPkBeginLo1.ToString();
+            report[2] = Round(speed,1).ToString(CultureInfo.CurrentCulture);
+            report[3] = _decoder[k].ParamsOedes[numPkBeginLo1].Yc1.ToString();
+            report[4] = _decoder[k].ParamsOedes[numPkBeginLo1].Yc2.ToString();
+            report[5] = numPkEndLo1.ToString();
+            report[6] = @"0.0";
+            report[7] = _decoder[k].ParamsOedes[numPkEndLo1].Yc1.ToString();
+            report[8] = _decoder[k].ParamsOedes[numPkEndLo1].Yc2.ToString();
+
+
+            // Канал 2
+
+            for (int i = 0; i < _decoder[k].ParamsOedes.Length; i++)
+            {
+                if (!_decoder[k].ParamsOedes[i].IndLo2) continue;
+                var neprerNewLo2Uz = i;
+                if (neprerNewLo2Uz == neprerOldLo2Uz + 1)//будет отображать установленные флаги если они были выставлены минимум 2 такта подряд
+                {
+                    numPkLo2Uzk[idxLo2Uz] = (ushort)i;
+                    idxLo2Uz++;
+                }
+                neprerOldLo2Uz = neprerNewLo2Uz;
+
+                if (numberPaketStartKanal2 == 0)
+                {
+                    numberPaketStartKanal2 = i;                    //номер пакета в котором впервые появляется INDLO1
+                }
+                numberPaketFinishKanal2 = i; //(-1 для подгона)
+            }
+
+            var numPkBeginLo2Uz = numPkLo2Uzk[0] - 1;//"-1" нужно для взятия первого пакета в кот. устан. флаг, т.к. в вычислении номера этого пакета из-за условия он увеличивается на 1
+            var numPkEndLo2Uz = numPkLo2Uzk[idxLo2Uz - 2]; // ПОДГОН! (было -1)
+
+            if (_decoder[k].ParamsOedes[numPkBeginLo2Uz].FrameNumber >
+                _decoder[k].ParamsOedes[numberPaketStartKanal2].FrameNumber)
+            {
+                numPkBeginLo2Uz = numberPaketStartKanal2;
+            }
+
+            speed = 0;
+            for (int iii = 1; iii < 10; iii++)
+            {
+
+
+                var q1K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkd2 +
+                        _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkk2;
+                var q0K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Qkd2 +
+                        _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Qkk2;
+                var fi1K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Fikd2 +
+                         _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Fikk2;
+                var fi0K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Fikd2 +
+                         _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Fikk2;
+                speedDelta = Sqrt(Pow(q1K2 - q0K2, 2) + Pow(fi1K2 - fi0K2, 2));
+                if (speed < speedDelta) speed = speedDelta;
+            }
+            speed = speed * 50 / 3600;
+
+            // Массив отчета канал 2
+            report[9] = numPkBeginLo2Uz.ToString();
+            report[10] = Round(speed, 1).ToString(CultureInfo.CurrentCulture);
+            report[11] = _decoder[k].ParamsOedes[numPkBeginLo2Uz].Yc1.ToString();
+            report[12] = _decoder[k].ParamsOedes[numPkBeginLo2Uz].Yc2.ToString();
+            report[13] = numPkEndLo2Uz.ToString();
+            report[14] = @"0.0";
+            report[15] = _decoder[k].ParamsOedes[numPkEndLo2Uz].Yc1.ToString();
+            report[16] = _decoder[k].ParamsOedes[numPkEndLo2Uz].Yc2.ToString();
+            #endregion
+
+            #region Таблица 2 (Таблица размера полей анализа)
+
+           // Вычисление параментров первой строки 
+            if (_decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber >
+                _decoder[k].ParamsOedes[numberPaketStartKanal1].FrameNumber)
+            {
+                numPkBeginLo1 = numberPaketStartKanal1;
+            }
+
+            // Отчет начинается с элемента 17
+            // Строка 1 таблицы
+            report[17] = _decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber.ToString();
+            report[18] = ((double)_decoder[k].ParamsOedes[numPkBeginLo1].Focuspc / 10).ToString();
+            report[19] = Round((double)_decoder[k].ParamsOedes[numPkBeginLo1].DeltaA1 / 120, 1).ToString();
+
+            // Строка 2 таблицы
+            report[20] = _decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber.ToString();
+            report[21] = ((double)_decoder[k].ParamsOedes[numPkBeginLo1].Focuspc / 10).ToString();
+            report[22] = Round((double)_decoder[k].ParamsOedes[numPkBeginLo1].DeltaA1 / 120, 1).ToString();
+
+            // Строка 3 таблицы
+            report[23] = _decoder[k].ParamsOedes[numberPaketFinishKanal1].FrameNumber.ToString();
+            report[24] = ((double)_decoder[k].ParamsOedes[numberPaketFinishKanal1].Focuspc / 10).ToString();
+            report[25] = Round((double)_decoder[k].ParamsOedes[numberPaketFinishKanal1].DeltaA1 / 120, 1).ToString();
+
+            // Строка 4 таблицы
+            report[26] = _decoder[k].ParamsOedes[numPkBeginLo2Uz].FrameNumber.ToString();
+            report[27] = focus.ToString();
+            report[28] = Round((double)_decoder[k].ParamsOedes[numPkBeginLo2Uz].DeltaA2 / 120, 1).ToString();
+
+            // Строка 5 таблицы
+            report[29] = _decoder[k].ParamsOedes[numPkEndLo2Uz].FrameNumber.ToString();
+            report[30] = focus.ToString();
+            report[31] = Round((double)_decoder[k].ParamsOedes[numPkEndLo2Uz].DeltaA2 / 120, 1).ToString();
+            #endregion
+
+            GeneralHealthCheckReport(_safeFilePathes[k] + ".txt", report);
             return true;
+        }
+
+        private static void GeneralHealthCheckReport(string path, string[] report)
+        {
+            if (report.Length != 32) return;     
+            
+            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                sw.WriteLine("			Отчет о прохождении сеанса боевой работы ОЭД 'ПАНЦИРЬ - С1'.");
+                sw.WriteLine();                
+                sw.WriteLine("Файл: " + path);
+                sw.WriteLine();
+                sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Прибор №: {0} ", report[0]);
+                sw.WriteLine();
+                sw.WriteLine("_______________________________________________________________");
+                sw.WriteLine("|                  |          |          | Уровень   | Уровень   |");
+                sw.WriteLine("|   Режим          | № кадра  | Скорость | сигнала в | сигнала в |");
+                sw.WriteLine("|                  |          | (гр/c)   | канале 1  | канале 2  |");
+                sw.WriteLine("|__________________|__________|__________|___________|___________|");
+                sw.WriteLine("|         |        |          |          |           |           |");
+                sw.WriteLine("| Сопрово | начало |   {0}    |   {1}    |   {2}     |   {3}     |", report[1], report[2], report[3], report[4]);
+                sw.WriteLine("| ждение  |________|__________|__________|___________|___________|");
+                sw.WriteLine("| ЛО1     |        |          |          |           |           |");
+                sw.WriteLine("|         | конец  |   {0}    |   {1}    |   {2}     |   {3}     |", report[5], report[6], report[7], report[8]);
+                sw.WriteLine("|_________|________|__________|__________|___________|___________|");
+                sw.WriteLine("|         |        |          |          |           |           |");
+                sw.WriteLine("| Сопрово | начало |   {0}    |   {1}    |   {2}     |   {3}     |", report[9], report[10], report[11], report[12]);
+                sw.WriteLine("| ждение  |________|__________|__________|___________|___________|");
+                sw.WriteLine("| ЛО2     |        |          |          |           |           |");
+                sw.WriteLine("| _(узк.) | конец  |   {0}    |   {1}    |   {2}     |   {3}     |", report[13], report[14], report[15], report[16]);
+                sw.WriteLine("|_________|________|__________|__________|___________|___________|");
+                sw.WriteLine(" ЛО1 - импульс. источник в к1; ЛО2 - импульс. источник в к2; ");
+                sw.WriteLine();
+                sw.WriteLine("			Таблица размеров полей анализа.");
+                sw.WriteLine();
+                sw.WriteLine("__________________________________________________________________");
+                sw.WriteLine("|                 |         |            |                       |");
+                sw.WriteLine("|      Режим      | № кадра | Фокус (мм) | Размер поля анализа   |");
+                sw.WriteLine("|                 |         |            | (в угловых минутах ±) |");
+                sw.WriteLine("|_________________|_________|____________|_______________________|");
+                sw.WriteLine("|                 |         |            |                       |");
+                sw.WriteLine("|   Обнар. Кан1.  |  {0}    |  {1}       | {2}                   |", report[17], report[18], report[19]);
+                sw.WriteLine("|_________________|_________|____________|_______________________|");
+                sw.WriteLine("|                 |         |            |                       |");
+                sw.WriteLine("|Сопр. (нач) Кан1.|  {0}    |  {1}       | {2}                   |", report[20], report[21], report[22]);
+                sw.WriteLine("|_________________|_________|____________|_______________________|");
+                sw.WriteLine("|                 |         |            |                       |");
+                sw.WriteLine("|Сопр. (кон) Кан1.|  {0}    |  {1}       | {2}                   |", report[23], report[24], report[25]);
+                sw.WriteLine("|_________________|_________|____________|_______________________|");
+                sw.WriteLine("|                 |         |            |                       |");
+                sw.WriteLine("|Обнар. Кан2.     |  {0}    |  {1}       | {2}                   |", report[26], report[27], report[28]);
+                sw.WriteLine("|_________________|_________|____________|_______________________|");
+                sw.WriteLine("|                 |         |            |                       |");
+                sw.WriteLine("|Сопр. Кан2.      |  {0}    |  {1}       | {2}                   |", report[29], report[30], report[31]);
+                sw.WriteLine("|_________________|_________|____________|_______________________|");
+            }
         }
         //Проверка отработки сигналов установок
         private bool CheckingTheTuningOfThePlantSignals(int k)
@@ -531,7 +756,7 @@ namespace TelemetryAnalyzerEOS
             return rightpackages != 0;
         }
         /// <summary>
-        /// Создание файkа "Отчет об отработке сигналов установок ОЭД 'ПАНЦИРЬ - С1'" 
+        /// Создание файла "Отчет об отработке сигналов установок ОЭД 'ПАНЦИРЬ - С1'" 
         /// </summary>
         /// <param name="path">Путь сохранения файла.</param>
         /// <param name="data">Результаты теста.</param>
