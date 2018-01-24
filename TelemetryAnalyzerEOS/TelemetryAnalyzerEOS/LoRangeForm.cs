@@ -19,5 +19,10 @@ namespace TelemetryAnalyzerEOS
             else
                 MessageBox.Show("Недопустимое значение дальности, пожалуйста введите другое значение.");
         }
+
+        private void LoRangeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -71,6 +71,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LoRangeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "LoRangeForm";
+            this.Load += new System.EventHandler(this.LoRangeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

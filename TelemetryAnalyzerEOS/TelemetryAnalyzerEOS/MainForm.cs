@@ -46,6 +46,7 @@ namespace TelemetryAnalyzerEOS
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
             // Получение текущей версии ПО
             lbVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
@@ -409,12 +410,18 @@ namespace TelemetryAnalyzerEOS
             }));
         }
 
+        #region Тесты
         //Проверка общей работоспособности
         private bool GeneralHealthCheck(int k)
         {
             var fvForm = new FocusValueForm();
             fvForm.ShowDialog();
             var focus = fvForm.FocusValue;
+            if (focus < 300 || focus > 400)
+            {
+                CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Значение фокуса введено не верно.");
+                return false;
+            }
 
             //Создание массива отчета
             var report = new string[32];
@@ -583,7 +590,6 @@ namespace TelemetryAnalyzerEOS
             GeneralHealthCheckReport(_safeFilePathes[k] + ".txt", report);
             return true;
         }
-
         private static void GeneralHealthCheckReport(string path, string[] report)
         {
             if (report.Length != 32) return;     
@@ -598,7 +604,7 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine();
                 sw.WriteLine("Прибор №: {0} ", report[0]);
                 sw.WriteLine();
-                sw.WriteLine("_______________________________________________________________");
+                sw.WriteLine("__________________________________________________________________");
                 sw.WriteLine("|                  |          |          | Уровень   | Уровень   |");
                 sw.WriteLine("|   Режим          | № кадра  | Скорость | сигнала в | сигнала в |");
                 sw.WriteLine("|                  |          | (гр/c)   | канале 1  | канале 2  |");
@@ -810,6 +816,11 @@ namespace TelemetryAnalyzerEOS
             var report = new string[17];
 
             double dlo = loRangeForm.Range;
+            if (dlo < 0 || dlo > 65536)
+            {
+                CreateReport(_safeFilePathes[k1] + ".txt", "Ошибка. Дальность может быть от 0 до 65535");
+                return false;
+            }
             for (int i = 0; i < _decoder[k1].ParamsOedes.Length - 1; i++)
             {
                 if (_decoder[k1].ParamsCvses[i].Dkp != (short) dlo) continue;
@@ -958,7 +969,7 @@ namespace TelemetryAnalyzerEOS
         {
             
         }
-
+        #endregion
         // Считывание состояния элементов GUI
         private void timerGUI_Tick(object sender, EventArgs e)
         {
