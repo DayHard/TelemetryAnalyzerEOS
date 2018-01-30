@@ -37,7 +37,7 @@
             // 
             this.btnLoRange.Location = new System.Drawing.Point(52, 31);
             this.btnLoRange.Name = "btnLoRange";
-            this.btnLoRange.Size = new System.Drawing.Size(88, 23);
+            this.btnLoRange.Size = new System.Drawing.Size(70, 23);
             this.btnLoRange.TabIndex = 0;
             this.btnLoRange.Text = "Ok";
             this.btnLoRange.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.tbLoRange.Location = new System.Drawing.Point(124, 5);
             this.tbLoRange.Name = "tbLoRange";
-            this.tbLoRange.Size = new System.Drawing.Size(46, 20);
+            this.tbLoRange.Size = new System.Drawing.Size(45, 20);
             this.tbLoRange.TabIndex = 2;
             this.tbLoRange.Text = "0";
             // 
@@ -64,14 +64,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(182, 61);
+            this.ClientSize = new System.Drawing.Size(184, 61);
             this.Controls.Add(this.tbLoRange);
             this.Controls.Add(this.lbLoRange);
             this.Controls.Add(this.btnLoRange);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LoRangeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LoRangeForm";
+            this.Text = "Дальность ЛО";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,11 +35,11 @@
             // 
             // btnFocusValue
             // 
-            this.btnFocusValue.Location = new System.Drawing.Point(54, 38);
+            this.btnFocusValue.Location = new System.Drawing.Point(86, 31);
             this.btnFocusValue.Name = "btnFocusValue";
-            this.btnFocusValue.Size = new System.Drawing.Size(134, 23);
+            this.btnFocusValue.Size = new System.Drawing.Size(69, 23);
             this.btnFocusValue.TabIndex = 0;
-            this.btnFocusValue.Text = "Ok";
+            this.btnFocusValue.Text = "Ок";
             this.btnFocusValue.UseVisualStyleBackColor = true;
             this.btnFocusValue.Click += new System.EventHandler(this.btnFocusValue_Click);
             // 
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 72);
+            this.ClientSize = new System.Drawing.Size(254, 61);
             this.Controls.Add(this.lbFocusValue);
             this.Controls.Add(this.tbFocusValue);
             this.Controls.Add(this.btnFocusValue);
@@ -73,7 +73,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FocusValueForm";
+            this.Text = "Значение фокуса";
             this.ResumeLayout(false);
             this.PerformLayout();
 
