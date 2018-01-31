@@ -712,7 +712,6 @@
             this.Controls.Add(this.gbLoadedFileList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
