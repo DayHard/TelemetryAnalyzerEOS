@@ -12,15 +12,14 @@ using System.Xml;
 using System.Xml.Linq;
 using static System.Math;
 
-
 namespace TelemetryAnalyzerEOS
 {
     public partial class MainForm : Form
-    {     
+    {
         #region Variable
         private delegate void TaskStatusChanged();
         private event TaskStatusChanged TaskIsComplite;
-        private  LoadingForm _loadingForm;
+        private LoadingForm _loadingForm;
 
         private Decoder[] _decoder;
         private List<ComboBox> _cblist;
@@ -29,7 +28,7 @@ namespace TelemetryAnalyzerEOS
         private IList<string> _safefileNames;
         private IList<string> _safeFilePathes;
 
-        private const double  FokusKanal2 = 323.0;
+        private const double FokusKanal2 = 323.0;
         private readonly string[] _cbstatus = new string[15];
 
         #endregion
@@ -58,7 +57,6 @@ namespace TelemetryAnalyzerEOS
         // Установка параметров Label, ComboBox, PictureBox, Button
         private void SetProperties(IList<string> safeFileNames)
         {
-
             // Создание списка Label 
             // установка видимости , согласно количеству загруженных файлов
             var lblist = new List<Label>
@@ -82,8 +80,8 @@ namespace TelemetryAnalyzerEOS
 
             for (int i = 0; i < safeFileNames.Count; i++)
             {
-               lblist[i].Text = safeFileNames[i] + @" :";
-               lblist[i].Visible = true;
+                lblist[i].Text = safeFileNames[i] + @" :";
+                lblist[i].Visible = true;
             }
 
             // Создание списка ComboBox 
@@ -107,8 +105,8 @@ namespace TelemetryAnalyzerEOS
                 cbSelfDiagnosis
             };
 
-             for (int i = 0; i < safeFileNames.Count; i++)
-                 _cblist[i].Visible = true;
+            for (int i = 0; i < safeFileNames.Count; i++)
+                _cblist[i].Visible = true;
 
             // Создание списка PictureBox 
             _pblist = new List<PictureBox>
@@ -132,7 +130,7 @@ namespace TelemetryAnalyzerEOS
 
             for (int i = 0; i < safeFileNames.Count; i++)
                 _pblist[i].Visible = true;
-            
+
             // Создание списка Button, 
             // установка видимости кнопок согласно количеству загруженных файлов
             _btnlist = new List<Button>
@@ -157,11 +155,11 @@ namespace TelemetryAnalyzerEOS
             for (int i = 0; i < safeFileNames.Count; i++)
                 _btnlist[i].Visible = true;
 
-            //!!! FOR DEBUGING
-            foreach (ComboBox t in _cblist)
-            {
-                t.SelectedIndex = 3;
-            }
+            ////!!! FOR DEBUGING
+            //foreach (ComboBox t in _cblist)
+            //{
+            //    t.SelectedIndex = 3;
+            //}
 
             // Установка размеров формы, в соответствии с количеством выбранных файлов
             Height = 135 + safeFileNames.Count * 31;
@@ -232,13 +230,14 @@ namespace TelemetryAnalyzerEOS
         // Загрузка файла с данными
         private bool LoadFiles()
         {
+            openFileDialog.Filter = @"Hex files (.imi)|*.imi";
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length <= 15)
             {
                 SetProperties(openFileDialog.SafeFileNames);
                 _safefileNames = openFileDialog.SafeFileNames;
                 _safeFilePathes = openFileDialog.FileNames;
             }
-            else 
+            else
             {
                 // Если пользователем выбрано больше 15 файлов
                 // Запрос на повтор выбора файла или закрытие приложения
@@ -277,6 +276,16 @@ namespace TelemetryAnalyzerEOS
         //Тестирование, согласно установленным параметрам
         private void btnStartAnalyze_Click(object sender, EventArgs e)
         {
+            // Проверяем, был ли выбран хотябы один тест, иначе игнорируем
+
+            for (int i = 0; i < _cblist.Count; i++)
+            {
+                if (_cblist[i].SelectedIndex != -1) break;
+                if (i != _cblist.Count - 1) continue;
+                MessageBox.Show(@"Выберите тест для проверки", @"Внимание", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
             // Выделение памяти, согласно количеству загруженных файлов
             // Класс отвечает за Открытие\Декодирование файлов
             _decoder = new Decoder[openFileDialog.FileNames.Length];
@@ -287,7 +296,7 @@ namespace TelemetryAnalyzerEOS
                 Owner = this,
                 StartPosition = StartPosition
             };
-                _loadingForm.Show();
+            _loadingForm.Show();
 
             // Установка максимального значения прогресс бара, согласно количеству файлов
             _loadingForm.pbAnalysing.Maximum = _decoder.Length;
@@ -301,13 +310,13 @@ namespace TelemetryAnalyzerEOS
             // Создание тасков для декодирования (иначе подвисает форма)
             for (int i = 0; i < openFileDialog.FileNames.Length; i++)
             {
-                Task.Factory.StartNew(DataAnalysis,i);
-            }  
+                Task.Factory.StartNew(DataAnalysis, i);
+            }
         }
         //Загрузка, декодирование и анализ данных
         private void DataAnalysis(object possition)
         {
-            var i = (int) possition;
+            var i = (int)possition;
             // Проверка, выбран ли тест
             if (_cbstatus[i] != "-1")
             {
@@ -322,7 +331,7 @@ namespace TelemetryAnalyzerEOS
                 {
                     case "0":
                         if (GeneralHealthCheck(i))
-                             SetSuccedImage(i);
+                            SetSuccedImage(i);
                         else SetFailImage(i);
                         break;
                     case "1":
@@ -331,20 +340,22 @@ namespace TelemetryAnalyzerEOS
                         else SetFailImage(i);
                         break;
                     case "2":
-                        if(CheckingTheAccumulationTime(i))
+                        if (CheckingTheAccumulationTime(i))
                             SetSuccedImage(i);
                         else SetFailImage(i);
                         break;
                     case "3":
-                        if(CheckingTheCaptureAndRecaptureTime(i))
+                        if (CheckingTheCaptureAndRecaptureTime(i))
                             SetSuccedImage(i);
                         else SetFailImage(i);
                         break;
                     case "4":
-                        DiagnosticResultsAnalysis();
+                        if (DiagnosticResultsAnalysis(i))
+                            SetSuccedImage(i);
+                        else SetFailImage(i);
                         break;
                     default:
-                        throw new Exception("ComboBox switch exception.");
+                        throw new Exception("Ошибка выбора комбобокс.");
                 }
             }
             // Вызов события завершения работы потока (необходимо для работы прогесс бара)
@@ -436,7 +447,7 @@ namespace TelemetryAnalyzerEOS
             #region Таблица 1                     
             double speedDelta;
             int numberPaketStartKanal1 = 0, numberPaketStartKanal2 = 0,
-                numberPaketFinishKanal1 = 0, numberPaketFinishKanal2 = 0,
+                numberPaketFinishKanal1 = 0,
                 idxLo1 = 0, idxLo2Uz = 0;
             var neprerOldLo1 = 0;
             var neprerOldLo2Uz = 0;
@@ -465,7 +476,7 @@ namespace TelemetryAnalyzerEOS
             var numPkBeginLo1 = numPkLo1[0] - 1;//"-1" нужно для взятия первого пакета в кот. устан. флаг, т.к. в вычислении номера этого пакета из-за условия он увеличивается на 1
             var numPkEndLo1 = numPkLo1[idxLo1 - 2]; // ПОДГОН! (было -1)
 
-            if (_decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber > 
+            if (_decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber >
                 _decoder[k].ParamsOedes[numberPaketStartKanal1].FrameNumber)
             {
                 numPkBeginLo1 = numberPaketStartKanal1;
@@ -476,13 +487,13 @@ namespace TelemetryAnalyzerEOS
             {
 
                 var q1K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Qkd1 +
-                            _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Qkk1;
+                           _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Qkk1;
                 var q0K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Qkd1 +
-                            _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Qkk1;
+                           _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Qkk1;
                 var fi1K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Fikd1 +
-                         _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Fikk1;
+                            _decoder[k].ParamsOedes[numPkBeginLo1 + iii].Fikk1;
                 var fi0K1 = _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Fikd1 +
-                         _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Fikk1;
+                            _decoder[k].ParamsOedes[numPkBeginLo1 + iii - 1].Fikk1;
                 speedDelta = Sqrt(Pow(q1K1 - q0K1, 2) + Pow(fi1K1 - fi0K1, 2));
                 if (speed < speedDelta) speed = speedDelta;
             }
@@ -490,7 +501,7 @@ namespace TelemetryAnalyzerEOS
 
             // Массив отчета канал 1
             report[1] = numPkBeginLo1.ToString();
-            report[2] = Round(speed,1).ToString(CultureInfo.CurrentCulture);
+            report[2] = Round(speed, 1).ToString(CultureInfo.CurrentCulture);
             report[3] = _decoder[k].ParamsOedes[numPkBeginLo1].Yc1.ToString();
             report[4] = _decoder[k].ParamsOedes[numPkBeginLo1].Yc2.ToString();
             report[5] = numPkEndLo1.ToString();
@@ -516,7 +527,6 @@ namespace TelemetryAnalyzerEOS
                 {
                     numberPaketStartKanal2 = i;                    //номер пакета в котором впервые появляется INDLO1
                 }
-                numberPaketFinishKanal2 = i; //(-1 для подгона)
             }
 
             var numPkBeginLo2Uz = numPkLo2Uzk[0] - 1;//"-1" нужно для взятия первого пакета в кот. устан. флаг, т.к. в вычислении номера этого пакета из-за условия он увеличивается на 1
@@ -534,13 +544,13 @@ namespace TelemetryAnalyzerEOS
 
 
                 var q1K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkd2 +
-                        _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkk2;
+                           _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkk2;
                 var q0K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Qkd2 +
-                        _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Qkk2;
+                           _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Qkk2;
                 var fi1K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Fikd2 +
-                         _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Fikk2;
+                            _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Fikk2;
                 var fi0K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Fikd2 +
-                         _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Fikk2;
+                            _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1].Fikk2;
                 speedDelta = Sqrt(Pow(q1K2 - q0K2, 2) + Pow(fi1K2 - fi0K2, 2));
                 if (speed < speedDelta) speed = speedDelta;
             }
@@ -559,7 +569,7 @@ namespace TelemetryAnalyzerEOS
 
             #region Таблица 2 (Таблица размера полей анализа)
 
-           // Вычисление параментров первой строки 
+            // Вычисление параментров первой строки 
             if (_decoder[k].ParamsOedes[numPkBeginLo1].FrameNumber >
                 _decoder[k].ParamsOedes[numberPaketStartKanal1].FrameNumber)
             {
@@ -599,12 +609,12 @@ namespace TelemetryAnalyzerEOS
         // Отчет: Проверка общей работоспособности
         private static void GeneralHealthCheckReport(string path, string[] report)
         {
-            if (report.Length != 32) return;     
-            
+            if (report.Length != 32) return;
+
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
                 sw.WriteLine("			Отчет о прохождении сеанса боевой работы ОЭД 'ПАНЦИРЬ - С1'.");
-                sw.WriteLine();                
+                sw.WriteLine();
                 sw.WriteLine("Файл: " + path);
                 sw.WriteLine();
                 sw.WriteLine("Отчет создан: " + DateTime.Now);
@@ -617,16 +627,16 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("|                  |          | (гр/c)   | канале 1  | канале 2  |");
                 sw.WriteLine("|__________________|__________|__________|___________|___________|");
                 sw.WriteLine("|         |        |          |          |           |           |");
-                sw.WriteLine("| Сопрово | начало |   {0}    |   {1}    |   {2}     |   {3}     |", report[1], report[2], report[3], report[4]);
+                sw.WriteLine("| Сопрово | начало |   {0}  |   {1}  |   {2}   |   {3}   |", report[1].PadRight(5), report[2].PadRight(5), report[3].PadRight(5), report[4].PadRight(5));
                 sw.WriteLine("| ждение  |________|__________|__________|___________|___________|");
                 sw.WriteLine("| ЛО1     |        |          |          |           |           |");
-                sw.WriteLine("|         | конец  |   {0}    |   {1}    |   {2}     |   {3}     |", report[5], report[6], report[7], report[8]);
+                sw.WriteLine("|         | конец  |   {0}  |   {1}  |   {2}   |   {3}   |", report[5].PadRight(5), report[6].PadRight(5), report[7].PadRight(5), report[8].PadRight(5));
                 sw.WriteLine("|_________|________|__________|__________|___________|___________|");
                 sw.WriteLine("|         |        |          |          |           |           |");
-                sw.WriteLine("| Сопрово | начало |   {0}    |   {1}    |   {2}     |   {3}     |", report[9], report[10], report[11], report[12]);
+                sw.WriteLine("| Сопрово | начало |   {0}  |   {1}  |   {2}   |   {3}   |", report[9].PadRight(5), report[10].PadRight(5), report[11].PadRight(5), report[12].PadRight(5));
                 sw.WriteLine("| ждение  |________|__________|__________|___________|___________|");
                 sw.WriteLine("| ЛО2     |        |          |          |           |           |");
-                sw.WriteLine("| _(узк.) | конец  |   {0}    |   {1}    |   {2}     |   {3}     |", report[13], report[14], report[15], report[16]);
+                sw.WriteLine("| _(узк.) | конец  |   {0}  |   {1}  |   {2}   |   {3}   |", report[13].PadRight(5), report[14].PadRight(5), report[15].PadRight(5), report[16].PadRight(5));
                 sw.WriteLine("|_________|________|__________|__________|___________|___________|");
                 sw.WriteLine(" ЛО1 - импульс. источник в к1; ЛО2 - импульс. источник в к2; ");
                 sw.WriteLine();
@@ -638,19 +648,19 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("|                 |         |            | (в угловых минутах ±) |");
                 sw.WriteLine("|_________________|_________|____________|_______________________|");
                 sw.WriteLine("|                 |         |            |                       |");
-                sw.WriteLine("|   Обнар. Кан1.  |  {0}    |  {1}       | {2}                   |", report[17], report[18], report[19]);
+                sw.WriteLine("|   Обнар. Кан1.  |  {0}  |  {1}     | {2}                 |", report[17].PadRight(5), report[18].PadRight(5), report[19].PadRight(5));
                 sw.WriteLine("|_________________|_________|____________|_______________________|");
                 sw.WriteLine("|                 |         |            |                       |");
-                sw.WriteLine("|Сопр. (нач) Кан1.|  {0}    |  {1}       | {2}                   |", report[20], report[21], report[22]);
+                sw.WriteLine("|Сопр. (нач) Кан1.|  {0}  |  {1}     | {2}                 |", report[20].PadRight(5), report[21].PadRight(5), report[22].PadRight(5));
                 sw.WriteLine("|_________________|_________|____________|_______________________|");
                 sw.WriteLine("|                 |         |            |                       |");
-                sw.WriteLine("|Сопр. (кон) Кан1.|  {0}    |  {1}       | {2}                   |", report[23], report[24], report[25]);
+                sw.WriteLine("|Сопр. (кон) Кан1.|  {0}  |  {1}     | {2}                 |", report[23].PadRight(5), report[24].PadRight(5), report[25].PadRight(5));
                 sw.WriteLine("|_________________|_________|____________|_______________________|");
                 sw.WriteLine("|                 |         |            |                       |");
-                sw.WriteLine("|Обнар. Кан2.     |  {0}    |  {1}       | {2}                   |", report[26], report[27], report[28]);
+                sw.WriteLine("|Обнар. Кан2.     |  {0}  |  {1}     | {2}                 |", report[26].PadRight(5), report[27].PadRight(5), report[28].PadRight(5));
                 sw.WriteLine("|_________________|_________|____________|_______________________|");
                 sw.WriteLine("|                 |         |            |                       |");
-                sw.WriteLine("|Сопр. Кан2.      |  {0}    |  {1}       | {2}                   |", report[29], report[30], report[31]);
+                sw.WriteLine("|Сопр. Кан2.      |  {0}  |  {1}     | {2}                 |", report[29].PadRight(5), report[30].PadRight(5), report[31].PadRight(5));
                 sw.WriteLine("|_________________|_________|____________|_______________________|");
             }
         }
@@ -684,16 +694,16 @@ namespace TelemetryAnalyzerEOS
                     && !_decoder[k].ParamsCvses[i].SoprLO1 && !_decoder[k].ParamsCvses[i].SoprLO2)
                 {
                     // По каналу 1
-                    if (_decoder[k].ParamsCvses[i].Deltaqk1 <11000 &&
-                        _decoder[k].ParamsCvses[i].Deltafik1 < 14000 && 
+                    if (_decoder[k].ParamsCvses[i].Deltaqk1 < 11000 &&
+                        _decoder[k].ParamsCvses[i].Deltafik1 < 14000 &&
                         i > 100 &&
-                        _decoder[k].ParamsCvses[i + 1].Deltaqk1 < 11000 && 
+                        _decoder[k].ParamsCvses[i + 1].Deltaqk1 < 11000 &&
                         _decoder[k].ParamsCvses[i + 1].Deltafik1 < 14000)
                     {
                         if (_decoder[k].ParamsCvses[i].Deltaqk1 != 0 &&
                             _decoder[k].ParamsCvses[i].Deltafik1 != 0)
                         {
-                            var gradus = (double) _decoder[k].ParamsCvses[i].Deltaqk1 / 3600 * (PI / 180);
+                            var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk1 / 3600 * (PI / 180);
                             var pixelKanal1Q = _decoder[k].ParamsOedes[i].Focuspc * Tan(gradus) / (2 * 0.0083);
 
                             gradus = (double)_decoder[k].ParamsCvses[i].Deltafik1 / 3600 * (PI / 180);
@@ -791,16 +801,16 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("|                  |         |                              |");
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 1 по q  | {0}     | {1}                          |", data[0], data[1]);
+                sw.WriteLine("|    Канал 1 по q  | {0}   | {1}                        |", data[0].PadRight(5), data[1].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 1 по fi | {0}     | {1}                          |", data[2], data[3]);
+                sw.WriteLine("|    Канал 1 по fi | {0}   | {1}                        |", data[2].PadRight(5), data[3].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 2 по q  | {0}     | {1}                          |", data[4], data[5]);
+                sw.WriteLine("|    Канал 2 по q  | {0}   | {1}                        |", data[4].PadRight(5), data[5].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 2 по fi | {0}     | {1}                          |", data[6], data[7]);
+                sw.WriteLine("|    Канал 2 по fi | {0}   | {1}                        |", data[6].PadRight(5), data[7].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("Время запаздывания отработки сигналов установок - 20 милисекунд.");
             }
@@ -835,7 +845,7 @@ namespace TelemetryAnalyzerEOS
             }
             for (int i = 0; i < _decoder[k].ParamsOedes.Length - 1; i++)
             {
-                if (_decoder[k].ParamsCvses[i].Dkp != (short) dlo) continue;
+                if (_decoder[k].ParamsCvses[i].Dkp != (short)dlo) continue;
                 num = i;
                 break;
             }
@@ -845,18 +855,18 @@ namespace TelemetryAnalyzerEOS
                 CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Введена неверная дальность.");
                 return false;
             }
-            
+
 
             var l1 = num;
             while (_decoder[k].ParamsOedes[l1].Yc1 >=
-                        _decoder[k].ParamsOedes[num].Yc1 / 1.5)
+                   _decoder[k].ParamsOedes[num].Yc1 / 1.5)
             {
                 chl1BorderLow = l1;
                 l1--;
                 if (l1 == 0)
-                break;
+                    break;
             }
-      
+
             l1 = chl1BorderLow;
             while (_decoder[k].ParamsOedes[l1].Yc1 >=
                    _decoder[k].ParamsOedes[num].Yc1 / 1.5)
@@ -888,33 +898,33 @@ namespace TelemetryAnalyzerEOS
             }
 
             if (chl1BorderLow > 0)
-                {
-                    cmostime = (double) (_decoder[k].ParamsCvses[chl1BorderLow].Dkp
-                                         - _decoder[k].ParamsCvses[chl1BorderHight].Dkp) / 150;
-                    report[0] = 1.ToString();
-                    report[1] = _decoder[k].ParamsOedes[num].Yc1.ToString();
-                    report[2] = dlo.ToString(CultureInfo.InvariantCulture);
-                    report[3] = chl1BorderLow.ToString();
-                    report[4] = _decoder[k].ParamsCvses[chl1BorderLow].Dkp.ToString();
-                    report[5] = chl1BorderHight.ToString();
-                    report[6] = _decoder[k].ParamsCvses[chl1BorderHight].Dkp.ToString();
-                    report[7] = cmostime.ToString(CultureInfo.InvariantCulture);
-                }
-                if (chl2BorderLow > 0)
-                {
-                    cmostime2 = (double) (_decoder[k].ParamsCvses[chl2BorderLow].Dkp
-                                          - _decoder[k].ParamsCvses[chl2BorderHight].Dkp) / 150;
-                    report[8] = 2.ToString();
-                    report[9] = _decoder[k].ParamsOedes[num].Yc2.ToString();
-                    report[10] = dlo.ToString(CultureInfo.InvariantCulture);
-                    report[11] = chl2BorderLow.ToString();
-                    report[12] = _decoder[k].ParamsCvses[chl2BorderLow].Dkp.ToString();
-                    report[13] = chl2BorderHight.ToString();
-                    report[14] = _decoder[k].ParamsCvses[chl2BorderHight].Dkp.ToString();
-                    report[15] = cmostime2.ToString(CultureInfo.InvariantCulture);
-                }
-                report[16] = _decoder[k].NumberDevice.ToString();
-                CheckingTheAccumulationTimeReport(_safeFilePathes[k] + ".txt", report);
+            {
+                cmostime = (double)(_decoder[k].ParamsCvses[chl1BorderLow].Dkp
+                                    - _decoder[k].ParamsCvses[chl1BorderHight].Dkp) / 150;
+                report[0] = 1.ToString();
+                report[1] = _decoder[k].ParamsOedes[num].Yc1.ToString();
+                report[2] = dlo.ToString(CultureInfo.InvariantCulture);
+                report[3] = chl1BorderLow.ToString();
+                report[4] = _decoder[k].ParamsCvses[chl1BorderLow].Dkp.ToString();
+                report[5] = chl1BorderHight.ToString();
+                report[6] = _decoder[k].ParamsCvses[chl1BorderHight].Dkp.ToString();
+                report[7] = cmostime.ToString(CultureInfo.InvariantCulture);
+            }
+            if (chl2BorderLow > 0)
+            {
+                cmostime2 = (double)(_decoder[k].ParamsCvses[chl2BorderLow].Dkp
+                                     - _decoder[k].ParamsCvses[chl2BorderHight].Dkp) / 150;
+                report[8] = 2.ToString();
+                report[9] = _decoder[k].ParamsOedes[num].Yc2.ToString();
+                report[10] = dlo.ToString(CultureInfo.InvariantCulture);
+                report[11] = chl2BorderLow.ToString();
+                report[12] = _decoder[k].ParamsCvses[chl2BorderLow].Dkp.ToString();
+                report[13] = chl2BorderHight.ToString();
+                report[14] = _decoder[k].ParamsCvses[chl2BorderHight].Dkp.ToString();
+                report[15] = cmostime2.ToString(CultureInfo.InvariantCulture);
+            }
+            report[16] = _decoder[k].NumberDevice.ToString();
+            CheckingTheAccumulationTimeReport(_safeFilePathes[k] + ".txt", report);
             return !(cmostime < 8) && !(cmostime > 18) && !(cmostime2 < 8) && !(cmostime2 > 18);
         }
         // Отчет: Проверка времени накопления
@@ -991,17 +1001,17 @@ namespace TelemetryAnalyzerEOS
                 {
                     for (int j = i; j < _decoder[k].ParamsOedes.Length; j++)
                     {
-                        if (_decoder[k].ParamsOedes[j].Yc1 <= 0 || begin1Ch1 != -1 ) continue; 
-                        
+                        if (_decoder[k].ParamsOedes[j].Yc1 <= 0 || begin1Ch1 != -1) continue;
+
                         begin1Ch1 = j;
                         while (_decoder[k].ParamsOedes[j].Yc1 > 0 && !_decoder[k].ParamsOedes[j].IndLo1)
                         {
                             j++;
                         }
                         var end1Ch1 = j;
-                        
-                        if (begin1Ch1 == -1 || end1Ch1 == -1 ) continue;
-                    
+
+                        if (begin1Ch1 == -1 || end1Ch1 == -1) continue;
+
                         var recap1Ch1 = (end1Ch1 - begin1Ch1) * 0.02;
 
                         if (end1Ch1 - begin1Ch1 == 0 && end1Ch1 != -1 && begin1Ch1 != -1)
@@ -1184,9 +1194,10 @@ namespace TelemetryAnalyzerEOS
         }
 
         //Анализ результатов диагностики
-        private void DiagnosticResultsAnalysis()
+        private bool DiagnosticResultsAnalysis(int k)
         {
-            
+            CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Тест в процессе разработки.");
+            return false;
         }
 
         #endregion
@@ -1210,9 +1221,9 @@ namespace TelemetryAnalyzerEOS
 
         private void OpenFile(int lauchN)
         {
-            if (File.Exists(_safeFilePathes[lauchN]))
+            if (File.Exists(_safeFilePathes[lauchN] + ".txt"))
                 System.Diagnostics.Process.Start(_safeFilePathes[lauchN] + ".txt");
-            else MessageBox.Show(@"File not found");
+            else MessageBox.Show(@"Файл не найден. Перезапустите тест.", @"Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnResultN1_Click(object sender, EventArgs e)
@@ -1284,6 +1295,6 @@ namespace TelemetryAnalyzerEOS
         {
             OpenFile(14);
         }
-#endregion
+        #endregion
     }
 }
