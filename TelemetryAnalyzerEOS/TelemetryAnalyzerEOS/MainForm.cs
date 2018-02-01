@@ -20,7 +20,7 @@ namespace TelemetryAnalyzerEOS
         #region Variable
         private delegate void TaskStatusChanged();
         private event TaskStatusChanged TaskIsComplite;
-        private LoadingForm _loadingForm = new LoadingForm();
+        private LoadingForm _loadingForm;
 
         private Decoder[] _decoder;
         private List<ComboBox> _cblist;
@@ -42,6 +42,13 @@ namespace TelemetryAnalyzerEOS
             InitializeComponent();
             // Подпись на событие завершения потока обработки
             TaskIsComplite += TaskStatus;
+            // Задаем начальное положение окна прогресс бара
+            _loadingForm = new LoadingForm
+            {
+                Owner = this,
+                StartPosition = StartPosition
+            };
+
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -153,17 +160,22 @@ namespace TelemetryAnalyzerEOS
                 btnResultSelfDiag
             };
 
-            for (int i = 0; i < safeFileNames.Count; i++)
-                _btnlist[i].Visible = true;
+            for (int i = safeFileNames.Count; i < _cblist.Count; i++)
+            {
+                _btnlist[i].Enabled = false;
+                _cblist[i].Enabled = false;
+            }
+            //for (int i = 0; i < safeFileNames.Count; i++)
+            //    _btnlist[i].Visible = true;
 
-            ////!!! FOR DEBUGING
-            //foreach (ComboBox t in _cblist)
-            //{
-            //    t.SelectedIndex = 3;
-            //}
+            //!!! FOR DEBUGING
+            foreach (ComboBox t in _cblist)
+            {
+                t.SelectedIndex = 4;
+            }
 
             // Установка размеров формы, в соответствии с количеством выбранных файлов
-            Height = 135 + safeFileNames.Count * 31;
+            //Height = 135 + safeFileNames.Count * 31;
             btnStartAnalyze.Enabled = true;
         }
         // Обновление файла конфигурации
@@ -289,10 +301,11 @@ namespace TelemetryAnalyzerEOS
             _decoder = new Decoder[openFileDialog.FileNames.Length];
 
             // Инициализация класса, для отображения прогресс бара
-
+            //_loadingForm.Owner = this;
+            //_loadingForm.StartPosition = FormStartPosition.CenterParent;
             _loadingForm.Show();
             //_loadingForm.StartPosition = FormStartPosition.CenterParent;
-            _loadingForm.Location = new Point(Left + Width / 4 - 30,Top + Height / 3);
+            //_loadingForm.Location = new Point(Left + Width / 4 - 30,Top + Height / 3);
 
             // Установка максимального значения прогресс бара, согласно количеству файлов
             _loadingForm.pbAnalysing.Maximum = _decoder.Length;

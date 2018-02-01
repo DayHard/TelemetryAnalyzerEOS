@@ -143,12 +143,15 @@
   <metadata name="pbStatusSelfDiagnosis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="pbStatusSelfDiagnosis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
   <data name="pbStatusSelfDiagnosis.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbStatusSelfDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 423</value>
+    <value>411, 428</value>
   </data>
   <data name="pbStatusSelfDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 24</value>
@@ -158,9 +161,6 @@
   </data>
   <data name="pbStatusSelfDiagnosis.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
-  </data>
-  <data name="pbStatusSelfDiagnosis.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusSelfDiagnosis.Name" xml:space="preserve">
     <value>pbStatusSelfDiagnosis</value>
@@ -177,9 +177,6 @@
   <metadata name="btnResultN1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -194,9 +191,6 @@
   </data>
   <data name="btnResultN1.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN1.Name" xml:space="preserve">
     <value>btnResultN1</value>
@@ -213,9 +207,6 @@
   <metadata name="btnResultN2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -230,9 +221,6 @@
   </data>
   <data name="btnResultN2.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN2.Name" xml:space="preserve">
     <value>btnResultN2</value>
@@ -249,9 +237,6 @@
   <metadata name="btnResultN3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -266,9 +251,6 @@
   </data>
   <data name="btnResultN3.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN3.Name" xml:space="preserve">
     <value>btnResultN3</value>
@@ -285,9 +267,6 @@
   <metadata name="btnResultN4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN4.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -302,9 +281,6 @@
   </data>
   <data name="btnResultN4.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN4.Name" xml:space="preserve">
     <value>btnResultN4</value>
@@ -321,9 +297,6 @@
   <metadata name="btnResultN5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN5.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -338,9 +311,6 @@
   </data>
   <data name="btnResultN5.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN5.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN5.Name" xml:space="preserve">
     <value>btnResultN5</value>
@@ -357,9 +327,6 @@
   <metadata name="btnResultN6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN6.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -374,9 +341,6 @@
   </data>
   <data name="btnResultN6.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN6.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN6.Name" xml:space="preserve">
     <value>btnResultN6</value>
@@ -393,9 +357,6 @@
   <metadata name="btnResultN7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN7.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -410,9 +371,6 @@
   </data>
   <data name="btnResultN7.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN7.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN7.Name" xml:space="preserve">
     <value>btnResultN7</value>
@@ -429,9 +387,6 @@
   <metadata name="btnResultN8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN8.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -446,9 +401,6 @@
   </data>
   <data name="btnResultN8.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN8.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN8.Name" xml:space="preserve">
     <value>btnResultN8</value>
@@ -465,9 +417,6 @@
   <metadata name="btnResultN9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN9.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -482,9 +431,6 @@
   </data>
   <data name="btnResultN9.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN9.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN9.Name" xml:space="preserve">
     <value>btnResultN9</value>
@@ -501,9 +447,6 @@
   <metadata name="btnResultN10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN10.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -518,9 +461,6 @@
   </data>
   <data name="btnResultN10.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN10.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN10.Name" xml:space="preserve">
     <value>btnResultN10</value>
@@ -537,9 +477,6 @@
   <metadata name="btnResultN11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN11.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -554,9 +491,6 @@
   </data>
   <data name="btnResultN11.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN11.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN11.Name" xml:space="preserve">
     <value>btnResultN11</value>
@@ -573,9 +507,6 @@
   <metadata name="btnResultN12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN12.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -590,9 +521,6 @@
   </data>
   <data name="btnResultN12.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN12.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN12.Name" xml:space="preserve">
     <value>btnResultN12</value>
@@ -609,9 +537,6 @@
   <metadata name="btnResultN13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN13.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -626,9 +551,6 @@
   </data>
   <data name="btnResultN13.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN13.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN13.Name" xml:space="preserve">
     <value>btnResultN13</value>
@@ -645,14 +567,14 @@
   <metadata name="btnResultSelfDiag.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultSelfDiag.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="btnResultSelfDiag.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="btnResultSelfDiag.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnResultSelfDiag.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 423</value>
+    <value>459, 429</value>
   </data>
   <data name="btnResultSelfDiag.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 23</value>
@@ -662,9 +584,6 @@
   </data>
   <data name="btnResultSelfDiag.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultSelfDiag.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultSelfDiag.Name" xml:space="preserve">
     <value>btnResultSelfDiag</value>
@@ -691,19 +610,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 38</value>
+    <value>77, 38</value>
   </data>
   <data name="lbLaunchN1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN1.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <data name="lbLaunchN1.Text" xml:space="preserve">
-    <value>Пуск N + 1</value>
-  </data>
-  <data name="lbLaunchN1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 2:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN1.Name" xml:space="preserve">
     <value>lbLaunchN1</value>
@@ -730,19 +646,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 68</value>
+    <value>77, 68</value>
   </data>
   <data name="lbLaunchN2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN2.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="lbLaunchN2.Text" xml:space="preserve">
-    <value>Пуск N + 2</value>
-  </data>
-  <data name="lbLaunchN2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 3:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN2.Name" xml:space="preserve">
     <value>lbLaunchN2</value>
@@ -769,19 +682,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 98</value>
+    <value>77, 98</value>
   </data>
   <data name="lbLaunchN3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN3.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="lbLaunchN3.Text" xml:space="preserve">
-    <value>Пуск N + 3</value>
-  </data>
-  <data name="lbLaunchN3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 4:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN3.Name" xml:space="preserve">
     <value>lbLaunchN3</value>
@@ -808,19 +718,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 128</value>
+    <value>77, 128</value>
   </data>
   <data name="lbLaunchN4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN4.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="lbLaunchN4.Text" xml:space="preserve">
-    <value>Пуск N + 4</value>
-  </data>
-  <data name="lbLaunchN4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 5:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN4.Name" xml:space="preserve">
     <value>lbLaunchN4</value>
@@ -847,19 +754,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 158</value>
+    <value>77, 158</value>
   </data>
   <data name="lbLaunchN5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN5.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="lbLaunchN5.Text" xml:space="preserve">
-    <value>Пуск N + 5</value>
-  </data>
-  <data name="lbLaunchN5.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 6:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN5.Name" xml:space="preserve">
     <value>lbLaunchN5</value>
@@ -886,19 +790,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 188</value>
+    <value>77, 188</value>
   </data>
   <data name="lbLaunchN6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN6.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
   <data name="lbLaunchN6.Text" xml:space="preserve">
-    <value>Пуск N + 6</value>
-  </data>
-  <data name="lbLaunchN6.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 7:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN6.Name" xml:space="preserve">
     <value>lbLaunchN6</value>
@@ -925,19 +826,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 218</value>
+    <value>77, 218</value>
   </data>
   <data name="lbLaunchN7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN7.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
   <data name="lbLaunchN7.Text" xml:space="preserve">
-    <value>Пуск N + 7</value>
-  </data>
-  <data name="lbLaunchN7.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 8:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN7.Name" xml:space="preserve">
     <value>lbLaunchN7</value>
@@ -964,19 +862,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 248</value>
+    <value>77, 248</value>
   </data>
   <data name="lbLaunchN8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN8.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="lbLaunchN8.Text" xml:space="preserve">
-    <value>Пуск N + 8</value>
-  </data>
-  <data name="lbLaunchN8.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 9:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN8.Name" xml:space="preserve">
     <value>lbLaunchN8</value>
@@ -1003,19 +898,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 278</value>
+    <value>71, 278</value>
   </data>
   <data name="lbLaunchN9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>50, 13</value>
   </data>
   <data name="lbLaunchN9.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="lbLaunchN9.Text" xml:space="preserve">
-    <value>Пуск N + 9</value>
-  </data>
-  <data name="lbLaunchN9.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 10:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN9.Name" xml:space="preserve">
     <value>lbLaunchN9</value>
@@ -1042,19 +934,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 308</value>
+    <value>71, 308</value>
   </data>
   <data name="lbLaunchN10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>50, 13</value>
   </data>
   <data name="lbLaunchN10.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="lbLaunchN10.Text" xml:space="preserve">
-    <value>Пуск N + 10</value>
-  </data>
-  <data name="lbLaunchN10.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 11:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN10.Name" xml:space="preserve">
     <value>lbLaunchN10</value>
@@ -1081,19 +970,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 338</value>
+    <value>71, 338</value>
   </data>
   <data name="lbLaunchN11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>50, 13</value>
   </data>
   <data name="lbLaunchN11.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
   <data name="lbLaunchN11.Text" xml:space="preserve">
-    <value>Пуск N + 11</value>
-  </data>
-  <data name="lbLaunchN11.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 12:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN11.Name" xml:space="preserve">
     <value>lbLaunchN11</value>
@@ -1120,19 +1006,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 368</value>
+    <value>71, 368</value>
   </data>
   <data name="lbLaunchN12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>50, 13</value>
   </data>
   <data name="lbLaunchN12.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
   <data name="lbLaunchN12.Text" xml:space="preserve">
-    <value>Пуск N + 12</value>
-  </data>
-  <data name="lbLaunchN12.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 13:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN12.Name" xml:space="preserve">
     <value>lbLaunchN12</value>
@@ -1159,19 +1042,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 398</value>
+    <value>71, 398</value>
   </data>
   <data name="lbLaunchN13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>50, 13</value>
   </data>
   <data name="lbLaunchN13.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
   <data name="lbLaunchN13.Text" xml:space="preserve">
-    <value>Пуск N + 13</value>
-  </data>
-  <data name="lbLaunchN13.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 14:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN13.Name" xml:space="preserve">
     <value>lbLaunchN13</value>
@@ -1212,9 +1092,6 @@
   <data name="cbLaunchN.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="cbLaunchN.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN.Name" xml:space="preserve">
     <value>cbLaunchN</value>
   </data>
@@ -1253,9 +1130,6 @@
   </data>
   <data name="cbLaunchN1.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
-  </data>
-  <data name="cbLaunchN1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN1.Name" xml:space="preserve">
     <value>cbLaunchN1</value>
@@ -1296,9 +1170,6 @@
   <data name="cbLaunchN2.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
-  <data name="cbLaunchN2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN2.Name" xml:space="preserve">
     <value>cbLaunchN2</value>
   </data>
@@ -1337,9 +1208,6 @@
   </data>
   <data name="cbLaunchN3.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
-  </data>
-  <data name="cbLaunchN3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN3.Name" xml:space="preserve">
     <value>cbLaunchN3</value>
@@ -1380,9 +1248,6 @@
   <data name="cbLaunchN4.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
   </data>
-  <data name="cbLaunchN4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN4.Name" xml:space="preserve">
     <value>cbLaunchN4</value>
   </data>
@@ -1421,9 +1286,6 @@
   </data>
   <data name="cbLaunchN5.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
-  </data>
-  <data name="cbLaunchN5.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN5.Name" xml:space="preserve">
     <value>cbLaunchN5</value>
@@ -1464,9 +1326,6 @@
   <data name="cbLaunchN6.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
-  <data name="cbLaunchN6.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN6.Name" xml:space="preserve">
     <value>cbLaunchN6</value>
   </data>
@@ -1505,9 +1364,6 @@
   </data>
   <data name="cbLaunchN7.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
-  </data>
-  <data name="cbLaunchN7.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN7.Name" xml:space="preserve">
     <value>cbLaunchN7</value>
@@ -1548,9 +1404,6 @@
   <data name="cbLaunchN8.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
-  <data name="cbLaunchN8.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN8.Name" xml:space="preserve">
     <value>cbLaunchN8</value>
   </data>
@@ -1589,9 +1442,6 @@
   </data>
   <data name="cbLaunchN9.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
-  </data>
-  <data name="cbLaunchN9.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN9.Name" xml:space="preserve">
     <value>cbLaunchN9</value>
@@ -1632,9 +1482,6 @@
   <data name="cbLaunchN10.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
-  <data name="cbLaunchN10.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN10.Name" xml:space="preserve">
     <value>cbLaunchN10</value>
   </data>
@@ -1673,9 +1520,6 @@
   </data>
   <data name="cbLaunchN11.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
-  </data>
-  <data name="cbLaunchN11.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbLaunchN11.Name" xml:space="preserve">
     <value>cbLaunchN11</value>
@@ -1716,9 +1560,6 @@
   <data name="cbLaunchN12.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
   </data>
-  <data name="cbLaunchN12.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN12.Name" xml:space="preserve">
     <value>cbLaunchN12</value>
   </data>
@@ -1758,9 +1599,6 @@
   <data name="cbLaunchN13.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
-  <data name="cbLaunchN13.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;cbLaunchN13.Name" xml:space="preserve">
     <value>cbLaunchN13</value>
   </data>
@@ -1793,9 +1631,6 @@
   </data>
   <data name="pbStatusN.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
-  </data>
-  <data name="pbStatusN.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN.Name" xml:space="preserve">
     <value>pbStatusN</value>
@@ -1830,9 +1665,6 @@
   <data name="pbStatusN1.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
-  <data name="pbStatusN1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN1.Name" xml:space="preserve">
     <value>pbStatusN1</value>
   </data>
@@ -1858,19 +1690,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbLaunchN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 8</value>
+    <value>77, 8</value>
   </data>
   <data name="lbLaunchN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="lbLaunchN.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="lbLaunchN.Text" xml:space="preserve">
-    <value>Пуск N</value>
-  </data>
-  <data name="lbLaunchN.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Пуск 1:</value>
   </data>
   <data name="&gt;&gt;lbLaunchN.Name" xml:space="preserve">
     <value>lbLaunchN</value>
@@ -1887,9 +1716,6 @@
   <metadata name="btnResultN.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnResultN.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnResultN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1904,9 +1730,6 @@
   </data>
   <data name="btnResultN.Text" xml:space="preserve">
     <value>Результаты анализа</value>
-  </data>
-  <data name="btnResultN.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnResultN.Name" xml:space="preserve">
     <value>btnResultN</value>
@@ -1941,9 +1764,6 @@
   <data name="pbStatusN2.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
-  <data name="pbStatusN2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN2.Name" xml:space="preserve">
     <value>pbStatusN2</value>
   </data>
@@ -1973,9 +1793,6 @@
   </data>
   <data name="pbStatusN3.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
-  </data>
-  <data name="pbStatusN3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN3.Name" xml:space="preserve">
     <value>pbStatusN3</value>
@@ -2007,9 +1824,6 @@
   <data name="pbStatusN4.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="pbStatusN4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN4.Name" xml:space="preserve">
     <value>pbStatusN4</value>
   </data>
@@ -2039,9 +1853,6 @@
   </data>
   <data name="pbStatusN5.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>
-  </data>
-  <data name="pbStatusN5.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN5.Name" xml:space="preserve">
     <value>pbStatusN5</value>
@@ -2073,9 +1884,6 @@
   <data name="pbStatusN6.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
-  <data name="pbStatusN6.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN6.Name" xml:space="preserve">
     <value>pbStatusN6</value>
   </data>
@@ -2105,9 +1913,6 @@
   </data>
   <data name="pbStatusN7.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
-  </data>
-  <data name="pbStatusN7.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN7.Name" xml:space="preserve">
     <value>pbStatusN7</value>
@@ -2139,9 +1944,6 @@
   <data name="pbStatusN8.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
   </data>
-  <data name="pbStatusN8.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN8.Name" xml:space="preserve">
     <value>pbStatusN8</value>
   </data>
@@ -2171,9 +1973,6 @@
   </data>
   <data name="pbStatusN9.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
-  </data>
-  <data name="pbStatusN9.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN9.Name" xml:space="preserve">
     <value>pbStatusN9</value>
@@ -2205,9 +2004,6 @@
   <data name="pbStatusN10.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <data name="pbStatusN10.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN10.Name" xml:space="preserve">
     <value>pbStatusN10</value>
   </data>
@@ -2237,9 +2033,6 @@
   </data>
   <data name="pbStatusN11.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
-  </data>
-  <data name="pbStatusN11.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbStatusN11.Name" xml:space="preserve">
     <value>pbStatusN11</value>
@@ -2271,9 +2064,6 @@
   <data name="pbStatusN12.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
   </data>
-  <data name="pbStatusN12.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN12.Name" xml:space="preserve">
     <value>pbStatusN12</value>
   </data>
@@ -2304,9 +2094,6 @@
   <data name="pbStatusN13.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
   </data>
-  <data name="pbStatusN13.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;pbStatusN13.Name" xml:space="preserve">
     <value>pbStatusN13</value>
   </data>
@@ -2322,6 +2109,9 @@
   <metadata name="cbSelfDiagnosis.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="cbSelfDiagnosis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
   <data name="cbSelfDiagnosis.Items" xml:space="preserve">
     <value>Проверка общей работоспособности</value>
   </data>
@@ -2338,16 +2128,13 @@
     <value>Анализ результатов диагностики</value>
   </data>
   <data name="cbSelfDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 423</value>
+    <value>127, 430</value>
   </data>
   <data name="cbSelfDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 21</value>
   </data>
   <data name="cbSelfDiagnosis.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
-  </data>
-  <data name="cbSelfDiagnosis.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;cbSelfDiagnosis.Name" xml:space="preserve">
     <value>cbSelfDiagnosis</value>
@@ -2374,22 +2161,19 @@
     <value>NoControl</value>
   </data>
   <data name="lbSelfDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 434</value>
+    <value>20, 434</value>
   </data>
   <data name="lbSelfDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+    <value>101, 13</value>
   </data>
   <data name="lbSelfDiagnosis.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
   <data name="lbSelfDiagnosis.Text" xml:space="preserve">
-    <value>Самодиаг</value>
+    <value>Самодиагностика:</value>
   </data>
   <data name="lbSelfDiagnosis.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="lbSelfDiagnosis.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;lbSelfDiagnosis.Name" xml:space="preserve">
     <value>lbSelfDiagnosis</value>
@@ -2538,6 +2322,9 @@
   <data name="btnLangFr.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="btnLangFr.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnLangFr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2571,6 +2358,9 @@
   <data name="btnLangEng.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="btnLangEng.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnLangEng.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2603,6 +2393,9 @@
   </data>
   <data name="btnLangRus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
+  </data>
+  <data name="btnLangRus.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnLangRus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

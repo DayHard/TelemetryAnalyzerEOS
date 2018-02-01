@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="gbLoadedFileList.Text" xml:space="preserve">
+    <value>List of downloaded telemetry files</value>
+  </data>
   <data name="btnResultN1.Text" xml:space="preserve">
     <value>Analysis results</value>
   </data>
@@ -161,126 +164,121 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbLaunchN1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 32</value>
+    <value>66, 38</value>
   </data>
   <data name="lbLaunchN1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN1.Text" xml:space="preserve">
-    <value>N + 1 start or diagnostic naming:</value>
+    <value>Launch 2:</value>
   </data>
   <data name="lbLaunchN2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 62</value>
+    <value>66, 68</value>
   </data>
   <data name="lbLaunchN2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN2.Text" xml:space="preserve">
-    <value>N + 2 start or diagnostic naming:</value>
+    <value>Launch 3:</value>
   </data>
   <data name="lbLaunchN3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 92</value>
+    <value>66, 98</value>
   </data>
   <data name="lbLaunchN3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN3.Text" xml:space="preserve">
-    <value>N + 3 start or diagnostic naming:</value>
+    <value>Launch 4:</value>
   </data>
   <data name="lbLaunchN4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 122</value>
+    <value>66, 128</value>
   </data>
   <data name="lbLaunchN4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN4.Text" xml:space="preserve">
-    <value>N + 4 start or diagnostic naming:</value>
+    <value>Launch 5:</value>
   </data>
   <data name="lbLaunchN5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 152</value>
+    <value>66, 158</value>
   </data>
   <data name="lbLaunchN5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN5.Text" xml:space="preserve">
-    <value>N + 5 start or diagnostic naming:</value>
+    <value>Launch 6:</value>
   </data>
   <data name="lbLaunchN6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 182</value>
+    <value>66, 188</value>
   </data>
   <data name="lbLaunchN6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN6.Text" xml:space="preserve">
-    <value>N + 6 start or diagnostic naming:</value>
+    <value>Launch 7:</value>
   </data>
   <data name="lbLaunchN7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 212</value>
+    <value>66, 218</value>
   </data>
   <data name="lbLaunchN7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN7.Text" xml:space="preserve">
-    <value>N + 7 start or diagnostic naming:</value>
+    <value>Launch 8:</value>
   </data>
   <data name="lbLaunchN8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 242</value>
+    <value>66, 248</value>
   </data>
   <data name="lbLaunchN8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN8.Text" xml:space="preserve">
-    <value>N + 8 start or diagnostic naming:
-</value>
+    <value>Launch 9:</value>
   </data>
   <data name="lbLaunchN9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 272</value>
+    <value>60, 278</value>
   </data>
   <data name="lbLaunchN9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>61, 13</value>
   </data>
   <data name="lbLaunchN9.Text" xml:space="preserve">
-    <value>N + 9 start or diagnostic naming:</value>
+    <value>Launch 10:</value>
   </data>
   <data name="lbLaunchN10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 302</value>
+    <value>60, 308</value>
   </data>
   <data name="lbLaunchN10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>61, 13</value>
   </data>
   <data name="lbLaunchN10.Text" xml:space="preserve">
-    <value>N + 10 start or diagnostic naming:
-</value>
+    <value>Launch 11:</value>
   </data>
   <data name="lbLaunchN11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 332</value>
+    <value>60, 338</value>
   </data>
   <data name="lbLaunchN11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>61, 13</value>
   </data>
   <data name="lbLaunchN11.Text" xml:space="preserve">
-    <value>N + 11 start or diagnostic naming:
-</value>
+    <value>Launch 12:</value>
   </data>
   <data name="lbLaunchN12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 362</value>
+    <value>60, 368</value>
   </data>
   <data name="lbLaunchN12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>61, 13</value>
   </data>
   <data name="lbLaunchN12.Text" xml:space="preserve">
-    <value>N + 12 start or diagnostic naming:
-</value>
+    <value>Launch 13:</value>
   </data>
   <data name="lbLaunchN13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 392</value>
+    <value>60, 398</value>
   </data>
   <data name="lbLaunchN13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 26</value>
+    <value>61, 13</value>
   </data>
   <data name="lbLaunchN13.Text" xml:space="preserve">
-    <value>N + 13 start or diagnostic naming:
-</value>
+    <value>Launch 14:</value>
   </data>
   <data name="cbLaunchN.Items" xml:space="preserve">
     <value>Check of the general working capacity</value>
@@ -493,13 +491,13 @@
     <value>Diagnostic results analysis</value>
   </data>
   <data name="lbLaunchN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 2</value>
+    <value>66, 8</value>
   </data>
   <data name="lbLaunchN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 26</value>
+    <value>55, 13</value>
   </data>
   <data name="lbLaunchN.Text" xml:space="preserve">
-    <value>N start or diagnostic naming:</value>
+    <value>Launch 1:</value>
   </data>
   <data name="btnResultN.Text" xml:space="preserve">
     <value>Analysis results</value>
@@ -528,13 +526,7 @@
   <data name="lbSelfDiagnosis.Text" xml:space="preserve">
     <value>Self-diagnosis:</value>
   </data>
-  <data name="gbLoadedFileList.Text" xml:space="preserve">
-    <value>List of downloaded telemetry files</value>
-  </data>
   <data name="btnStartAnalyze.Text" xml:space="preserve">
     <value>Start analysis</value>
-  </data>
-  <data name="openFileDialog.Title" xml:space="preserve">
-    <value>Opening</value>
   </data>
 </root>

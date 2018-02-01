@@ -639,6 +639,7 @@
             // 
             // cbSelfDiagnosis
             // 
+            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
             this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelfDiagnosis.FormattingEnabled = true;
             this.cbSelfDiagnosis.Items.AddRange(new object[] {
@@ -647,7 +648,6 @@
             resources.GetString("cbSelfDiagnosis.Items2"),
             resources.GetString("cbSelfDiagnosis.Items3"),
             resources.GetString("cbSelfDiagnosis.Items4")});
-            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
             this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
             // 
             // lbSelfDiagnosis
