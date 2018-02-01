@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace TelemetryAnalyzerEOS
         #region Variable
         private delegate void TaskStatusChanged();
         private event TaskStatusChanged TaskIsComplite;
-        private LoadingForm _loadingForm;
+        private LoadingForm _loadingForm = new LoadingForm();
 
         private Decoder[] _decoder;
         private List<ComboBox> _cblist;
@@ -277,11 +278,8 @@ namespace TelemetryAnalyzerEOS
         private void btnStartAnalyze_Click(object sender, EventArgs e)
         {
             // Проверяем, был ли выбран хотябы один тест, иначе игнорируем
-
-            for (int i = 0; i < _cblist.Count; i++)
+            if (_cblist.TakeWhile(t => t.SelectedIndex == -1).Where((t, i) => i == _cblist.Count - 1).Any())
             {
-                if (_cblist[i].SelectedIndex != -1) break;
-                if (i != _cblist.Count - 1) continue;
                 MessageBox.Show(@"Выберите тест для проверки", @"Внимание", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
@@ -291,12 +289,10 @@ namespace TelemetryAnalyzerEOS
             _decoder = new Decoder[openFileDialog.FileNames.Length];
 
             // Инициализация класса, для отображения прогресс бара
-            _loadingForm = new LoadingForm
-            {
-                Owner = this,
-                StartPosition = StartPosition
-            };
+
             _loadingForm.Show();
+            //_loadingForm.StartPosition = FormStartPosition.CenterParent;
+            _loadingForm.Location = new Point(Left + Width / 4 - 30,Top + Height / 3);
 
             // Установка максимального значения прогресс бара, согласно количеству файлов
             _loadingForm.pbAnalysing.Maximum = _decoder.Length;
@@ -1022,7 +1018,7 @@ namespace TelemetryAnalyzerEOS
                             if (j == _decoder[k].ParamsOedes.Length - 1) break;
                             j++;
                         }
-                        while (_decoder[k].ParamsOedes[j].Yc1 == 0)
+                        while (_decoder[k].ParamsOedes[j].Yc1 == 0 && j < _decoder[k].ParamsOedes.Length - 1)
                         {
                             j++;
                         }
@@ -1095,7 +1091,7 @@ namespace TelemetryAnalyzerEOS
                             if (j >= _decoder[k].ParamsOedes.Length - 1) break;
                             j++;
                         }
-                        while (_decoder[k].ParamsOedes[j].Yc2 == 0)
+                        while (_decoder[k].ParamsOedes[j].Yc2 == 0 && j < _decoder[k].ParamsOedes.Length - 1)
                         {
                             j++;
                         }
@@ -1196,6 +1192,7 @@ namespace TelemetryAnalyzerEOS
         //Анализ результатов диагностики
         private bool DiagnosticResultsAnalysis(int k)
         {
+            Thread.Sleep(3000);
             CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Тест в процессе разработки.");
             return false;
         }
