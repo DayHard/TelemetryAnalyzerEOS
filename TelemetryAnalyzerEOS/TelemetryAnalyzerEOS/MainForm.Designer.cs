@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gbLoadedFileList = new System.Windows.Forms.GroupBox();
             this.tabLayPan = new System.Windows.Forms.TableLayoutPanel();
-            this.pbStatusSelfDiagnosis = new System.Windows.Forms.PictureBox();
             this.btnResultN1 = new System.Windows.Forms.Button();
             this.btnResultN2 = new System.Windows.Forms.Button();
             this.btnResultN3 = new System.Windows.Forms.Button();
@@ -74,10 +73,20 @@
             this.cbLaunchN11 = new System.Windows.Forms.ComboBox();
             this.cbLaunchN12 = new System.Windows.Forms.ComboBox();
             this.cbLaunchN13 = new System.Windows.Forms.ComboBox();
-            this.pbStatusN = new System.Windows.Forms.PictureBox();
-            this.pbStatusN1 = new System.Windows.Forms.PictureBox();
             this.lbLaunchN = new System.Windows.Forms.Label();
             this.btnResultN = new System.Windows.Forms.Button();
+            this.cbSelfDiagnosis = new System.Windows.Forms.ComboBox();
+            this.lbSelfDiagnosis = new System.Windows.Forms.Label();
+            this.btnStartAnalyze = new System.Windows.Forms.Button();
+            this.lbVersion = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.timerGUI = new System.Windows.Forms.Timer(this.components);
+            this.btnLangFr = new System.Windows.Forms.Button();
+            this.btnLangEng = new System.Windows.Forms.Button();
+            this.btnLangRus = new System.Windows.Forms.Button();
+            this.pbStatusSelfDiagnosis = new System.Windows.Forms.PictureBox();
+            this.pbStatusN = new System.Windows.Forms.PictureBox();
+            this.pbStatusN1 = new System.Windows.Forms.PictureBox();
             this.pbStatusN2 = new System.Windows.Forms.PictureBox();
             this.pbStatusN3 = new System.Windows.Forms.PictureBox();
             this.pbStatusN4 = new System.Windows.Forms.PictureBox();
@@ -90,15 +99,6 @@
             this.pbStatusN11 = new System.Windows.Forms.PictureBox();
             this.pbStatusN12 = new System.Windows.Forms.PictureBox();
             this.pbStatusN13 = new System.Windows.Forms.PictureBox();
-            this.cbSelfDiagnosis = new System.Windows.Forms.ComboBox();
-            this.lbSelfDiagnosis = new System.Windows.Forms.Label();
-            this.btnStartAnalyze = new System.Windows.Forms.Button();
-            this.lbVersion = new System.Windows.Forms.Label();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnLangFr = new System.Windows.Forms.Button();
-            this.btnLangEng = new System.Windows.Forms.Button();
-            this.btnLangRus = new System.Windows.Forms.Button();
-            this.timerGUI = new System.Windows.Forms.Timer(this.components);
             this.gbLoadedFileList.SuspendLayout();
             this.tabLayPan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStatusSelfDiagnosis)).BeginInit();
@@ -189,12 +189,6 @@
             this.tabLayPan.Controls.Add(this.cbSelfDiagnosis, 1, 14);
             this.tabLayPan.Controls.Add(this.lbSelfDiagnosis, 0, 14);
             this.tabLayPan.Name = "tabLayPan";
-            // 
-            // pbStatusSelfDiagnosis
-            // 
-            resources.ApplyResources(this.pbStatusSelfDiagnosis, "pbStatusSelfDiagnosis");
-            this.pbStatusSelfDiagnosis.Name = "pbStatusSelfDiagnosis";
-            this.pbStatusSelfDiagnosis.TabStop = false;
             // 
             // btnResultN1
             // 
@@ -541,18 +535,6 @@
             resources.ApplyResources(this.cbLaunchN13, "cbLaunchN13");
             this.cbLaunchN13.Name = "cbLaunchN13";
             // 
-            // pbStatusN
-            // 
-            resources.ApplyResources(this.pbStatusN, "pbStatusN");
-            this.pbStatusN.Name = "pbStatusN";
-            this.pbStatusN.TabStop = false;
-            // 
-            // pbStatusN1
-            // 
-            resources.ApplyResources(this.pbStatusN1, "pbStatusN1");
-            this.pbStatusN1.Name = "pbStatusN1";
-            this.pbStatusN1.TabStop = false;
-            // 
             // lbLaunchN
             // 
             resources.ApplyResources(this.lbLaunchN, "lbLaunchN");
@@ -564,6 +546,87 @@
             this.btnResultN.Name = "btnResultN";
             this.btnResultN.UseVisualStyleBackColor = true;
             this.btnResultN.Click += new System.EventHandler(this.btnResultN_Click);
+            // 
+            // cbSelfDiagnosis
+            // 
+            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
+            this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelfDiagnosis.FormattingEnabled = true;
+            this.cbSelfDiagnosis.Items.AddRange(new object[] {
+            resources.GetString("cbSelfDiagnosis.Items"),
+            resources.GetString("cbSelfDiagnosis.Items1"),
+            resources.GetString("cbSelfDiagnosis.Items2"),
+            resources.GetString("cbSelfDiagnosis.Items3"),
+            resources.GetString("cbSelfDiagnosis.Items4")});
+            this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
+            // 
+            // lbSelfDiagnosis
+            // 
+            resources.ApplyResources(this.lbSelfDiagnosis, "lbSelfDiagnosis");
+            this.lbSelfDiagnosis.Name = "lbSelfDiagnosis";
+            // 
+            // btnStartAnalyze
+            // 
+            resources.ApplyResources(this.btnStartAnalyze, "btnStartAnalyze");
+            this.btnStartAnalyze.Name = "btnStartAnalyze";
+            this.btnStartAnalyze.UseVisualStyleBackColor = true;
+            this.btnStartAnalyze.Click += new System.EventHandler(this.btnStartAnalyze_Click);
+            // 
+            // lbVersion
+            // 
+            resources.ApplyResources(this.lbVersion, "lbVersion");
+            this.lbVersion.Name = "lbVersion";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Multiselect = true;
+            // 
+            // timerGUI
+            // 
+            this.timerGUI.Enabled = true;
+            this.timerGUI.Tick += new System.EventHandler(this.timerGUI_Tick);
+            // 
+            // btnLangFr
+            // 
+            resources.ApplyResources(this.btnLangFr, "btnLangFr");
+            this.btnLangFr.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_of_France;
+            this.btnLangFr.Name = "btnLangFr";
+            this.btnLangFr.UseVisualStyleBackColor = true;
+            this.btnLangFr.Click += new System.EventHandler(this.btnLangFr_Click);
+            // 
+            // btnLangEng
+            // 
+            resources.ApplyResources(this.btnLangEng, "btnLangEng");
+            this.btnLangEng.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_UK;
+            this.btnLangEng.Name = "btnLangEng";
+            this.btnLangEng.UseVisualStyleBackColor = true;
+            this.btnLangEng.Click += new System.EventHandler(this.btnLangEng_Click);
+            // 
+            // btnLangRus
+            // 
+            resources.ApplyResources(this.btnLangRus, "btnLangRus");
+            this.btnLangRus.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_Russia;
+            this.btnLangRus.Name = "btnLangRus";
+            this.btnLangRus.UseVisualStyleBackColor = true;
+            this.btnLangRus.Click += new System.EventHandler(this.btnLangRus_Click);
+            // 
+            // pbStatusSelfDiagnosis
+            // 
+            resources.ApplyResources(this.pbStatusSelfDiagnosis, "pbStatusSelfDiagnosis");
+            this.pbStatusSelfDiagnosis.Name = "pbStatusSelfDiagnosis";
+            this.pbStatusSelfDiagnosis.TabStop = false;
+            // 
+            // pbStatusN
+            // 
+            resources.ApplyResources(this.pbStatusN, "pbStatusN");
+            this.pbStatusN.Name = "pbStatusN";
+            this.pbStatusN.TabStop = false;
+            // 
+            // pbStatusN1
+            // 
+            resources.ApplyResources(this.pbStatusN1, "pbStatusN1");
+            this.pbStatusN1.Name = "pbStatusN1";
+            this.pbStatusN1.TabStop = false;
             // 
             // pbStatusN2
             // 
@@ -637,69 +700,6 @@
             this.pbStatusN13.Name = "pbStatusN13";
             this.pbStatusN13.TabStop = false;
             // 
-            // cbSelfDiagnosis
-            // 
-            resources.ApplyResources(this.cbSelfDiagnosis, "cbSelfDiagnosis");
-            this.cbSelfDiagnosis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSelfDiagnosis.FormattingEnabled = true;
-            this.cbSelfDiagnosis.Items.AddRange(new object[] {
-            resources.GetString("cbSelfDiagnosis.Items"),
-            resources.GetString("cbSelfDiagnosis.Items1"),
-            resources.GetString("cbSelfDiagnosis.Items2"),
-            resources.GetString("cbSelfDiagnosis.Items3"),
-            resources.GetString("cbSelfDiagnosis.Items4")});
-            this.cbSelfDiagnosis.Name = "cbSelfDiagnosis";
-            // 
-            // lbSelfDiagnosis
-            // 
-            resources.ApplyResources(this.lbSelfDiagnosis, "lbSelfDiagnosis");
-            this.lbSelfDiagnosis.Name = "lbSelfDiagnosis";
-            // 
-            // btnStartAnalyze
-            // 
-            resources.ApplyResources(this.btnStartAnalyze, "btnStartAnalyze");
-            this.btnStartAnalyze.Name = "btnStartAnalyze";
-            this.btnStartAnalyze.UseVisualStyleBackColor = true;
-            this.btnStartAnalyze.Click += new System.EventHandler(this.btnStartAnalyze_Click);
-            // 
-            // lbVersion
-            // 
-            resources.ApplyResources(this.lbVersion, "lbVersion");
-            this.lbVersion.Name = "lbVersion";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.Multiselect = true;
-            // 
-            // btnLangFr
-            // 
-            resources.ApplyResources(this.btnLangFr, "btnLangFr");
-            this.btnLangFr.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_of_France;
-            this.btnLangFr.Name = "btnLangFr";
-            this.btnLangFr.UseVisualStyleBackColor = true;
-            this.btnLangFr.Click += new System.EventHandler(this.btnLangFr_Click);
-            // 
-            // btnLangEng
-            // 
-            resources.ApplyResources(this.btnLangEng, "btnLangEng");
-            this.btnLangEng.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_UK;
-            this.btnLangEng.Name = "btnLangEng";
-            this.btnLangEng.UseVisualStyleBackColor = true;
-            this.btnLangEng.Click += new System.EventHandler(this.btnLangEng_Click);
-            // 
-            // btnLangRus
-            // 
-            resources.ApplyResources(this.btnLangRus, "btnLangRus");
-            this.btnLangRus.BackgroundImage = global::TelemetryAnalyzerEOS.Properties.Resources.Flag_Russia;
-            this.btnLangRus.Name = "btnLangRus";
-            this.btnLangRus.UseVisualStyleBackColor = true;
-            this.btnLangRus.Click += new System.EventHandler(this.btnLangRus_Click);
-            // 
-            // timerGUI
-            // 
-            this.timerGUI.Enabled = true;
-            this.timerGUI.Tick += new System.EventHandler(this.timerGUI_Tick);
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -713,7 +713,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
