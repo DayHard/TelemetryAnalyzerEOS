@@ -8,6 +8,8 @@ namespace TelemetryAnalyzerEOS
         public DockPrlParamCvsOed[] ParamsCvses;
 
         public uint NumberDevice;
+        public int BadPackagesCounter;
+
         private const uint SingBegin = 0xE4EF7289;
         private const uint SingEnd = 0x76EFFF28;
         private const uint CsPointer = 2300 * 4 + 8;
@@ -66,7 +68,7 @@ namespace TelemetryAnalyzerEOS
         /// <returns>Возвращает true, при успешном декодировании.</returns> 
         public void Decode()
         {
-            int counter = 0, ecounter = 0;
+            int counter = 0;
             for (uint i = CsPointer + 4; i < _data.Length; i+=4)
             {
             if (ToBigEndian(i, 4) == SingBegin)
@@ -85,7 +87,7 @@ namespace TelemetryAnalyzerEOS
                         //!!!!
                         ParamsOedes[counter] = null;
                         ParamsCvses[counter] = null;
-                        ecounter++;
+                        BadPackagesCounter++;
                     }
                 }
                 // Если указанное смещение не верно, ищем признак конца
@@ -102,7 +104,7 @@ namespace TelemetryAnalyzerEOS
                                 //!!!!
                                 ParamsOedes[counter] = null;
                                 ParamsCvses[counter] = null;
-                                ecounter++;
+                                BadPackagesCounter++;
                             }
                             break;
                         }
@@ -516,6 +518,7 @@ namespace TelemetryAnalyzerEOS
             int j = 0;
             for (uint i = counter; i < counter + size; i++)
             {
+                if (i >= _data.Length) continue;
                 cdata[j] = _data[i];
                 j++;
             }

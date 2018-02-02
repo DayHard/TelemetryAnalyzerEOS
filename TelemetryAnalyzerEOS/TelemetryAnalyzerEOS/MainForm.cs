@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -20,7 +19,7 @@ namespace TelemetryAnalyzerEOS
         #region Variable
         private delegate void TaskStatusChanged();
         private event TaskStatusChanged TaskIsComplite;
-        private LoadingForm _loadingForm;
+        private readonly LoadingForm _loadingForm;
 
         private Decoder[] _decoder;
         private List<ComboBox> _cblist;
@@ -165,17 +164,17 @@ namespace TelemetryAnalyzerEOS
                 _btnlist[i].Enabled = false;
                 _cblist[i].Enabled = false;
             }
-            //for (int i = 0; i < safeFileNames.Count; i++)
-            //    _btnlist[i].Visible = true;
 
             //!!! FOR DEBUGING
-            foreach (ComboBox t in _cblist)
-            {
-                t.SelectedIndex = 4;
-            }
-
+            //foreach (ComboBox t in _cblist)
+            //{
+            //    t.SelectedIndex = 4;
+            //}
+            //for (int i = 0; i < safeFileNames.Count; i++)
+            //    _btnlist[i].Visible = true;
             // Установка размеров формы, в соответствии с количеством выбранных файлов
             //Height = 135 + safeFileNames.Count * 31;
+
             btnStartAnalyze.Enabled = true;
         }
         // Обновление файла конфигурации
@@ -301,11 +300,7 @@ namespace TelemetryAnalyzerEOS
             _decoder = new Decoder[openFileDialog.FileNames.Length];
 
             // Инициализация класса, для отображения прогресс бара
-            //_loadingForm.Owner = this;
-            //_loadingForm.StartPosition = FormStartPosition.CenterParent;
             _loadingForm.Show();
-            //_loadingForm.StartPosition = FormStartPosition.CenterParent;
-            //_loadingForm.Location = new Point(Left + Width / 4 - 30,Top + Height / 3);
 
             // Установка максимального значения прогресс бара, согласно количеству файлов
             _loadingForm.pbAnalysing.Maximum = _decoder.Length;
@@ -450,7 +445,7 @@ namespace TelemetryAnalyzerEOS
             }
 
             //Создание массива отчета
-            var report = new string[32];
+            var report = new string[33];
             report[0] = _decoder[k].NumberDevice.ToString();
 
             #region Таблица 1                     
@@ -466,6 +461,7 @@ namespace TelemetryAnalyzerEOS
             // Канал 1
             for (int i = 0; i < _decoder[k].ParamsOedes.Length; i++)
             {
+                if(_decoder[k].ParamsOedes[i] == null) continue;
                 if (!_decoder[k].ParamsOedes[i].IndLo1) continue;
                 var neprerNewLo1 = i;
                 if (neprerNewLo1 == neprerOldLo1 + 1)//будет отображать установленные флаги если они были выставлены минимум 2 такта подряд
@@ -523,6 +519,7 @@ namespace TelemetryAnalyzerEOS
 
             for (int i = 0; i < _decoder[k].ParamsOedes.Length; i++)
             {
+                if (_decoder[k].ParamsOedes[i] == null) continue;
                 if (!_decoder[k].ParamsOedes[i].IndLo2) continue;
                 var neprerNewLo2Uz = i;
                 if (neprerNewLo2Uz == neprerOldLo2Uz + 1)//будет отображать установленные флаги если они были выставлены минимум 2 такта подряд
@@ -550,7 +547,8 @@ namespace TelemetryAnalyzerEOS
             speed = 0;
             for (int iii = 1; iii < 10; iii++)
             {
-
+                if(_decoder[k].ParamsOedes[numPkBeginLo2Uz + iii] == null ||
+                    _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii - 1] == null) continue;
 
                 var q1K2 = _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkd2 +
                            _decoder[k].ParamsOedes[numPkBeginLo2Uz + iii].Qkk2;
@@ -612,13 +610,15 @@ namespace TelemetryAnalyzerEOS
             report[31] = Round((double)_decoder[k].ParamsOedes[numPkEndLo2Uz].DeltaA2 / 120, 1).ToString(CultureInfo.CurrentCulture);
             #endregion
 
+            // Количество ошибочных пакетов
+            report[32] = _decoder[k].BadPackagesCounter.ToString();
+
             GeneralHealthCheckReport(_safeFilePathes[k] + ".txt", report);
             return true;
         }
         // Отчет: Проверка общей работоспособности
         private static void GeneralHealthCheckReport(string path, string[] report)
         {
-            if (report.Length != 32) return;
 
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
@@ -627,6 +627,8 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("Файл: " + path);
                 sw.WriteLine();
                 sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Ошибочных пакетов: " + report[32]);
                 sw.WriteLine();
                 sw.WriteLine("Прибор №: {0} ", report[0]);
                 sw.WriteLine();
@@ -683,7 +685,7 @@ namespace TelemetryAnalyzerEOS
         {
             var rightpackages = 0;
             // Создание массива результатов
-            var report = new string[9];
+            var report = new string[10];
             var numberPaketMaxWorkingOffStpChannel1Q = 0;
             var numberPaketMaxWorkingOffStpChannel1Fi = 0;
             var numberPaketMaxWorkingOffStpChannel2Q = 0;
@@ -699,6 +701,7 @@ namespace TelemetryAnalyzerEOS
 
             for (var i = 0; i < _decoder[k].ParamsCvses.Length - 2; i++)
             {
+                if (_decoder[k].ParamsCvses[i] == null || _decoder[k].ParamsCvses[i + 1] == null) continue;
                 if (_decoder[k].ParamsCvses[i].Launch && _decoder[k].ParamsCvses[i].Shod
                     && !_decoder[k].ParamsCvses[i].SoprLO1 && !_decoder[k].ParamsCvses[i].SoprLO2)
                 {
@@ -787,12 +790,14 @@ namespace TelemetryAnalyzerEOS
                     return false;
                 }
             }
+            // Количество ошибочных пакетов
+            report[9] = _decoder[k].BadPackagesCounter.ToString();
 
             CheckingTheTuningOfThePlantSignalsReport(_safeFilePathes[k] + ".txt", report);
             return rightpackages != 0;
         }
         // Отчет: Проверка отработки сигналов установок
-        private static void CheckingTheTuningOfThePlantSignalsReport(string path, string[] data)
+        private static void CheckingTheTuningOfThePlantSignalsReport(string path, string[] report)
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
             {
@@ -802,7 +807,9 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine();
                 sw.WriteLine("Отчет создан: " + DateTime.Now);
                 sw.WriteLine();
-                sw.WriteLine("Прибор №: {0} ", data[8]);
+                sw.WriteLine("Ошибочных пакетов: " + report[9]);
+                sw.WriteLine();
+                sw.WriteLine("Прибор №: {0} ", report[8]);
                 sw.WriteLine();
                 sw.WriteLine("_____________________________________________________________");
                 sw.WriteLine("|                  |         |                              | ");
@@ -810,16 +817,16 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("|                  |         |                              |");
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 1 по q  | {0}   | {1}                        |", data[0].PadRight(5), data[1].PadRight(5));
+                sw.WriteLine("|    Канал 1 по q  | {0}   | {1}                        |", report[0].PadRight(5), report[1].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 1 по fi | {0}   | {1}                        |", data[2].PadRight(5), data[3].PadRight(5));
+                sw.WriteLine("|    Канал 1 по fi | {0}   | {1}                        |", report[2].PadRight(5), report[3].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 2 по q  | {0}   | {1}                        |", data[4].PadRight(5), data[5].PadRight(5));
+                sw.WriteLine("|    Канал 2 по q  | {0}   | {1}                        |", report[4].PadRight(5), report[5].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("|                  |         |                              |");
-                sw.WriteLine("|    Канал 2 по fi | {0}   | {1}                        |", data[6].PadRight(5), data[7].PadRight(5));
+                sw.WriteLine("|    Канал 2 по fi | {0}   | {1}                        |", report[6].PadRight(5), report[7].PadRight(5));
                 sw.WriteLine("|__________________|_________|______________________________|");
                 sw.WriteLine("Время запаздывания отработки сигналов установок - 20 милисекунд.");
             }
@@ -844,7 +851,7 @@ namespace TelemetryAnalyzerEOS
             int chl1BorderLow = 0, chl1BorderHight = 0;
             int chl2BorderLow = 0, chl2BorderHight = 0;
             double cmostime = 0, cmostime2 = 0;
-            var report = new string[17];
+            var report = new string[18];
 
             double dlo = loRangeForm.Range;
             if (dlo < 0 || dlo > 65536)
@@ -854,6 +861,7 @@ namespace TelemetryAnalyzerEOS
             }
             for (int i = 0; i < _decoder[k].ParamsOedes.Length - 1; i++)
             {
+                if(_decoder[k].ParamsCvses[i] == null) continue;
                 if (_decoder[k].ParamsCvses[i].Dkp != (short)dlo) continue;
                 num = i;
                 break;
@@ -864,46 +872,45 @@ namespace TelemetryAnalyzerEOS
                 CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Введена неверная дальность.");
                 return false;
             }
-
-
-            var l1 = num;
-            while (_decoder[k].ParamsOedes[l1].Yc1 >=
-                   _decoder[k].ParamsOedes[num].Yc1 / 1.5)
+            // Канал 1 кадр начала времени накопления
+            for (int i = num; i >= 0; i--)
             {
-                chl1BorderLow = l1;
-                l1--;
-                if (l1 == 0)
-                    break;
+                // Проверяем, успешно ли декодирован пакет
+                if (_decoder[k].ParamsOedes[i] == null) continue;
+                if (_decoder[k].ParamsOedes[i].Yc1 >= _decoder[k].ParamsOedes[num].Yc1 / 1.5)
+                {
+                    chl1BorderLow = i;
+                } else break;
             }
-
-            l1 = chl1BorderLow;
-            while (_decoder[k].ParamsOedes[l1].Yc1 >=
-                   _decoder[k].ParamsOedes[num].Yc1 / 1.5)
+            // Канал 1 кадр завершения времени накопления
+            for (int i = chl1BorderLow; i < _decoder[k].ParamsOedes.Length; i++)
             {
-                chl1BorderHight = l1;
-                l1++;
-                if (l1 == _decoder[k].ParamsOedes.Length)
-                    break;
+                if (_decoder[k].ParamsOedes[i] == null) continue;
+                if (_decoder[k].ParamsOedes[i].Yc1 >= _decoder[k].ParamsOedes[num].Yc1 / 1.5)
+                {
+                    chl1BorderHight = i;
+                }
+                else break;
             }
-
-            var l2 = num;
-            while (_decoder[k].ParamsOedes[l2].Yc1 >=
-                   _decoder[k].ParamsOedes[num].Yc1 / 1.5)
+            // Канал 2 кадр начала времени накопления
+            for (int i = num; i >= 0; i--)
             {
-                chl2BorderLow = l2;
-                l2--;
-                if (l2 == 0)
-                    break;
+                if (_decoder[k].ParamsOedes[i] == null) continue;
+                if (_decoder[k].ParamsOedes[i].Yc2 >= _decoder[k].ParamsOedes[num].Yc2 / 1.5)
+                {
+                    chl2BorderLow = i;
+                }
+                else break;
             }
-            l2 = chl2BorderLow;
-            while (_decoder[k].ParamsOedes[l2].Yc2 >=
-                   _decoder[k].ParamsOedes[num].Yc2 / 1.5)
+            // Канал 2 кадр завершения времени накопления
+            for (int i = chl2BorderLow; i < _decoder[k].ParamsOedes.Length; i++)
             {
-                //!!! Не понятно почему -1!!!
-                chl2BorderHight = l1 - 1;
-                l2++;
-                if (l2 == _decoder[k].ParamsOedes.Length)
-                    break;
+                if (_decoder[k].ParamsOedes[i] == null) continue;
+                if (_decoder[k].ParamsOedes[i].Yc2 >= _decoder[k].ParamsOedes[num].Yc2 / 1.5)
+                {
+                    chl2BorderHight = i;
+                }
+                else break;
             }
 
             if (chl1BorderLow > 0)
@@ -933,6 +940,8 @@ namespace TelemetryAnalyzerEOS
                 report[15] = cmostime2.ToString(CultureInfo.InvariantCulture);
             }
             report[16] = _decoder[k].NumberDevice.ToString();
+            // Количество ошибочных пакетов
+            report[17] = _decoder[k].BadPackagesCounter.ToString();
             CheckingTheAccumulationTimeReport(_safeFilePathes[k] + ".txt", report);
             return !(cmostime < 8) && !(cmostime > 18) && !(cmostime2 < 8) && !(cmostime2 > 18);
         }
@@ -947,6 +956,8 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("Файл: " + path);
                 sw.WriteLine();
                 sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Ошибочных пакетов: " + report[17]);
                 sw.WriteLine();
                 sw.WriteLine("Прибор №: {0} ", report[16]);
                 sw.WriteLine();
@@ -994,11 +1005,13 @@ namespace TelemetryAnalyzerEOS
         /// <returns></returns>
         private bool CheckingTheCaptureAndRecaptureTime(int k)
         {
-            var report = new string[13];
+            var report = new string[14];
             report[0] = _decoder[k].NumberDevice.ToString();
 
             for (int i = 0; i < _decoder[k].ParamsOedes.Length; i++)
             {
+                if (_decoder[k].ParamsCvses[i] == null) continue;
+
                 var begin1Ch1 = -1;
                 // Канал 1
                 // Определяем время захвата и перезахвата для канала 1
@@ -1010,10 +1023,11 @@ namespace TelemetryAnalyzerEOS
                 {
                     for (int j = i; j < _decoder[k].ParamsOedes.Length; j++)
                     {
+                        if(_decoder[k].ParamsOedes[j] == null) continue;
                         if (_decoder[k].ParamsOedes[j].Yc1 <= 0 || begin1Ch1 != -1) continue;
 
                         begin1Ch1 = j;
-                        while (_decoder[k].ParamsOedes[j].Yc1 > 0 && !_decoder[k].ParamsOedes[j].IndLo1)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc1 > 0 && !_decoder[k].ParamsOedes[j].IndLo1)
                         {
                             j++;
                         }
@@ -1026,18 +1040,18 @@ namespace TelemetryAnalyzerEOS
                         if (end1Ch1 - begin1Ch1 == 0 && end1Ch1 != -1 && begin1Ch1 != -1)
                             recap1Ch1 = 0.02;
 
-                        while (_decoder[k].ParamsOedes[j].Yc1 > 0)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc1 > 0 && j < _decoder[k].ParamsOedes.Length - 1)
                         {
                             if (j == _decoder[k].ParamsOedes.Length - 1) break;
                             j++;
                         }
-                        while (_decoder[k].ParamsOedes[j].Yc1 == 0 && j < _decoder[k].ParamsOedes.Length - 1)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc1 == 0 && j < _decoder[k].ParamsOedes.Length - 1)
                         {
                             j++;
                         }
 
                         var begin2Ch1 = j;
-                        while (_decoder[k].ParamsOedes[j].Yc1 > 0 && !_decoder[k].ParamsOedes[j].IndLo1)
+                        while (_decoder[k].ParamsOedes[j] != null &&  _decoder[k].ParamsOedes[j].Yc1 > 0 && !_decoder[k].ParamsOedes[j].IndLo1)
                         {
                             j++;
                         }
@@ -1083,10 +1097,11 @@ namespace TelemetryAnalyzerEOS
                 {
                     for (int j = i; j < _decoder[k].ParamsOedes.Length; j++)
                     {
+                        if(_decoder[k].ParamsOedes[j] == null) continue;
                         if (_decoder[k].ParamsOedes[j].Yc2 <= 0 || begin1Ch2 != -1) continue;
 
                         begin1Ch2 = j;
-                        while (_decoder[k].ParamsOedes[j].Yc2 > 0 && !_decoder[k].ParamsOedes[j].IndLo2)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc2 > 0 && !_decoder[k].ParamsOedes[j].IndLo2)
                         {
                             j++;
                         }
@@ -1099,18 +1114,18 @@ namespace TelemetryAnalyzerEOS
                         if (end1Ch2 - begin1Ch2 == 0 && end1Ch2 != -1 && begin1Ch2 != -1)
                             recap1Ch2 = 0.02;
 
-                        while (_decoder[k].ParamsOedes[j].Yc2 > 0)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc2 > 0 )
                         {
                             if (j >= _decoder[k].ParamsOedes.Length - 1) break;
                             j++;
                         }
-                        while (_decoder[k].ParamsOedes[j].Yc2 == 0 && j < _decoder[k].ParamsOedes.Length - 1)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc2 == 0 && j < _decoder[k].ParamsOedes.Length - 1)
                         {
                             j++;
                         }
 
                         var begin2Ch2 = j;
-                        while (_decoder[k].ParamsOedes[j].Yc2 > 0 && !_decoder[k].ParamsOedes[j].IndLo2)
+                        while (_decoder[k].ParamsOedes[j] != null && _decoder[k].ParamsOedes[j].Yc2 > 0 && !_decoder[k].ParamsOedes[j].IndLo2)
                         {
                             j++;
                         }
@@ -1153,6 +1168,8 @@ namespace TelemetryAnalyzerEOS
                 CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Файл не предназначен для данного типа проверок.");
                 return false;
             }
+            // Количество ошибочных пакетов
+            report[13] = _decoder[k].BadPackagesCounter.ToString();
 
             CheckingTheCaptureAndRecaptureTimeReport(_safeFilePathes[k] + ".txt", report);
             return true;
@@ -1167,6 +1184,8 @@ namespace TelemetryAnalyzerEOS
                 sw.WriteLine("Файл: " + path);
                 sw.WriteLine();
                 sw.WriteLine("Отчет создан: " + DateTime.Now);
+                sw.WriteLine();
+                sw.WriteLine("Ошибочных пакетов: " + report[13]);
                 sw.WriteLine();
                 sw.WriteLine("Прибор №: {0} ", report[0]);
                 sw.WriteLine();
