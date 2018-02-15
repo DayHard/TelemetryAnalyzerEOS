@@ -49,7 +49,7 @@
             this.tbFocusValue.Name = "tbFocusValue";
             this.tbFocusValue.Size = new System.Drawing.Size(48, 20);
             this.tbFocusValue.TabIndex = 1;
-            this.tbFocusValue.Text = "323";
+            this.tbFocusValue.Text = "323,0";
             // 
             // lbFocusValue
             // 

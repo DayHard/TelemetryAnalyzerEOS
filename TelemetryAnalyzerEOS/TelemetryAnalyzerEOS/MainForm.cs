@@ -27,8 +27,8 @@ namespace TelemetryAnalyzerEOS
         private List<PictureBox> _pblist;
         private IList<string> _safefileNames;
         private IList<string> _safeFilePathes;
+        private double _focus;
 
-        private const double FokusKanal2 = 323.0;
         private readonly string[] _cbstatus = new string[15];
 
         #endregion
@@ -311,6 +311,12 @@ namespace TelemetryAnalyzerEOS
             btnLangFr.Enabled = false;
             btnLangEng.Enabled = false;
 
+            if (_cbstatus.Any(t => t == "0" || t == "1"))
+            {
+                var fvForm = new FocusValueForm();
+                fvForm.ShowDialog();
+                _focus = fvForm.FocusValue;
+            }
             // Создание тасков для декодирования (иначе подвисает форма)
             for (int i = 0; i < openFileDialog.FileNames.Length; i++)
             {
@@ -435,9 +441,7 @@ namespace TelemetryAnalyzerEOS
         /// <returns></returns>
         private bool GeneralHealthCheck(int k)
         {
-            var fvForm = new FocusValueForm();
-            fvForm.ShowDialog();
-            var focus = fvForm.FocusValue;
+            var focus = _focus;
             if (focus < 300 || focus > 400)
             {
                 CreateReport(_safeFilePathes[k] + ".txt", "Ошибка. Значение фокуса введено не верно.");
@@ -683,6 +687,7 @@ namespace TelemetryAnalyzerEOS
         /// <returns></returns>
         private bool CheckingTheTuningOfThePlantSignals(int k)
         {
+            var fokusKanal2 = _focus;
             var rightpackages = 0;
             // Создание массива результатов
             var report = new string[10];
@@ -739,16 +744,16 @@ namespace TelemetryAnalyzerEOS
                         _decoder[k].ParamsCvses[i + 1].Deltafik2 < 2000)
                     {
                         var gradus = (double)_decoder[k].ParamsCvses[i].Deltaqk2 / 3600 * (PI / 180);
-                        var pixelKanal2Q = FokusKanal2 * Tan(gradus) / (4 * 0.0083);
+                        var pixelKanal2Q = fokusKanal2 * Tan(gradus) / (4 * 0.0083);
 
                         gradus = (double)_decoder[k].ParamsCvses[i].Deltafik2 / 3600 * (PI / 180);
-                        var pixelKanal2Fi = FokusKanal2 * Tan(gradus) / (4 * 0.0086);
+                        var pixelKanal2Fi = fokusKanal2 * Tan(gradus) / (4 * 0.0086);
 
                         gradus = (double)_decoder[k].ParamsOedes[i + 1].Qkd2 / 3600 * (PI / 180);
-                        var pixelKanal2Q1 = FokusKanal2 * Tan(gradus) / (4 * 0.0083);
+                        var pixelKanal2Q1 = fokusKanal2 * Tan(gradus) / (4 * 0.0083);
 
                         gradus = (double)_decoder[k].ParamsOedes[i + 1].Fikd2 / 3600 * (PI / 180);
-                        var pixelKanal2Fi1 = FokusKanal2 * Tan(gradus) / (4 * 0.0086);
+                        var pixelKanal2Fi1 = fokusKanal2 * Tan(gradus) / (4 * 0.0086);
 
                         tempDelta21 = Abs(pixelKanal2Q - pixelKanal2Q1);
                         tempDelta22 = Abs(pixelKanal2Fi - pixelKanal2Fi1);
