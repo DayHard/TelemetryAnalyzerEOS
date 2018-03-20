@@ -109,5 +109,15 @@ namespace TelemetryAnalyzerEOS.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon TelemetryAnalyzerEOS {
+            get {
+                object obj = ResourceManager.GetObject("TelemetryAnalyzerEOS", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
